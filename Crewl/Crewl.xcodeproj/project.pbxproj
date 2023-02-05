@@ -8,17 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173363298FBB5C00EEC9B4 /* CrewlApp.swift */; };
-		34173366298FBB5C00EEC9B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173365298FBB5C00EEC9B4 /* ContentView.swift */; };
 		34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34173367298FBB5F00EEC9B4 /* Assets.xcassets */; };
 		3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */; };
+		3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F887298FCF0B00577FFB /* State+Extension.swift */; };
+		3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F888298FCF0B00577FFB /* View+Extension.swift */; };
+		3461F896298FCF2900577FFB /* SpaceGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */; };
+		3461F897298FCF2900577FFB /* SpaceGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F88F298FCF2900577FFB /* SpaceGrotesk-Regular.ttf */; };
+		3461F898298FCF2900577FFB /* SpaceGrotesk-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F890298FCF2900577FFB /* SpaceGrotesk-SemiBold.ttf */; };
+		3461F899298FCF2900577FFB /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F891298FCF2900577FFB /* SpaceGrotesk-Medium.ttf */; };
+		3461F89A298FCF2900577FFB /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F892298FCF2900577FFB /* SpaceGrotesk-Bold.ttf */; };
+		3461F89C298FCF2900577FFB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3461F894298FCF2900577FFB /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		34173360298FBB5C00EEC9B4 /* Crewl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crewl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34173363298FBB5C00EEC9B4 /* CrewlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewlApp.swift; sourceTree = "<group>"; };
-		34173365298FBB5C00EEC9B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34173367298FBB5F00EEC9B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3461F887298FCF0B00577FFB /* State+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+Extension.swift"; sourceTree = "<group>"; };
+		3461F888298FCF0B00577FFB /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Light.ttf"; sourceTree = "<group>"; };
+		3461F88F298FCF2900577FFB /* SpaceGrotesk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Regular.ttf"; sourceTree = "<group>"; };
+		3461F890298FCF2900577FFB /* SpaceGrotesk-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-SemiBold.ttf"; sourceTree = "<group>"; };
+		3461F891298FCF2900577FFB /* SpaceGrotesk-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Medium.ttf"; sourceTree = "<group>"; };
+		3461F892298FCF2900577FFB /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
+		3461F894298FCF2900577FFB /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		3461F89D298FCFB000577FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				34173363298FBB5C00EEC9B4 /* CrewlApp.swift */,
-				34173365298FBB5C00EEC9B4 /* ContentView.swift */,
-				34173367298FBB5F00EEC9B4 /* Assets.xcassets */,
+				3461F884298FCEDA00577FFB /* Core */,
+				3461F886298FCF0B00577FFB /* Extensions */,
+				3461F889298FCF0B00577FFB /* Model */,
+				3461F885298FCF0B00577FFB /* Service */,
+				3461F88C298FCF2900577FFB /* Source */,
+				3461F895298FCF2900577FFB /* Utils */,
 				34173369298FBB5F00EEC9B4 /* Preview Content */,
 			);
 			path = Crewl;
@@ -65,6 +84,66 @@
 				3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3461F884298FCEDA00577FFB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3461F885298FCF0B00577FFB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3461F886298FCF0B00577FFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3461F887298FCF0B00577FFB /* State+Extension.swift */,
+				3461F888298FCF0B00577FFB /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3461F889298FCF0B00577FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3461F88C298FCF2900577FFB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3461F88D298FCF2900577FFB /* SpaceGrotestFonts */,
+				3461F89D298FCFB000577FFB /* Info.plist */,
+				34173367298FBB5F00EEC9B4 /* Assets.xcassets */,
+				3461F894298FCF2900577FFB /* Localizable.strings */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3461F88D298FCF2900577FFB /* SpaceGrotestFonts */ = {
+			isa = PBXGroup;
+			children = (
+				3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */,
+				3461F88F298FCF2900577FFB /* SpaceGrotesk-Regular.ttf */,
+				3461F890298FCF2900577FFB /* SpaceGrotesk-SemiBold.ttf */,
+				3461F891298FCF2900577FFB /* SpaceGrotesk-Medium.ttf */,
+				3461F892298FCF2900577FFB /* SpaceGrotesk-Bold.ttf */,
+			);
+			path = SpaceGrotestFonts;
+			sourceTree = "<group>";
+		};
+		3461F895298FCF2900577FFB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +204,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3461F898298FCF2900577FFB /* SpaceGrotesk-SemiBold.ttf in Resources */,
+				3461F896298FCF2900577FFB /* SpaceGrotesk-Light.ttf in Resources */,
+				3461F899298FCF2900577FFB /* SpaceGrotesk-Medium.ttf in Resources */,
 				3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */,
+				3461F89C298FCF2900577FFB /* Localizable.strings in Resources */,
+				3461F897298FCF2900577FFB /* SpaceGrotesk-Regular.ttf in Resources */,
 				34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */,
+				3461F89A298FCF2900577FFB /* SpaceGrotesk-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34173366298FBB5C00EEC9B4 /* ContentView.swift in Sources */,
 				34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */,
+				3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */,
+				3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +348,7 @@
 		3417336F298FBB5F00EEC9B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CrewlAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -270,6 +356,7 @@
 				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Crewl/Source/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,7 +383,7 @@
 		34173370298FBB5F00EEC9B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = CrewlAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -304,6 +391,7 @@
 				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Crewl/Source/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
