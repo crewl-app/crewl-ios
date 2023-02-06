@@ -10,6 +10,7 @@
 		34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173363298FBB5C00EEC9B4 /* CrewlApp.swift */; };
 		34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34173367298FBB5F00EEC9B4 /* Assets.xcassets */; };
 		3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */; };
+		343CD7B229913F630036A559 /* Router+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CD7B129913F630036A559 /* Router+Extension.swift */; };
 		3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F887298FCF0B00577FFB /* State+Extension.swift */; };
 		3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F888298FCF0B00577FFB /* View+Extension.swift */; };
 		3461F896298FCF2900577FFB /* SpaceGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */; };
@@ -18,6 +19,18 @@
 		3461F899298FCF2900577FFB /* SpaceGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F891298FCF2900577FFB /* SpaceGrotesk-Medium.ttf */; };
 		3461F89A298FCF2900577FFB /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F892298FCF2900577FFB /* SpaceGrotesk-Bold.ttf */; };
 		3461F89C298FCF2900577FFB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3461F894298FCF2900577FFB /* Localizable.strings */; };
+		3461F8B5298FD25F00577FFB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8A2298FD25F00577FFB /* SplashViewModel.swift */; };
+		3461F8B6298FD25F00577FFB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8A3298FD25F00577FFB /* SplashView.swift */; };
+		3461F8B7298FD25F00577FFB /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8A4298FD25F00577FFB /* SplashRouter.swift */; };
+		3461F8B9298FD25F00577FFB /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8A9298FD25F00577FFB /* ColorHelper.swift */; };
+		3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8AA298FD25F00577FFB /* ColorHandler.swift */; };
+		3461F8BB298FD25F00577FFB /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8AC298FD25F00577FFB /* ImageHelper.swift */; };
+		3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8AD298FD25F00577FFB /* ImageHandler.swift */; };
+		3461F8BE298FD25F00577FFB /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B0298FD25F00577FFB /* TextHelper.swift */; };
+		3461F8BF298FD25F00577FFB /* TextHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B1298FD25F00577FFB /* TextHandler.swift */; };
+		3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B3298FD25F00577FFB /* FontHandler.swift */; };
+		3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B4298FD25F00577FFB /* FontHelper.swift */; };
+		3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8C3298FD2BF00577FFB /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +38,7 @@
 		34173363298FBB5C00EEC9B4 /* CrewlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewlApp.swift; sourceTree = "<group>"; };
 		34173367298FBB5F00EEC9B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		343CD7B129913F630036A559 /* Router+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Extension.swift"; sourceTree = "<group>"; };
 		3461F887298FCF0B00577FFB /* State+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+Extension.swift"; sourceTree = "<group>"; };
 		3461F888298FCF0B00577FFB /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Light.ttf"; sourceTree = "<group>"; };
@@ -34,6 +48,18 @@
 		3461F892298FCF2900577FFB /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
 		3461F894298FCF2900577FFB /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3461F89D298FCFB000577FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3461F8A2298FD25F00577FFB /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		3461F8A3298FD25F00577FFB /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		3461F8A4298FD25F00577FFB /* SplashRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		3461F8A9298FD25F00577FFB /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		3461F8AA298FD25F00577FFB /* ColorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHandler.swift; sourceTree = "<group>"; };
+		3461F8AC298FD25F00577FFB /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		3461F8AD298FD25F00577FFB /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
+		3461F8B0298FD25F00577FFB /* TextHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		3461F8B1298FD25F00577FFB /* TextHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextHandler.swift; sourceTree = "<group>"; };
+		3461F8B3298FD25F00577FFB /* FontHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
+		3461F8B4298FD25F00577FFB /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		3461F8C3298FD2BF00577FFB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +112,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		343CD7B02991231C0036A559 /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8A8298FD25F00577FFB /* Color */,
+				3461F8AB298FD25F00577FFB /* Image */,
+				3461F8AF298FD25F00577FFB /* Text */,
+				3461F8B2298FD25F00577FFB /* Font */,
+			);
+			path = Instruments;
+			sourceTree = "<group>";
+		};
 		3461F884298FCEDA00577FFB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3461F8A0298FD25F00577FFB /* View */,
+				3461F89E298FD25F00577FFB /* Component */,
+				3461F8A7298FD25F00577FFB /* Helper */,
+				3461F89F298FD25F00577FFB /* Router */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -105,6 +146,7 @@
 			children = (
 				3461F887298FCF0B00577FFB /* State+Extension.swift */,
 				3461F888298FCF0B00577FFB /* View+Extension.swift */,
+				343CD7B129913F630036A559 /* Router+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +186,91 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		3461F89E298FD25F00577FFB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		3461F89F298FD25F00577FFB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3461F8A0298FD25F00577FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8A1298FD25F00577FFB /* Splash */,
+				3461F8C2298FD29A00577FFB /* Onboarding */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3461F8A1298FD25F00577FFB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8A4298FD25F00577FFB /* SplashRouter.swift */,
+				3461F8A2298FD25F00577FFB /* SplashViewModel.swift */,
+				3461F8A3298FD25F00577FFB /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		3461F8A7298FD25F00577FFB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				343CD7B02991231C0036A559 /* Instruments */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3461F8A8298FD25F00577FFB /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8A9298FD25F00577FFB /* ColorHelper.swift */,
+				3461F8AA298FD25F00577FFB /* ColorHandler.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		3461F8AB298FD25F00577FFB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8AC298FD25F00577FFB /* ImageHelper.swift */,
+				3461F8AD298FD25F00577FFB /* ImageHandler.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		3461F8AF298FD25F00577FFB /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8B0298FD25F00577FFB /* TextHelper.swift */,
+				3461F8B1298FD25F00577FFB /* TextHandler.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		3461F8B2298FD25F00577FFB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8B3298FD25F00577FFB /* FontHandler.swift */,
+				3461F8B4298FD25F00577FFB /* FontHelper.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		3461F8C2298FD29A00577FFB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3461F8C3298FD2BF00577FFB /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +349,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3461F8BE298FD25F00577FFB /* TextHelper.swift in Sources */,
+				3461F8B5298FD25F00577FFB /* SplashViewModel.swift in Sources */,
+				3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */,
+				3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */,
+				3461F8BB298FD25F00577FFB /* ImageHelper.swift in Sources */,
+				3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */,
+				3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */,
 				34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */,
+				3461F8B7298FD25F00577FFB /* SplashRouter.swift in Sources */,
+				3461F8B9298FD25F00577FFB /* ColorHelper.swift in Sources */,
+				343CD7B229913F630036A559 /* Router+Extension.swift in Sources */,
+				3461F8B6298FD25F00577FFB /* SplashView.swift in Sources */,
 				3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */,
 				3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */,
+				3461F8BF298FD25F00577FFB /* TextHandler.swift in Sources */,
+				3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +497,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crewl/Source/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -392,7 +531,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crewl/Source/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
