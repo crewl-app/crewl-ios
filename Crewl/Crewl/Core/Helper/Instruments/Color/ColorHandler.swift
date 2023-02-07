@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Color {
-    public static let BackgroundColor = Color(ColorHelper.white.rawValue)
+    public static let BackgroundColor = Color(ColorHelper.backgroundColor.rawValue)
     public static let CrewlWhite = Color(ColorHelper.white.rawValue)
     public static let CrewlGreen = Color(ColorHelper.green.rawValue)
     public static let CrewlWhitePink = Color(ColorHelper.whitePink.rawValue)

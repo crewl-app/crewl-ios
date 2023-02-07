@@ -17,18 +17,18 @@ struct Fonts {
 }
 
 struct FontSize {
-    var Little: CGFloat = 10
-    var AltRegular: CGFloat = 11
-    var Regular: CGFloat = 12
-    var AltMedium: CGFloat = 13
-    var Medium: CGFloat = 14
-    var Middle: CGFloat = 16
-    var AltLarge: CGFloat = 17
-    var Large: CGFloat = 18
-    var BigLarge: CGFloat = 20
-    var AltTitle: CGFloat = 22
-    var Title: CGFloat = 24
-    var LargeTitle: CGFloat = 40
+    var Little10: CGFloat = 10
+    var AltRegular11: CGFloat = 11
+    var Regular12: CGFloat = 12
+    var AltMedium13: CGFloat = 13
+    var Medium14: CGFloat = 14
+    var Middle16: CGFloat = 16
+    var AltLarge17: CGFloat = 17
+    var Large18: CGFloat = 18
+    var BigLarge20: CGFloat = 20
+    var Title22: CGFloat = 22
+    var Title24: CGFloat = 24
+    var LargeTitle40: CGFloat = 40
 }
 
 

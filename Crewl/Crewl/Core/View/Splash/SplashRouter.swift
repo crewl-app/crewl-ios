@@ -16,6 +16,6 @@ protocol SplashRouterCharter {
 
 extension SplashRouter : SplashRouterCharter {
     func goToOnboarding() -> OnboardingView {
-        OnboardingView()
+        OnboardingView(viewModel: .init(routerActive: Bool()))
     }
 }

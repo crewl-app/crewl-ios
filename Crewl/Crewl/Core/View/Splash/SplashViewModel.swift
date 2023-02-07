@@ -18,10 +18,10 @@ final class SplashViewModel: ObservableObject {
     init(isActive : Bool, router: SplashRoutePromoter = SplashRoutePromoter()) {
         self.isActive = isActive
         self.router = router
-        splashCountdown()
+        startCountdown()
     }
     
-    func splashCountdown() {
+    func startCountdown() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.isActive = true
         }

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct SplashView: View {
     
-    @ObservedObject var vm : SplashViewModel 
+    @ObservedObject var ViewModel : SplashViewModel 
     
     var body: some View {
-        if vm.isActive {
-            vm.router.goToOnboarding()
+        if ViewModel.isActive {
+            ViewModel.router.goToOnboarding()
         } else {
             ZStack{
                 RoundedRectangle(cornerRadius: 0)
@@ -30,7 +30,7 @@ struct SplashView: View {
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView(vm: .init(isActive: false, router: SplashRoutePromoter()))
+        SplashView(ViewModel: .init(isActive: false, router: SplashRoutePromoter()))
     }
 }
 

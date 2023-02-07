@@ -10,7 +10,6 @@
 		34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173363298FBB5C00EEC9B4 /* CrewlApp.swift */; };
 		34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34173367298FBB5F00EEC9B4 /* Assets.xcassets */; };
 		3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */; };
-		343CD7B229913F630036A559 /* Router+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CD7B129913F630036A559 /* Router+Extension.swift */; };
 		3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F887298FCF0B00577FFB /* State+Extension.swift */; };
 		3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F888298FCF0B00577FFB /* View+Extension.swift */; };
 		3461F896298FCF2900577FFB /* SpaceGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */; };
@@ -31,6 +30,12 @@
 		3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B3298FD25F00577FFB /* FontHandler.swift */; };
 		3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B4298FD25F00577FFB /* FontHelper.swift */; };
 		3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8C3298FD2BF00577FFB /* OnboardingView.swift */; };
+		34DA931C29917B3000A65E0E /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA931B29917B3000A65E0E /* OnboardingViewModel.swift */; };
+		34DA931E29917B3700A65E0E /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA931D29917B3700A65E0E /* OnboardingRouter.swift */; };
+		34DA932129917C1100A65E0E /* Prehome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA932029917C1100A65E0E /* Prehome.swift */; };
+		34DA9323299183DB00A65E0E /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA9322299183DB00A65E0E /* PrimaryButtonStyle.swift */; };
+		34DA93262991845C00A65E0E /* HelperCustomizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA93252991845C00A65E0E /* HelperCustomizeButton.swift */; };
+		34DC9A742991ACD4002A8EC0 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A732991ACD4002A8EC0 /* OnboardingItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +43,6 @@
 		34173363298FBB5C00EEC9B4 /* CrewlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewlApp.swift; sourceTree = "<group>"; };
 		34173367298FBB5F00EEC9B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		343CD7B129913F630036A559 /* Router+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Extension.swift"; sourceTree = "<group>"; };
 		3461F887298FCF0B00577FFB /* State+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+Extension.swift"; sourceTree = "<group>"; };
 		3461F888298FCF0B00577FFB /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Light.ttf"; sourceTree = "<group>"; };
@@ -60,6 +64,12 @@
 		3461F8B3298FD25F00577FFB /* FontHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
 		3461F8B4298FD25F00577FFB /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		3461F8C3298FD2BF00577FFB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		34DA931B29917B3000A65E0E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		34DA931D29917B3700A65E0E /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		34DA932029917C1100A65E0E /* Prehome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prehome.swift; sourceTree = "<group>"; };
+		34DA9322299183DB00A65E0E /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		34DA93252991845C00A65E0E /* HelperCustomizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperCustomizeButton.swift; sourceTree = "<group>"; };
+		34DC9A732991ACD4002A8EC0 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +156,6 @@
 			children = (
 				3461F887298FCF0B00577FFB /* State+Extension.swift */,
 				3461F888298FCF0B00577FFB /* View+Extension.swift */,
-				343CD7B129913F630036A559 /* Router+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +163,7 @@
 		3461F889298FCF0B00577FFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				34DC9A732991ACD4002A8EC0 /* OnboardingItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +201,7 @@
 		3461F89E298FD25F00577FFB /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				34DA93242991842900A65E0E /* Buttons */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 			children = (
 				3461F8A1298FD25F00577FFB /* Splash */,
 				3461F8C2298FD29A00577FFB /* Onboarding */,
+				34DA931F29917C0200A65E0E /* Prehome */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,9 +280,28 @@
 		3461F8C2298FD29A00577FFB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				34DA931D29917B3700A65E0E /* OnboardingRouter.swift */,
+				34DA931B29917B3000A65E0E /* OnboardingViewModel.swift */,
 				3461F8C3298FD2BF00577FFB /* OnboardingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		34DA931F29917C0200A65E0E /* Prehome */ = {
+			isa = PBXGroup;
+			children = (
+				34DA932029917C1100A65E0E /* Prehome.swift */,
+			);
+			path = Prehome;
+			sourceTree = "<group>";
+		};
+		34DA93242991842900A65E0E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				34DA9322299183DB00A65E0E /* PrimaryButtonStyle.swift */,
+				34DA93252991845C00A65E0E /* HelperCustomizeButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,18 +380,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DC9A742991ACD4002A8EC0 /* OnboardingItem.swift in Sources */,
 				3461F8BE298FD25F00577FFB /* TextHelper.swift in Sources */,
+				34DA931E29917B3700A65E0E /* OnboardingRouter.swift in Sources */,
 				3461F8B5298FD25F00577FFB /* SplashViewModel.swift in Sources */,
 				3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */,
 				3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */,
 				3461F8BB298FD25F00577FFB /* ImageHelper.swift in Sources */,
+				34DA93262991845C00A65E0E /* HelperCustomizeButton.swift in Sources */,
 				3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */,
 				3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */,
 				34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */,
 				3461F8B7298FD25F00577FFB /* SplashRouter.swift in Sources */,
+				34DA931C29917B3000A65E0E /* OnboardingViewModel.swift in Sources */,
 				3461F8B9298FD25F00577FFB /* ColorHelper.swift in Sources */,
-				343CD7B229913F630036A559 /* Router+Extension.swift in Sources */,
 				3461F8B6298FD25F00577FFB /* SplashView.swift in Sources */,
+				34DA932129917C1100A65E0E /* Prehome.swift in Sources */,
+				34DA9323299183DB00A65E0E /* PrimaryButtonStyle.swift in Sources */,
 				3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */,
 				3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */,
 				3461F8BF298FD25F00577FFB /* TextHandler.swift in Sources */,
