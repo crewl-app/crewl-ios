@@ -1,8 +1,9 @@
 {
   "images" : [
     {
-      "filename" : "img_fourth_onboarding.png",
-      "idiom" : "iphone"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
     }
   ],
   "info" : {
