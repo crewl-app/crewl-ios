@@ -1,0 +1,56 @@
+/* 
+  Localizable.strings
+  Crewl
+
+  Created by NomoteteS on 13.01.2023.
+  
+*/
+
+// MARK: - Button Texts
+"sendVerification" = "Onay Kodu Gödner";
+"continue" = "Devam Et";
+"signIn" = "Giriş Yap";
+"signUp" = "Kayıt Ol";
+"later" = "Daha sonra";
+"allow" = "İzin ver";
+
+// MARK: - Onboarding View
+"firstOnboardingTitle" = "Etrafındaki etkinlikleri keşfet";
+"firstOnboardingDescription" = "İnsanlar için etkinlik oluştur veya düzenlenen etkinliklere katıl.";
+
+"secondOnboardingTitle" = "Yeni insanlarla tanış ve rekabet et";
+"secondOnboardingDescription" = "Şehrindeki yeni insanları bul, etkinliklerde ekibini oluştur ve ödül kazan.";
+
+"thirdOnboardingTitle" = "Özel indirimler kazan ve farklı tatları dene";
+"thirdOnboardingDescription" = "Gittiğin barların özel içeceklerini dene ve Crewl üyeliğine özel indirimlerin tadını çıkar.";
+
+"fourthOnboardingTitle" = "Unutulmayacak bir gece deneyimle";
+"fourthOnboardingDescription" = "Şimdi katıl ve hikayenin bir parçası ol. Seni aramızda görmek için sabırsızlanıyoruz.";
+
+// MARK: - Login View
+
+"loginTitle" = "Telefon numaran nedir?";
+"loginDescription" = "Crewl’da herkesin güvende olması için senin gerçek bir insan olduğunu doğrulamam gerekiyor. Numaran profilinde gözükmeyecek.";
+
+"verificationText" = "Teşekkürler, şimdi numaranı doğrulamam gerekiyor.";
+"sendedCodeNumber" = " numarasına bir kod yolladım.";
+"attentionMassage" = "Numaranı doğru girdiğinden emin ol. Sana bir SMS kodu yollayacağım.";
+"confirmInLastLogin" = "Başarıyla doğruladım. Sanırım gerçekten de insansın.";
+"nextToPageInLastLogin" = "Devam edelimi mi?";
+"confirm" = "Onayla";
+
+// MARK: - Notification
+"notifacionServiceTitle"= "Bildirimlerini aç";
+"notifacionServiceDescription" = "Etrafındaki etkinlikleri sana göstermemiz için lokasyon izni vermen gerekiyor. Gerekmiyor mu?";
+"locationServiceTitle"= "Konum servislerini aç";
+"locationServiceDescription" = "Etrafındaki etkinlikleri sana göstermemiz için lokasyon izni vermen gerekiyor. Gerekmiyor mu?";
+
+// MARK: - Terms Service
+
+"privacyPolicy"="Gizlilik Politikası";
+"privacyPolicyDescription"="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+"termsOfUse"="Kullanım Koşulları";
+"termsOfUseDescription"="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ";
+
+

@@ -11,7 +11,7 @@ import SwiftUI
 struct CrewlApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView(ViewModel: SplashViewModel(isActive: false))
         }
     }
 }
