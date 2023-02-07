@@ -10,8 +10,8 @@ import Foundation
 struct ImageHelper {
     
     enum App : String {
-        case AppLogo = "CrewlLogo"
-        case CrewlLogo = "PreHome"
+        case AppLogo = "AppLogo"
+        case CrewlLogo = "CrewlLogo"
     }
     
     // MARK: - Onboarding Views
