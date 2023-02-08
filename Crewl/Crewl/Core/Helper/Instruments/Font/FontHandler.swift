@@ -40,6 +40,7 @@ extension Font {
     static let RoundedRegular18 : Font = .system(size: getSize.Large18, weight: .regular, design: .rounded)
     static let RoundedRegular17 : Font = .system(size: getSize.AltLarge17, weight: .regular, design: .rounded)
     static let RoundedRegular16 : Font = .system(size: getSize.Middle16, weight: .regular, design: .rounded)
+    static let RoundedRegular14 : Font = .system(size: getSize.Medium14, weight: .regular, design: .rounded)
     static let RoundedRegular12 : Font = .system(size: getSize.Regular12, weight: .regular, design: .rounded)
     static let RoundedRegular10 : Font = .system(size: getSize.Little10, weight: .regular, design: .rounded)
     

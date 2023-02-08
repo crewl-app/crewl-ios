@@ -11,7 +11,7 @@ final class PrehomeRouter {}
 
 protocol PrehomeRouterCharter {
     func goToRegister() -> RegisterName
-    func goToLogin() -> LoginNumber
+    func goToLogin() -> LoginNumberView
     
 }
 
@@ -20,7 +20,7 @@ extension PrehomeRouter : PrehomeRouterCharter {
         RegisterName()
     }
     
-    func goToLogin() -> LoginNumber {
-        LoginNumber()
+    func goToLogin() -> LoginNumberView {
+        LoginNumberView()
     }
 }

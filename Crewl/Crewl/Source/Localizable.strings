@@ -30,7 +30,7 @@
 // MARK: - Login View
 
 "loginTitle" = "Telefon numaran nedir?";
-"loginDescription" = "Crewl’da herkesin güvende olması için senin gerçek bir insan olduğunu doğrulamam gerekiyor. Numaran profilinde gözükmeyecek.";
+"loginDescription" = "Crewl’da herkesin güvende olması için senin gerçek bir insan olduğunu doğrulamam gerekiyor.";
 
 "verificationText" = "Teşekkürler, şimdi numaranı doğrulamam gerekiyor.";
 "sendedCodeNumber" = " numarasına bir kod yolladım.";

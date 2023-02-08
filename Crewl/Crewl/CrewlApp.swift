@@ -12,6 +12,7 @@ struct CrewlApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView(ViewModel: SplashViewModel(isActive: false))
+                .preferredColorScheme(.light)
         }
     }
 }

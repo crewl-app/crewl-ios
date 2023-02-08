@@ -30,6 +30,14 @@
 		3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B3298FD25F00577FFB /* FontHandler.swift */; };
 		3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B4298FD25F00577FFB /* FontHelper.swift */; };
 		3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8C3298FD2BF00577FFB /* OnboardingView.swift */; };
+		34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E229932FB7007E9740 /* LoginPropertys.swift */; };
+		34D145E52993368B007E9740 /* CustomPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E42993368B007E9740 /* CustomPhoneTextField.swift */; };
+		34D145E729933D26007E9740 /* CustomCountryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E629933D26007E9740 /* CustomCountryTextField.swift */; };
+		34D145E9299340A0007E9740 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E8299340A0007E9740 /* TextFieldViewModel.swift */; };
+		34D264DA29929721003A2BDF /* LoginNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D264D929929721003A2BDF /* LoginNumberViewModel.swift */; };
+		34D264DC29929729003A2BDF /* LoginNumberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D264DB29929729003A2BDF /* LoginNumberRouter.swift */; };
+		34D264DF2992979A003A2BDF /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D264DE2992979A003A2BDF /* PrivacyPolicyView.swift */; };
+		34D264E2299297E7003A2BDF /* PrivacyPolicyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D264E1299297E7003A2BDF /* PrivacyPolicyViewModel.swift */; };
 		34DA931C29917B3000A65E0E /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA931B29917B3000A65E0E /* OnboardingViewModel.swift */; };
 		34DA931E29917B3700A65E0E /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA931D29917B3700A65E0E /* OnboardingRouter.swift */; };
 		34DA932129917C1100A65E0E /* PrehomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA932029917C1100A65E0E /* PrehomeView.swift */; };
@@ -41,7 +49,7 @@
 		34DC9A7D29927B05002A8EC0 /* PrehomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A7C29927B05002A8EC0 /* PrehomeViewModel.swift */; };
 		34DC9A8029927B14002A8EC0 /* PrehomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A7F29927B14002A8EC0 /* PrehomeRouter.swift */; };
 		34DC9A8D29927C6E002A8EC0 /* RegisterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8C29927C6E002A8EC0 /* RegisterName.swift */; };
-		34DC9A8F29927C7F002A8EC0 /* LoginNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8E29927C7F002A8EC0 /* LoginNumber.swift */; };
+		34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +78,14 @@
 		3461F8B3298FD25F00577FFB /* FontHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
 		3461F8B4298FD25F00577FFB /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		3461F8C3298FD2BF00577FFB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		34D145E229932FB7007E9740 /* LoginPropertys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPropertys.swift; sourceTree = "<group>"; };
+		34D145E42993368B007E9740 /* CustomPhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhoneTextField.swift; sourceTree = "<group>"; };
+		34D145E629933D26007E9740 /* CustomCountryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountryTextField.swift; sourceTree = "<group>"; };
+		34D145E8299340A0007E9740 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		34D264D929929721003A2BDF /* LoginNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberViewModel.swift; sourceTree = "<group>"; };
+		34D264DB29929729003A2BDF /* LoginNumberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberRouter.swift; sourceTree = "<group>"; };
+		34D264DE2992979A003A2BDF /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		34D264E1299297E7003A2BDF /* PrivacyPolicyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewModel.swift; sourceTree = "<group>"; };
 		34DA931B29917B3000A65E0E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		34DA931D29917B3700A65E0E /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		34DA932029917C1100A65E0E /* PrehomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrehomeView.swift; sourceTree = "<group>"; };
@@ -81,7 +97,7 @@
 		34DC9A7C29927B05002A8EC0 /* PrehomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrehomeViewModel.swift; sourceTree = "<group>"; };
 		34DC9A7F29927B14002A8EC0 /* PrehomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrehomeRouter.swift; sourceTree = "<group>"; };
 		34DC9A8C29927C6E002A8EC0 /* RegisterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterName.swift; sourceTree = "<group>"; };
-		34DC9A8E29927C7F002A8EC0 /* LoginNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumber.swift; sourceTree = "<group>"; };
+		34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				34DC9A732991ACD4002A8EC0 /* OnboardingItem.swift */,
+				34D145E229932FB7007E9740 /* LoginPropertys.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +230,8 @@
 		3461F89E298FD25F00577FFB /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				34D264DD2992976D003A2BDF /* UISubViews */,
+				34D264D8299296F5003A2BDF /* TextField */,
 				34DA93242991842900A65E0E /* Buttons */,
 			);
 			path = Component;
@@ -301,6 +320,33 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		34D264D8299296F5003A2BDF /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				34D145E42993368B007E9740 /* CustomPhoneTextField.swift */,
+				34D145E629933D26007E9740 /* CustomCountryTextField.swift */,
+				34D145E8299340A0007E9740 /* TextFieldViewModel.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		34D264DD2992976D003A2BDF /* UISubViews */ = {
+			isa = PBXGroup;
+			children = (
+				34D264E0299297A4003A2BDF /* PrivacyPolicy */,
+			);
+			path = UISubViews;
+			sourceTree = "<group>";
+		};
+		34D264E0299297A4003A2BDF /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				34D264DE2992979A003A2BDF /* PrivacyPolicyView.swift */,
+				34D264E1299297E7003A2BDF /* PrivacyPolicyViewModel.swift */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
 		34DA931F29917C0200A65E0E /* Prehome */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +395,9 @@
 		34DC9A8129927B48002A8EC0 /* LoginNumber */ = {
 			isa = PBXGroup;
 			children = (
-				34DC9A8E29927C7F002A8EC0 /* LoginNumber.swift */,
+				34D264DB29929729003A2BDF /* LoginNumberRouter.swift */,
+				34D264D929929721003A2BDF /* LoginNumberViewModel.swift */,
+				34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */,
 			);
 			path = LoginNumber;
 			sourceTree = "<group>";
@@ -454,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */,
 				34DC9A742991ACD4002A8EC0 /* OnboardingItem.swift in Sources */,
 				3461F8BE298FD25F00577FFB /* TextHelper.swift in Sources */,
 				34DC9A7629927374002A8EC0 /* BackButton.swift in Sources */,
@@ -463,16 +512,23 @@
 				34DC9A7D29927B05002A8EC0 /* PrehomeViewModel.swift in Sources */,
 				3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */,
 				3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */,
+				34D145E9299340A0007E9740 /* TextFieldViewModel.swift in Sources */,
 				3461F8BB298FD25F00577FFB /* ImageHelper.swift in Sources */,
+				34D145E729933D26007E9740 /* CustomCountryTextField.swift in Sources */,
+				34D264E2299297E7003A2BDF /* PrivacyPolicyViewModel.swift in Sources */,
 				34DA93262991845C00A65E0E /* HelperCustomizeButton.swift in Sources */,
+				34D145E52993368B007E9740 /* CustomPhoneTextField.swift in Sources */,
 				3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */,
 				3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */,
-				34DC9A8F29927C7F002A8EC0 /* LoginNumber.swift in Sources */,
+				34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */,
+				34D264DF2992979A003A2BDF /* PrivacyPolicyView.swift in Sources */,
 				34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */,
 				3461F8B7298FD25F00577FFB /* SplashRouter.swift in Sources */,
 				34DA931C29917B3000A65E0E /* OnboardingViewModel.swift in Sources */,
 				3461F8B9298FD25F00577FFB /* ColorHelper.swift in Sources */,
 				3461F8B6298FD25F00577FFB /* SplashView.swift in Sources */,
+				34D264DA29929721003A2BDF /* LoginNumberViewModel.swift in Sources */,
+				34D264DC29929729003A2BDF /* LoginNumberRouter.swift in Sources */,
 				34DA932129917C1100A65E0E /* PrehomeView.swift in Sources */,
 				34DA9323299183DB00A65E0E /* PrimaryButtonStyle.swift in Sources */,
 				3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */,
