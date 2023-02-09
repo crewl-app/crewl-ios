@@ -15,6 +15,6 @@ protocol LoginNumberRouterCharter {
 
 extension LoginNumberRouter : LoginNumberRouterCharter {
     func goToLoginOTPView(number: String) -> LoginOTPView {
-        LoginOTPView()
+        LoginOTPView(viewModel: LoginOTPViewModel(number: number))
     }
 }

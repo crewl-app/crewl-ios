@@ -17,10 +17,12 @@ struct LoginSuccessView: View {
                 .ignoresSafeArea()
             VStack {
                 VStack(spacing: 36) {
+                    // MARK: - Image
                     Image.LoginSuccess
                         .resizable()
                         .frame(width: 282, height: 325)
                     
+                    // MARK: - Text
                     VStack(spacing: 20) {
                         Text(TextHelper.LoginText.ConfirmInLastLogin.rawValue.locale())
                             .font(.SpaceBold23)
@@ -34,14 +36,16 @@ struct LoginSuccessView: View {
                 
                 Spacer()
                 
+                // MARK: - Button
                 NavigationLink {
                     viewModel.router.goToHomeView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     Text(TextHelper.ButtonText.Continue.rawValue.locale())
                         .font(.SpaceBold13)
                 }
                 .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 321))
-                
+                // MARK: - \\
                 Spacer()
             }
         }

@@ -26,10 +26,12 @@ struct Prehome: View {
                                height: UIScreen.main.bounds.height * 0.15)
                     Spacer()
                     
-                    // MARK: - Button
+                    // MARK: - Buttons
                     VStack {
+                        // Login Button
                         NavigationLink {
                             viewModel.router.goToLogin()
+                                .navigationBarBackButtonHidden(true)
                         } label: {
                             Text(TextHelper.ButtonText.SignIn.rawValue.locale())
                                 .font(.SpaceBold13)
@@ -37,26 +39,22 @@ struct Prehome: View {
                         .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlWhite, setWidthAgain: 272))
                         .padding(.vertical)
                         
+                        // Back & Register Buttons
                         HStack(spacing: 17) {
-                          
                             BackButton()
                     
-                        
-                            
                             NavigationLink{
                                 viewModel.router.goToRegister()
+                                    .navigationBarBackButtonHidden(true)
                             } label: {
                                 Text(TextHelper.ButtonText.SignUp.rawValue.locale())
                                     .font(.SpaceBold13)
                             }
                             .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 215))
-
                         }
                     }
                     .padding(.horizontal)
-                    
                     Spacer()
-
                 }
             }
         }

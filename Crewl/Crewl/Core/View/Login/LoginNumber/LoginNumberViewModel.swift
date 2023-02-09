@@ -11,10 +11,10 @@ import SwiftUI
 typealias LoginNumberRouterPromoter = LoginNumberRouter
 
 class LoginNumberViewModel : ObservableObject {
-    @Published var loginPropertys = LoginPropertys()
     
     var router = LoginNumberRouterPromoter()
     
+    @Published var loginPropertys = LoginPropertys()
     @Published var isCheckMarked : Bool
     @Published var isActivatePolicy : Bool
     @Published var isActivateTerms : Bool

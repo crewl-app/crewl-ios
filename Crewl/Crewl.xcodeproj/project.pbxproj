@@ -12,6 +12,10 @@
 		341712E129954F3300463D46 /* LoginSuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712E029954F3300463D46 /* LoginSuccessViewModel.swift */; };
 		341712E329954F3800463D46 /* LoginSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712E229954F3800463D46 /* LoginSuccessView.swift */; };
 		341712E629956D5700463D46 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712E529956D5700463D46 /* HomeView.swift */; };
+		341712E82995746100463D46 /* LoginOTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712E72995746100463D46 /* LoginOTPRouter.swift */; };
+		341712EB2995747700463D46 /* LoginOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EA2995747600463D46 /* LoginOTPViewModel.swift */; };
+		341712ED299575D100463D46 /* CustomOTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EC299575D100463D46 /* CustomOTPTextField.swift */; };
+		341712EF2995786600463D46 /* ReSendCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EE2995786600463D46 /* ReSendCode.swift */; };
 		34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173363298FBB5C00EEC9B4 /* CrewlApp.swift */; };
 		34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34173367298FBB5F00EEC9B4 /* Assets.xcassets */; };
 		3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */; };
@@ -61,6 +65,10 @@
 		341712E029954F3300463D46 /* LoginSuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessViewModel.swift; sourceTree = "<group>"; };
 		341712E229954F3800463D46 /* LoginSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessView.swift; sourceTree = "<group>"; };
 		341712E529956D5700463D46 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		341712E72995746100463D46 /* LoginOTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOTPRouter.swift; sourceTree = "<group>"; };
+		341712EA2995747600463D46 /* LoginOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOTPViewModel.swift; sourceTree = "<group>"; };
+		341712EC299575D100463D46 /* CustomOTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOTPTextField.swift; sourceTree = "<group>"; };
+		341712EE2995786600463D46 /* ReSendCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSendCode.swift; sourceTree = "<group>"; };
 		34173360298FBB5C00EEC9B4 /* Crewl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crewl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34173363298FBB5C00EEC9B4 /* CrewlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewlApp.swift; sourceTree = "<group>"; };
 		34173367298FBB5F00EEC9B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +128,8 @@
 		340BC6102993FF3200FE6945 /* LoginOTP */ = {
 			isa = PBXGroup;
 			children = (
+				341712E72995746100463D46 /* LoginOTPRouter.swift */,
+				341712EA2995747600463D46 /* LoginOTPViewModel.swift */,
 				340BC6112994013200FE6945 /* LoginOTPView.swift */,
 			);
 			path = LoginOTP;
@@ -141,6 +151,25 @@
 				341712E529956D5700463D46 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		341712F029958D3E00463D46 /* LoginUIs */ = {
+			isa = PBXGroup;
+			children = (
+				34D264DE2992979A003A2BDF /* PrivacyPolicy.swift */,
+				341712EE2995786600463D46 /* ReSendCode.swift */,
+			);
+			path = LoginUIs;
+			sourceTree = "<group>";
+		};
+		341712F129958D5700463D46 /* LoginFields */ = {
+			isa = PBXGroup;
+			children = (
+				34D145E42993368B007E9740 /* CustomPhoneTextField.swift */,
+				34D145E629933D26007E9740 /* CustomCountryTextField.swift */,
+				341712EC299575D100463D46 /* CustomOTPTextField.swift */,
+			);
+			path = LoginFields;
 			sourceTree = "<group>";
 		};
 		34173357298FBB5C00EEC9B4 = {
@@ -356,8 +385,7 @@
 		34D264D8299296F5003A2BDF /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				34D145E42993368B007E9740 /* CustomPhoneTextField.swift */,
-				34D145E629933D26007E9740 /* CustomCountryTextField.swift */,
+				341712F129958D5700463D46 /* LoginFields */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -365,7 +393,7 @@
 		34D264DD2992976D003A2BDF /* UISubViews */ = {
 			isa = PBXGroup;
 			children = (
-				34D264DE2992979A003A2BDF /* PrivacyPolicy.swift */,
+				341712F029958D3E00463D46 /* LoginUIs */,
 			);
 			path = UISubViews;
 			sourceTree = "<group>";
@@ -552,8 +580,11 @@
 				3461F8B7298FD25F00577FFB /* SplashRouter.swift in Sources */,
 				34DA931C29917B3000A65E0E /* OnboardingViewModel.swift in Sources */,
 				3461F8B9298FD25F00577FFB /* ColorHelper.swift in Sources */,
+				341712E82995746100463D46 /* LoginOTPRouter.swift in Sources */,
+				341712EB2995747700463D46 /* LoginOTPViewModel.swift in Sources */,
 				3461F8B6298FD25F00577FFB /* SplashView.swift in Sources */,
 				34D264DA29929721003A2BDF /* LoginNumberViewModel.swift in Sources */,
+				341712EF2995786600463D46 /* ReSendCode.swift in Sources */,
 				34D264DC29929729003A2BDF /* LoginNumberRouter.swift in Sources */,
 				341712E629956D5700463D46 /* HomeView.swift in Sources */,
 				34DA932129917C1100A65E0E /* PrehomeView.swift in Sources */,
@@ -562,6 +593,7 @@
 				3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */,
 				340BC6122994013200FE6945 /* LoginOTPView.swift in Sources */,
 				3461F8BF298FD25F00577FFB /* TextHandler.swift in Sources */,
+				341712ED299575D100463D46 /* CustomOTPTextField.swift in Sources */,
 				34DC9A8029927B14002A8EC0 /* PrehomeRouter.swift in Sources */,
 				34DC9A7B29927995002A8EC0 /* BackButtonStyle.swift in Sources */,
 				3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */,

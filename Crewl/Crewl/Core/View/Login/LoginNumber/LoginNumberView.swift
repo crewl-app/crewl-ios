@@ -15,8 +15,8 @@ struct LoginNumberView: View {
         ZStack {
             Color.BackgroundColor
                 .ignoresSafeArea()
-            //MARK: - Text
             VStack {
+                //MARK: - Text
                 VStack(alignment: .leading, spacing: 10) {
                     Text(TextHelper.LoginText.LoginTitle.rawValue.locale())
                         .font(.SpaceBold23)
@@ -27,10 +27,6 @@ struct LoginNumberView: View {
                 }
                 .frame(height: 90)
                 .padding()
-                
-                NavigationLink<Text, LoginOTPView>("", isActive: $viewModel.isCheckMarked) {
-                    viewModel.router.goToLoginOTPView(number: "")
-                }
 
                 //MARK: - TextFields
                 VStack {
@@ -39,9 +35,8 @@ struct LoginNumberView: View {
                         CustomCountryTextField()
                         
                         CustomPhoneTextField(number: $viewModel.loginPropertys.userPhone)
-                        
                     }
-                    
+                //MARK: - Attentions
                     HStack {
                         Text("* ").foregroundColor(Color.red).font(.system(size: 15)) +
                         Text(TextHelper.LoginText.AttentionMassage.rawValue.locale())
@@ -66,16 +61,18 @@ struct LoginNumberView: View {
                     let status = (viewModel.isCheckMarked )
                     
                     NavigationLink(destination: {
-                        viewModel.router.goToLoginOTPView(number: "")
-                            .navigationBarBackButtonHidden(true)
+                        if status {
+                            viewModel.router.goToLoginOTPView(number: viewModel.loginPropertys.userPhone)
+                                .navigationBarBackButtonHidden(true)
+                        }
                     }, label: {
                         Text(TextHelper.ButtonText.SendVerification.rawValue.locale())
                             .font(.SpaceBold13)
                     })
-//                    .disabled(status != true)
+                    .disabled(status != true)
                     .buttonStyle(PrimaryButtonStyle(buttonColor: status ? Color.CrewlYellow : Color.CrewlSoftYellow,
                                                     setWidthAgain: 271))
-                    
+                    // MARK: - \\
                 }
                 Spacer()
             }
