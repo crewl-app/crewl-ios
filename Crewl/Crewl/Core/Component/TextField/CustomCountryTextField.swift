@@ -30,7 +30,7 @@ struct countryBackground: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 5)
             .stroke(Color.CrewlWhiteGray, lineWidth: 1)
-            .background(Color.CrewlWhite)
+            .background(Color.CrewlWhite.cornerRadius(5))
         
         Text("🇹🇷 +90")
             .font(.SpaceBold13)

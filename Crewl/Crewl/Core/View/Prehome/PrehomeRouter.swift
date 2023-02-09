@@ -21,6 +21,6 @@ extension PrehomeRouter : PrehomeRouterCharter {
     }
     
     func goToLogin() -> LoginNumberView {
-        LoginNumberView()
+        LoginNumberView(viewModel: LoginNumberViewModel())
     }
 }

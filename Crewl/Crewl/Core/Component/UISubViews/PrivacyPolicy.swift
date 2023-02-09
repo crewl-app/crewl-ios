@@ -7,56 +7,37 @@
 
 import SwiftUI
 
-struct PrivacyPolicyView: View {
+struct PrivacyPolicy: View {
     
-    @ObservedObject var viewModel : PrivacyPolicyViewModel
+    @Binding var checkMarked : Bool
+    @Binding var activatePolicy : Bool
+    @Binding var activateTerms : Bool
     
     var body: some View {
+
         ZStack {
             PPBlackBackground()
-            PPTemplate(viewModel: viewModel)
-        }
-        .sheet(isPresented: $viewModel.activateTerms) {
-            TermsView()
-        }
-        .sheet(isPresented: $viewModel.activatePolicy) {
-            PrivacyView()
-        }
-    }
-}
-
-struct PrivacyPolicyRectengle_Previews: PreviewProvider {
-    static var previews: some View {
-        PrivacyPolicyView(viewModel: PrivacyPolicyViewModel(checkMarked: false, activateTerms: false, activatePolicy: false))
-    }
-}
-
-
-private struct PPTemplate: View {
-    
-    @StateObject var viewModel : PrivacyPolicyViewModel
-    
-    var body: some View {
-        ZStack {
             RoundedRectangle(cornerRadius: 5)
                 .stroke(Color.CrewlBlack,lineWidth: 3)
                 .background {   Color.CrewlWhite.cornerRadius(5)    }
             HStack(spacing: 0) {
                 
-                PPCheck(checkMarked: $viewModel.checkMarked)
-                
-                PPText(activatePolicy: $viewModel.activatePolicy, activateTerms: $viewModel.activateTerms)
+                PPCheck(checkMarked: $checkMarked)
+                PPText(activatePolicy: $activatePolicy, activateTerms: $activateTerms)
             }
             .padding(.all,2)
-                
         }
-        .frame(width: UIScreen.main.bounds.width * 0.85,
-               height: UIScreen.main.bounds.height * 0.09)
-        .offset(x: viewModel.checkMarked ? 4 : 0,
-                y: viewModel.checkMarked ? 4 : 0)
-        
-            
-        
+        .frame(width: 302,
+               height: 51)
+        .offset(x: checkMarked ? 4 : 0,
+                y: checkMarked ? 4 : 0)
+
+    }
+}
+
+struct PrivacyPolicyRectengle_Previews: PreviewProvider {
+    static var previews: some View {
+        PrivacyPolicy(checkMarked: .constant(false), activatePolicy: .constant(false), activateTerms: .constant(false))
     }
 }
 
@@ -65,8 +46,6 @@ private struct PPBlackBackground: View{
     var body: some View {
         RoundedRectangle(cornerRadius: 5 )
             .foregroundColor(Color.CrewlBlack)
-            .frame(width: UIScreen.main.bounds.width * 0.85,
-                   height: UIScreen.main.bounds.height * 0.09)
             .offset(x: 4,
                     y: 4)
     }
@@ -97,8 +76,8 @@ private struct PPText: View {
             Text("okudum ve kabul ediyorum.")
         }
         .font(.RoundedRegular12)
-        .frame(width: UIScreen.main.bounds.width * 0.69,
-               height: UIScreen.main.bounds.height * 0.06)
+        .frame(width: 265,
+               height: 50)
     }
 }
 
@@ -108,16 +87,19 @@ private struct PPCheck: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(lineWidth: 2)
-                .frame(width: UIScreen.main.bounds.width * 0.059,
-                       height: UIScreen.main.bounds.height * 0.036)
-            Image(systemName: "checkmark")
-                .font(.system(size: 13, weight: .semibold))
-                .opacity(checkMarked ? 1 : 0)
+            ZStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(lineWidth: 2)
+                    .frame(width: 20,
+                           height: 20)
+                Image(systemName: "checkmark")
+                    .font(.system(size: 13, weight: .semibold))
+                    .opacity(checkMarked ? 1 : 0)
+            }
+            .padding()
+            .frame(width: 40, height: 40)
         }
-        .frame(width: UIScreen.main.bounds.width * 0.15,
-               height: UIScreen.main.bounds.height * 0.076)
+        .padding(.leading)
         .onTapGesture {
             checkMarked.toggle()
         }

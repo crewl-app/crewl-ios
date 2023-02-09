@@ -9,59 +9,56 @@ import SwiftUI
 
 struct Prehome: View {
     
-    @ObservedObject var viewModel : PrehomeViewModel = .init(activatedRegister: false, activatedLogin: false)
-    
+    @ObservedObject var viewModel : PrehomeViewModel = .init()
     
     var body: some View {
-        ZStack {
-            Color.BackgroundColor
-                .ignoresSafeArea()
-            VStack {
-                Spacer()
-                
-                // MARK: - Logo
-                Image.CrewlLogo
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width * 0.4,
-                           height: UIScreen.main.bounds.height * 0.15)
-                Spacer()
-                
-                // MARK: - Button
+        NavigationView {
+            ZStack {
+                Color.BackgroundColor
+                    .ignoresSafeArea()
                 VStack {
-                    Button {
-                        viewModel.activatedLogin = true
-                    } label: {
-                        Text(TextHelper.ButtonText.SignIn.rawValue.locale())
-                            .font(.SpaceBold13)
-                    }
-                    .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlWhite, setWidthAgain: 272))
-                    .padding(.vertical)
+                    Spacer()
                     
-                    HStack(spacing: 17) {
-                      
-                        BackButton()
-                
-                        Button {
-                            viewModel.activatedRegister = true
+                    // MARK: - Logo
+                    Image.CrewlLogo
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width * 0.4,
+                               height: UIScreen.main.bounds.height * 0.15)
+                    Spacer()
+                    
+                    // MARK: - Button
+                    VStack {
+                        NavigationLink {
+                            viewModel.router.goToLogin()
                         } label: {
-                            Text(TextHelper.ButtonText.SignUp.rawValue.locale())
+                            Text(TextHelper.ButtonText.SignIn.rawValue.locale())
                                 .font(.SpaceBold13)
                         }
-                        .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 215))
+                        .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlWhite, setWidthAgain: 272))
+                        .padding(.vertical)
+                        
+                        HStack(spacing: 17) {
+                          
+                            BackButton()
+                    
+                        
+                            
+                            NavigationLink{
+                                viewModel.router.goToRegister()
+                            } label: {
+                                Text(TextHelper.ButtonText.SignUp.rawValue.locale())
+                                    .font(.SpaceBold13)
+                            }
+                            .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 215))
 
+                        }
                     }
-                }
-                .padding(.horizontal)
-                
-                Spacer()
+                    .padding(.horizontal)
+                    
+                    Spacer()
 
+                }
             }
-        }
-        .fullScreenCover(isPresented: $viewModel.activatedLogin) {
-                viewModel.router.goToLogin()
-        }
-        .fullScreenCover(isPresented: $viewModel.activatedRegister) {
-            viewModel.router.goToRegister()
         }
     }
 }

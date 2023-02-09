@@ -6,14 +6,30 @@
 //
 
 import Foundation
+import SwiftUI
 
-final class LoginNumberViewModel : ObservableObject {
+typealias LoginNumberRouterPromoter = LoginNumberRouter
+
+class LoginNumberViewModel : ObservableObject {
     @Published var loginPropertys = LoginPropertys()
-    @Published var pp = PrivacyPolicyViewModel(checkMarked: Bool())
     
-    init(loginPropertys: LoginPropertys = LoginPropertys(), pp: PrivacyPolicyViewModel = PrivacyPolicyViewModel(checkMarked: Bool())) {
+    var router = LoginNumberRouterPromoter()
+    
+    @Published var isCheckMarked : Bool
+    @Published var isActivatePolicy : Bool
+    @Published var isActivateTerms : Bool
+    
+    init(loginPropertys: LoginPropertys = LoginPropertys(),
+         router: LoginNumberRouterPromoter = LoginNumberRouterPromoter(),
+         isCheckMarked: Bool = false,
+         isActivatePolicy: Bool = false,
+         isActivateTerms: Bool = false,
+         focusState: Bool = false)
+    {
         self.loginPropertys = loginPropertys
-        self.pp = pp
+        self.router = router
+        self.isCheckMarked = isCheckMarked
+        self.isActivatePolicy = isActivatePolicy
+        self.isActivateTerms = isActivateTerms
     }
-
 }

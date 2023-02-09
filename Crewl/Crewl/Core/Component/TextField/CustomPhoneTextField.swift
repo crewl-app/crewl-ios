@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct CustomPhoneTextField: View {
-    @StateObject var model : LoginPropertys = .init()
-    @StateObject var viewModel : TextFieldViewModel = .init()
     
+    @Binding var number : String
+    @State var tab = false
     
     var body: some View {
         ZStack {
-            phoneBackground(status: $viewModel.tab)
-                
-            TextField("", text: $model.userPhone.limit(10))
-                .keyboardType(.numberPad)
-                .frame(width: 210)
             
+            let status = (tab || number.count > 0)
+            phoneBackground(status: .constant(status))
+                
+            TextField("", text: $number.limit(10) )
+                .keyboardType(.numberPad)
+                .frame(width: 210,
+                       height: 40)
         }
         .onTapGesture {
-            viewModel.tab.toggle()
+            tab = true
         }
     }
 }
@@ -32,7 +34,7 @@ struct CustomPhoneTextField_Previews: PreviewProvider {
         ZStack {
             Color.BackgroundColor
                 .ignoresSafeArea()
-            CustomPhoneTextField()
+            CustomPhoneTextField(number: .constant(""))
         }
     }
 }

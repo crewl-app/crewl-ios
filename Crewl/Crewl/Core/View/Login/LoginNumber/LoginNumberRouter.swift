@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class LoginNumberRouter {}
+
+protocol LoginNumberRouterCharter {
+    func goToLoginOTPView(number: String) -> LoginOTPView
+}
+
+extension LoginNumberRouter : LoginNumberRouterCharter {
+    func goToLoginOTPView(number: String) -> LoginOTPView {
+        LoginOTPView()
+    }
+}

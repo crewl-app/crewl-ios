@@ -12,13 +12,10 @@ typealias PrehomeRouterPromoter = PrehomeRouter
 class PrehomeViewModel : ObservableObject {
     
     var router = PrehomeRouterPromoter()
+
     
-    @Published var activatedRegister : Bool
-    @Published var activatedLogin : Bool
-    
-    init(router: PrehomeRouterPromoter = PrehomeRouterPromoter(), activatedRegister: Bool, activatedLogin: Bool) {
+    init(router: PrehomeRouterPromoter = PrehomeRouterPromoter()) {
         self.router = router
-        self.activatedRegister = activatedRegister
-        self.activatedLogin = activatedLogin
+
     }
 }

@@ -48,9 +48,9 @@ struct OnboardingView: View {
                 Spacer()
                 Spacer()
             }
-        }.fullScreenCover(isPresented: $viewModel.routerActive) {
-                viewModel.router.goToPrehome()
-            
+        }
+        .fullScreenCover(isPresented: $viewModel.routerActive) {
+            viewModel.router.goToPrehome()
         }
     }
 }
@@ -62,25 +62,25 @@ struct OnboardingView_Previews: PreviewProvider {
 }
 
 private struct TemplateOnboarding: View {
-
+    
     var items : OnboardingItem
-
+    
     var body: some View {
         VStack {
-                Text(items.title.locale())
-                    .font(.SpaceBold22)
-                    .frame(width: UIScreen.main.bounds.width * 0.79)
-
-                items.image
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width * 0.9,
-                           height: UIScreen.main.bounds.height * 0.56,
-                           alignment: .center)
-                    .padding()
-
-                Text(items.description.locale())
-                    .font(.SpaceMedium14)
-                    .frame(width: UIScreen.main.bounds.width * 0.79)
+            Text(items.title.locale())
+                .font(.SpaceBold22)
+                .frame(width: UIScreen.main.bounds.width * 0.79)
+            
+            items.image
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width * 0.9,
+                       height: UIScreen.main.bounds.height * 0.56,
+                       alignment: .center)
+                .padding()
+            
+            Text(items.description.locale())
+                .font(.SpaceMedium14)
+                .frame(width: UIScreen.main.bounds.width * 0.79)
         }
     }
 }
