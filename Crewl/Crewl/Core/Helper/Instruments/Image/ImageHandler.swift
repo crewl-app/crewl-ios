@@ -18,6 +18,8 @@ extension Image {
     public static let OnboardingThree = Image(ImageHelper.Onboarding.OnboardingThree.rawValue)
     public static let OnboardingFour = Image(ImageHelper.Onboarding.OnboardinFour.rawValue)
 
+    public static let LoginSuccess = Image(ImageHelper.Login.LoginSuccess.rawValue)
+    
     // MARK: - Notifications Views
     public static let Notification = Image(ImageHelper.Notifications.notification.rawValue)
     public static let Location = Image(ImageHelper.Notifications.location.rawValue)

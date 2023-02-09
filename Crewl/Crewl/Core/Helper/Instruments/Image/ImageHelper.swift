@@ -22,6 +22,11 @@ struct ImageHelper {
         case OnboardinFour = "fourthOnboarding"
     }
     
+    // MARK: - Login Views
+    enum Login: String {
+        case LoginSuccess = "loginSuccess"
+    }
+    
     // MARK: - Notifications Views
     enum Notifications: String {
         case notification = "notificationImage"
