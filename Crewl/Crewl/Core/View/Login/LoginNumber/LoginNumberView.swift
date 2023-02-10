@@ -27,7 +27,7 @@ struct LoginNumberView: View {
                 }
                 .frame(height: 90)
                 .padding()
-
+                
                 //MARK: - TextFields
                 VStack {
                     HStack {
@@ -36,7 +36,7 @@ struct LoginNumberView: View {
                         
                         CustomPhoneTextField(number: $viewModel.loginPropertys.userPhone)
                     }
-                //MARK: - Attentions
+                    //MARK: - Attentions
                     HStack {
                         Text("* ").foregroundColor(Color.red).font(.system(size: 15)) +
                         Text(TextHelper.LoginText.AttentionMassage.rawValue.locale())
@@ -50,31 +50,40 @@ struct LoginNumberView: View {
                 PrivacyPolicy(checkMarked: $viewModel.isCheckMarked, activatePolicy: $viewModel.isActivatePolicy, activateTerms: $viewModel.isActivateTerms )
                     .padding()
                 
-                Spacer()
+                Spacer() // SPACER
                 
                 // MARK: - Buttons
                 HStack(spacing: 10) {
                     
                     BackButton()
                     
-                    /// Checking positive
-                    let status = (viewModel.isCheckMarked )
-                    
-                    NavigationLink(destination: {
-                        if status {
+                    // Button & Destination
+                    Group {
+                        /// Checking positive
+                        let status = (viewModel.isCheckMarked && viewModel.loginPropertys.userPhone.count > 9)
+                        
+                        // Button
+                        Button {
+                            PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.loginPropertys.userPhone) { success in
+                                    viewModel.isPhoneCorrect.toggle()
+                            }
+                        } label: {
+                            Text(TextHelper.ButtonText.SendVerification.rawValue.locale())
+                                .font(.SpaceBold13)
+                        }
+                        .disabled(status != true)
+                        .buttonStyle(PrimaryButtonStyle(buttonColor: status ? Color.CrewlYellow : Color.CrewlSoftYellow,
+                                                        setWidthAgain: 271))
+                        
+                        // Destination
+                        NavigationLink(isActive: $viewModel.isPhoneCorrect) {
                             viewModel.router.goToLoginOTPView(number: viewModel.loginPropertys.userPhone)
                                 .navigationBarBackButtonHidden(true)
-                        }
-                    }, label: {
-                        Text(TextHelper.ButtonText.SendVerification.rawValue.locale())
-                            .font(.SpaceBold13)
-                    })
-                    .disabled(status != true)
-                    .buttonStyle(PrimaryButtonStyle(buttonColor: status ? Color.CrewlYellow : Color.CrewlSoftYellow,
-                                                    setWidthAgain: 271))
+                        } label: { }
+                    }
                     // MARK: - \\
                 }
-                Spacer()
+                Spacer()// SPACER
             }
         }
     }

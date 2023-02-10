@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
+
 struct CrewlApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-//            SplashView(ViewModel: SplashViewModel(isActive: false))
-            
             Prehome()
         }
     }

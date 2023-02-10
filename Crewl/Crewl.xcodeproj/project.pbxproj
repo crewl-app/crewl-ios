@@ -16,6 +16,15 @@
 		341712EB2995747700463D46 /* LoginOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EA2995747600463D46 /* LoginOTPViewModel.swift */; };
 		341712ED299575D100463D46 /* CustomOTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EC299575D100463D46 /* CustomOTPTextField.swift */; };
 		341712EF2995786600463D46 /* ReSendCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EE2995786600463D46 /* ReSendCode.swift */; };
+		341712F329958F4300463D46 /* PhoneAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712F229958F4300463D46 /* PhoneAuthManager.swift */; };
+		341712F6299590C300463D46 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 341712F5299590C300463D46 /* FirebaseAnalytics */; };
+		341712F8299590C300463D46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 341712F7299590C300463D46 /* FirebaseAuth */; };
+		341712FA299590C300463D46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 341712F9299590C300463D46 /* FirebaseFirestore */; };
+		341712FC299590C300463D46 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 341712FB299590C300463D46 /* FirebaseFirestoreSwift */; };
+		341712FE299590C300463D46 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 341712FD299590C300463D46 /* FirebaseMessaging */; };
+		34171300299590C300463D46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 341712FF299590C300463D46 /* FirebaseStorage */; };
+		3417130529959C2300463D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3417130429959C2300463D46 /* AppDelegate.swift */; };
+		3417130729959F0700463D46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3417130629959F0700463D46 /* GoogleService-Info.plist */; };
 		34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173363298FBB5C00EEC9B4 /* CrewlApp.swift */; };
 		34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34173367298FBB5F00EEC9B4 /* Assets.xcassets */; };
 		3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */; };
@@ -69,6 +78,10 @@
 		341712EA2995747600463D46 /* LoginOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOTPViewModel.swift; sourceTree = "<group>"; };
 		341712EC299575D100463D46 /* CustomOTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOTPTextField.swift; sourceTree = "<group>"; };
 		341712EE2995786600463D46 /* ReSendCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSendCode.swift; sourceTree = "<group>"; };
+		341712F229958F4300463D46 /* PhoneAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthManager.swift; sourceTree = "<group>"; };
+		3417130429959C2300463D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3417130629959F0700463D46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		341713082995ADB200463D46 /* Crewl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crewl.entitlements; sourceTree = "<group>"; };
 		34173360298FBB5C00EEC9B4 /* Crewl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crewl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34173363298FBB5C00EEC9B4 /* CrewlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewlApp.swift; sourceTree = "<group>"; };
 		34173367298FBB5F00EEC9B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +132,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341712F6299590C300463D46 /* FirebaseAnalytics in Frameworks */,
+				341712F8299590C300463D46 /* FirebaseAuth in Frameworks */,
+				341712FE299590C300463D46 /* FirebaseMessaging in Frameworks */,
+				341712FA299590C300463D46 /* FirebaseFirestore in Frameworks */,
+				341712FC299590C300463D46 /* FirebaseFirestoreSwift in Frameworks */,
+				34171300299590C300463D46 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +191,14 @@
 			path = LoginFields;
 			sourceTree = "<group>";
 		};
+		341713012995912C00463D46 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				341712F229958F4300463D46 /* PhoneAuthManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		34173357298FBB5C00EEC9B4 = {
 			isa = PBXGroup;
 			children = (
@@ -191,12 +218,12 @@
 		34173362298FBB5C00EEC9B4 /* Crewl */ = {
 			isa = PBXGroup;
 			children = (
+				341713082995ADB200463D46 /* Crewl.entitlements */,
 				34173363298FBB5C00EEC9B4 /* CrewlApp.swift */,
 				3461F884298FCEDA00577FFB /* Core */,
 				3461F886298FCF0B00577FFB /* Extensions */,
 				3461F889298FCF0B00577FFB /* Model */,
 				3461F885298FCF0B00577FFB /* Service */,
-				3461F88C298FCF2900577FFB /* Source */,
 				3461F895298FCF2900577FFB /* Utils */,
 				34173369298FBB5F00EEC9B4 /* Preview Content */,
 			);
@@ -236,6 +263,8 @@
 		3461F885298FCF0B00577FFB /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				341713012995912C00463D46 /* Firebase */,
+				3417130429959C2300463D46 /* AppDelegate.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -258,17 +287,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3461F88C298FCF2900577FFB /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				3461F88D298FCF2900577FFB /* SpaceGrotestFonts */,
-				3461F89D298FCFB000577FFB /* Info.plist */,
-				34173367298FBB5F00EEC9B4 /* Assets.xcassets */,
-				3461F894298FCF2900577FFB /* Localizable.strings */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		3461F88D298FCF2900577FFB /* SpaceGrotestFonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +302,11 @@
 		3461F895298FCF2900577FFB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3461F88D298FCF2900577FFB /* SpaceGrotestFonts */,
+				3461F89D298FCFB000577FFB /* Info.plist */,
+				3417130629959F0700463D46 /* GoogleService-Info.plist */,
+				34173367298FBB5F00EEC9B4 /* Assets.xcassets */,
+				3461F894298FCF2900577FFB /* Localizable.strings */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -495,6 +518,14 @@
 			dependencies = (
 			);
 			name = Crewl;
+			packageProductDependencies = (
+				341712F5299590C300463D46 /* FirebaseAnalytics */,
+				341712F7299590C300463D46 /* FirebaseAuth */,
+				341712F9299590C300463D46 /* FirebaseFirestore */,
+				341712FB299590C300463D46 /* FirebaseFirestoreSwift */,
+				341712FD299590C300463D46 /* FirebaseMessaging */,
+				341712FF299590C300463D46 /* FirebaseStorage */,
+			);
 			productName = Crewl;
 			productReference = 34173360298FBB5C00EEC9B4 /* Crewl.app */;
 			productType = "com.apple.product-type.application";
@@ -523,6 +554,9 @@
 				Base,
 			);
 			mainGroup = 34173357298FBB5C00EEC9B4;
+			packageReferences = (
+				341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 34173361298FBB5C00EEC9B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -539,6 +573,7 @@
 			files = (
 				3461F898298FCF2900577FFB /* SpaceGrotesk-SemiBold.ttf in Resources */,
 				3461F896298FCF2900577FFB /* SpaceGrotesk-Light.ttf in Resources */,
+				3417130729959F0700463D46 /* GoogleService-Info.plist in Resources */,
 				3461F899298FCF2900577FFB /* SpaceGrotesk-Medium.ttf in Resources */,
 				3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */,
 				3461F89C298FCF2900577FFB /* Localizable.strings in Resources */,
@@ -555,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3417130529959C2300463D46 /* AppDelegate.swift in Sources */,
 				341712E329954F3800463D46 /* LoginSuccessView.swift in Sources */,
 				34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */,
 				34DC9A742991ACD4002A8EC0 /* OnboardingItem.swift in Sources */,
@@ -577,6 +613,7 @@
 				34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */,
 				34D264DF2992979A003A2BDF /* PrivacyPolicy.swift in Sources */,
 				34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */,
+				341712F329958F4300463D46 /* PhoneAuthManager.swift in Sources */,
 				3461F8B7298FD25F00577FFB /* SplashRouter.swift in Sources */,
 				34DA931C29917B3000A65E0E /* OnboardingViewModel.swift in Sources */,
 				3461F8B9298FD25F00577FFB /* ColorHelper.swift in Sources */,
@@ -653,7 +690,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_FILE = Crewl/Utils/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -707,7 +745,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_FILE = Crewl/Utils/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -722,13 +761,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = CrewlAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Crewl/Crewl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crewl/Preview Content\"";
 				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Crewl/Source/Info.plist;
+				INFOPLIST_FILE = Crewl/Utils/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -756,13 +796,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = CrewlAppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Crewl/Crewl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crewl/Preview Content\"";
 				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Crewl/Source/Info.plist;
+				INFOPLIST_FILE = Crewl/Utils/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -807,6 +848,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		341712F5299590C300463D46 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		341712F7299590C300463D46 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		341712F9299590C300463D46 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		341712FB299590C300463D46 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		341712FD299590C300463D46 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		341712FF299590C300463D46 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341712F4299590C300463D46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34173358298FBB5C00EEC9B4 /* Project object */;
 }

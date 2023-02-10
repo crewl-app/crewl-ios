@@ -17,6 +17,8 @@ struct LoginOTPView: View {
                 .ignoresSafeArea()
             VStack {
                 
+                Spacer() // SPACER
+                
                 // MARK: - Text
                 VStack(alignment: .leading,spacing: 10) {
                     Text(TextHelper.LoginText.VerificationText.rawValue.locale())
@@ -33,10 +35,15 @@ struct LoginOTPView: View {
                         .padding(.vertical)
                     
                     // MARK: - ReSendCode
-                    ReSendCode(launchTimer: .constant(false)) {
-                        
+                    ReSendCode(launchTimer: $viewModel.isReSended) {
+                        if viewModel.isReSended {
+                            PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.number) { success in
+                            }
+                        }
                     }
                     .padding(.vertical)
+                    
+                    Spacer() // SPACER
                     
                     // MARK: - Button
                     HStack(spacing: 20) {
@@ -45,18 +52,28 @@ struct LoginOTPView: View {
                         
                         let status = (viewModel.OTPString.count > 5)
                         
-                        NavigationLink {
-                            if status {
+                        Group{
+                            Button {
+                                PhoneAuthManager.shared.verifyCode(smsCode: viewModel.OTPString) { success in
+                                    viewModel.isVerifectionCorrect.toggle()
+                                }
+                            } label: {
+                                Text(TextHelper.ButtonText.Confirm.rawValue.locale())
+                                    .font(.SpaceBold13)
+                            }
+                            .disabled(status != true)
+                            .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 265))
+                            
+                            NavigationLink(isActive: $viewModel.isVerifectionCorrect) {
                                 viewModel.router.goToLoginSuccessView()
                                     .navigationBarBackButtonHidden(true)
-                            }
-                        } label: {
-                            Text(TextHelper.ButtonText.Confirm.rawValue.locale())
+                            } label: {  }
                         }
-                        .disabled(status != true)
-                        .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 265))
                         // MARK: - \\
                     }
+                    
+                    Spacer() // SPACER
+                    
                 }
             }
             .padding(.horizontal)

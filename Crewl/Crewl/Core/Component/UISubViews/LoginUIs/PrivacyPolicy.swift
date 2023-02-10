@@ -17,21 +17,22 @@ struct PrivacyPolicy: View {
 
         ZStack {
             PPBlackBackground()
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.CrewlBlack,lineWidth: 3)
-                .background {   Color.CrewlWhite.cornerRadius(5)    }
-            HStack(spacing: 0) {
-                
-                PPCheck(checkMarked: $checkMarked)
-                PPText(activatePolicy: $activatePolicy, activateTerms: $activateTerms)
+            ZStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color.CrewlBlack,lineWidth: 3)
+                    .background {   Color.CrewlWhite.cornerRadius(5)    }
+                HStack(spacing: 0) {
+                    
+                    PPCheck(checkMarked: $checkMarked)
+                    PPText(activatePolicy: $activatePolicy, activateTerms: $activateTerms)
+                }
+                .padding(.all,2)
             }
-            .padding(.all,2)
+            .offset(x: checkMarked ? 4 : 0,
+                y: checkMarked ? 4 : 0)
         }
         .frame(width: 302,
                height: 51)
-        .offset(x: checkMarked ? 4 : 0,
-                y: checkMarked ? 4 : 0)
-
     }
 }
 
