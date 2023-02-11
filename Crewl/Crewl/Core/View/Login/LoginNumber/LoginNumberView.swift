@@ -10,9 +10,11 @@ import SwiftUI
 struct LoginNumberView: View {
     
     @ObservedObject var viewModel : LoginNumberViewModel
+    @FocusState var toFocused : fields?
     
     var body: some View {
         ZStack {
+
             Color.BackgroundColor
                 .ignoresSafeArea()
             VStack {
@@ -26,15 +28,20 @@ struct LoginNumberView: View {
                         .foregroundColor(Color.CrewlGray)
                 }
                 .frame(height: 90)
-                .padding()
+                .padding(.vertical)
+                .padding(.top)
                 
                 //MARK: - TextFields
                 VStack {
                     HStack {
+                        CountryTextField(countryCode: $viewModel.loginPropertys.userCountry,
+                                         countryFlag: $viewModel.loginPropertys.userFlag)
+                            .onTapGesture {
+                                viewModel.isClickedCountry = true
+                            }
                         
-                        CustomCountryTextField()
-                        
-                        CustomPhoneTextField(number: $viewModel.loginPropertys.userPhone)
+                        PhoneTextField(number: $viewModel.loginPropertys.userPhone)
+                            .focused($toFocused, equals: .phoneNUmber)
                     }
                     //MARK: - Attentions
                     HStack {
@@ -47,13 +54,15 @@ struct LoginNumberView: View {
                     .frame(width: 240)
                 }
                 
-                PrivacyPolicy(checkMarked: $viewModel.isCheckMarked, activatePolicy: $viewModel.isActivatePolicy, activateTerms: $viewModel.isActivateTerms )
+                PrivacyPolicy(isCheckMarked: $viewModel.isCheckMarked,
+                              isActivatePolicy: $viewModel.isActivatePolicy,
+                              isActivateTerms: $viewModel.isActivateTerms)
                     .padding()
                 
                 Spacer() // SPACER
                 
                 // MARK: - Buttons
-                HStack(spacing: 10) {
+                HStack(spacing: 20) {
                     
                     BackButton()
                     
@@ -73,18 +82,28 @@ struct LoginNumberView: View {
                         }
                         .disabled(status != true)
                         .buttonStyle(PrimaryButtonStyle(buttonColor: status ? Color.CrewlYellow : Color.CrewlSoftYellow,
+                                                        backButtonColor: status ? Color.CrewlBlack : Color.CrewlSoftBlack,
                                                         setWidthAgain: 271))
                         
                         // Destination
                         NavigationLink(isActive: $viewModel.isPhoneCorrect) {
-                            viewModel.router.goToLoginOTPView(number: viewModel.loginPropertys.userPhone)
+                            viewModel.router.goToLoginOTPView(number: viewModel.loginPropertys.userPhone, countryCode: viewModel.loginPropertys.userCountry)
                                 .navigationBarBackButtonHidden(true)
                         } label: { }
                     }
+                    .padding(.vertical)
                     // MARK: - \\
                 }
-                Spacer()// SPACER
+              
             }
+            .sheet(isPresented: $viewModel.isClickedCountry) {
+                CountryCodes(countryCode: $viewModel.loginPropertys.userCountry,
+                             countryFlag: $viewModel.loginPropertys.userFlag,
+                             isClickedCountry: $viewModel.isClickedCountry)
+            }
+        }
+        .onAppear{
+            toFocused = .phoneNUmber
         }
     }
 }
@@ -92,5 +111,11 @@ struct LoginNumberView: View {
 struct LoginNumber_Previews: PreviewProvider {
     static var previews: some View {
         LoginNumberView(viewModel: LoginNumberViewModel())
+    }
+}
+
+extension LoginNumberView {
+    enum fields : Hashable {
+        case phoneNUmber
     }
 }

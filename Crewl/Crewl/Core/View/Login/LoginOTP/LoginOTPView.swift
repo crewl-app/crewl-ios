@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginOTPView: View {
     
     @ObservedObject var viewModel : LoginOTPViewModel
+    @FocusState var toFocused : fields?
     
     var body: some View {
         ZStack {
@@ -19,31 +20,40 @@ struct LoginOTPView: View {
                 
                 Spacer() // SPACER
                 
-                // MARK: - Text
                 VStack(alignment: .leading,spacing: 10) {
-                    Text(TextHelper.LoginText.VerificationText.rawValue.locale())
-                        .font(.SpaceBold23)
                     
-                    Group{
-                        Text("+90\(viewModel.number)") +
-                        Text(TextHelper.LoginText.SendedCodeNumber.rawValue.locale())
-                    }
+                    // MARK: - Text
+                    VStack(spacing: 10) {
+                        Text(TextHelper.LoginText.VerificationText.rawValue.locale())
+                            .font(.SpaceBold23)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.5)
+                        
+                        Group {
+                            Text("+\(viewModel.countryCode)\(viewModel.number)").font(.system(size: 14, weight: .bold)) +
+                            Text(TextHelper.LoginText.SendedCodeNumber.rawValue.locale())
+                            
+                        }
                         .font(.RoundedRegular14)
+                        .padding(.trailing)
+                    }
+                    .padding(.horizontal)
+                    .padding(.top)
+                    
                     
                     // MARK: - OTPTextField
-                    CustomOTPTextField(otpText: $viewModel.OTPString, wrongCode: $viewModel.isOTPWrong)
+                    OTPTextField(otpText: $viewModel.OTPString, wrongCode: $viewModel.isOTPWrong)
+                        .focused($toFocused, equals: .OTP)
                         .padding(.vertical)
                     
+                    Spacer() // Spacer
+                    
                     // MARK: - ReSendCode
-                    ReSendCode(launchTimer: $viewModel.isReSended) {
-                        if viewModel.isReSended {
-                            PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.number) { success in
-                            }
+                    ReSendCode() {
+                        PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.number) { success in
                         }
                     }
                     .padding(.vertical)
-                    
-                    Spacer() // SPACER
                     
                     // MARK: - Button
                     HStack(spacing: 20) {
@@ -55,14 +65,20 @@ struct LoginOTPView: View {
                         Group{
                             Button {
                                 PhoneAuthManager.shared.verifyCode(smsCode: viewModel.OTPString) { success in
-                                    viewModel.isVerifectionCorrect.toggle()
+                                    if success {
+                                        viewModel.isVerifectionCorrect.toggle()
+                                    } else {
+                                        viewModel.isOTPWrong.toggle()
+                                    }
                                 }
                             } label: {
                                 Text(TextHelper.ButtonText.Confirm.rawValue.locale())
                                     .font(.SpaceBold13)
                             }
                             .disabled(status != true)
-                            .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 265))
+                            .buttonStyle(PrimaryButtonStyle(buttonColor: status ? Color.CrewlYellow : Color.CrewlSoftYellow,
+                                                            backButtonColor: status ? Color.CrewlBlack : Color.CrewlSoftBlack,
+                                                            setWidthAgain: 265))
                             
                             NavigationLink(isActive: $viewModel.isVerifectionCorrect) {
                                 viewModel.router.goToLoginSuccessView()
@@ -71,18 +87,28 @@ struct LoginOTPView: View {
                         }
                         // MARK: - \\
                     }
+                    .padding(.bottom)
+                    .padding(.leading)
                     
-                    Spacer() // SPACER
                     
                 }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
+            .onAppear{
+                toFocused = .OTP
+            }
         }
     }
 }
 
 struct LoginOTPView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginOTPView(viewModel: .init(number: ""))
+        LoginOTPView(viewModel: .init(number: "", countryCode: ""))
+    }
+}
+
+extension LoginOTPView {
+    enum fields : Hashable {
+        case OTP
     }
 }

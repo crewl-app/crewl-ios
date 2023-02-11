@@ -25,6 +25,8 @@ struct ImageHelper {
     // MARK: - Login Views
     enum Login: String {
         case LoginSuccess = "loginSuccess"
+        case PrivacyPolicy = "privacyPolicy"
+        case TermsOfService = "termsOfService"
     }
     
     // MARK: - Notifications Views

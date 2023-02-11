@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
     var buttonColor : Color
+    var backButtonColor : Color
     var setWidthAgain : CGFloat
     var opacity : Double?
     func makeBody(configuration: Configuration) -> some View {
@@ -26,7 +27,7 @@ struct PrimaryButtonStyle: ButtonStyle {
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomBlackBackground(frameWidth: setWidthAgain, frameHeight: 50)
+            CustomBlackBackground(buttonColor: backButtonColor, frameWidth: setWidthAgain, frameHeight: 50)
                 .opacity(opacity ?? 1)
         }
     }
@@ -40,7 +41,7 @@ struct Button_Previews: PreviewProvider {
                 
             } label: {
                 Text("I am Test Wohooo")
-            }.buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 300))
+            }.buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, backButtonColor: Color.CrewlBlack, setWidthAgain: 300))
 
         }
     }

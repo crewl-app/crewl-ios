@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import FirebaseAuth
 
 typealias LoginNumberRouterPromoter = LoginNumberRouter
@@ -19,7 +20,7 @@ class LoginNumberViewModel : ObservableObject {
     @Published var isActivatePolicy : Bool
     @Published var isActivateTerms : Bool
     @Published var isPhoneCorrect : Bool
-    
+    @Published var isClickedCountry : Bool
     
     init(loginPropertys: LoginPropertys = LoginPropertys(),
          router: LoginNumberRouterPromoter = LoginNumberRouterPromoter(),
@@ -27,7 +28,9 @@ class LoginNumberViewModel : ObservableObject {
          isActivatePolicy: Bool = false,
          isActivateTerms: Bool = false,
          focusState: Bool = false,
-         isPhoneCorrect : Bool = false)
+         isPhoneCorrect : Bool = false,
+         isClickedCountry : Bool = false
+    )
     {
         self.loginPropertys = loginPropertys
         self.router = router
@@ -35,5 +38,6 @@ class LoginNumberViewModel : ObservableObject {
         self.isActivatePolicy = isActivatePolicy
         self.isActivateTerms = isActivateTerms
         self.isPhoneCorrect = isPhoneCorrect
+        self.isClickedCountry = isClickedCountry
     }
 }

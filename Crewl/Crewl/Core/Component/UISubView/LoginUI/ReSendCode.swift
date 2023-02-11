@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ReSendCode: View {
     @State var count = 60
-    @Binding var launchTimer : Bool
+    @State var launchTimer = true
     var action : () -> Void
     var body: some View {
         HStack {
             // Send code button
             Button {
                 action()
-                if count == 0 || launchTimer == false {
-                    launchTimer.toggle()
+                if count == 0 && launchTimer == false {
+                    launchTimer = true
                     count = 60
                     startTimer()
                 }
@@ -26,6 +26,7 @@ struct ReSendCode: View {
                     .font(.RoundedBold12)
                     .foregroundColor(Color(count == 0 ? ColorHelper.black.rawValue : ColorHelper.gray.rawValue))
             }
+            .disabled(launchTimer)
             
             Spacer()
             
@@ -60,7 +61,7 @@ struct ReSendCode: View {
 
 struct ReSendCode_Previews: PreviewProvider {
     static var previews: some View {
-        ReSendCode(launchTimer: .constant(false)) {
+        ReSendCode() {
             
         }
     }

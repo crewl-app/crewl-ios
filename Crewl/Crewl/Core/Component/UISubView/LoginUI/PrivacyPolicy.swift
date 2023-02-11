@@ -9,9 +9,9 @@ import SwiftUI
 
 struct PrivacyPolicy: View {
     
-    @Binding var checkMarked : Bool
-    @Binding var activatePolicy : Bool
-    @Binding var activateTerms : Bool
+    @Binding var isCheckMarked : Bool
+    @Binding var isActivatePolicy : Bool
+    @Binding var isActivateTerms : Bool
     
     var body: some View {
 
@@ -23,22 +23,29 @@ struct PrivacyPolicy: View {
                     .background {   Color.CrewlWhite.cornerRadius(5)    }
                 HStack(spacing: 0) {
                     
-                    PPCheck(checkMarked: $checkMarked)
-                    PPText(activatePolicy: $activatePolicy, activateTerms: $activateTerms)
+                    PPCheck(checkMarked: $isCheckMarked)
+                    PPText(activatePolicy: $isActivatePolicy, activateTerms: $isActivateTerms)
                 }
                 .padding(.all,2)
             }
-            .offset(x: checkMarked ? 4 : 0,
-                y: checkMarked ? 4 : 0)
+            .offset(x: isCheckMarked ? 4 : 0,
+                y: isCheckMarked ? 4 : 0)
         }
         .frame(width: 302,
                height: 51)
+        .sheet(isPresented: $isActivateTerms, content: {
+            TermsView()
+        })
+        .sheet(isPresented: $isActivatePolicy, content: {
+            PrivacyView()
+        })
+        
     }
 }
 
 struct PrivacyPolicyRectengle_Previews: PreviewProvider {
     static var previews: some View {
-        PrivacyPolicy(checkMarked: .constant(false), activatePolicy: .constant(false), activateTerms: .constant(false))
+        PrivacyPolicy(isCheckMarked: .constant(false), isActivatePolicy: .constant(false), isActivateTerms: .constant(false))
     }
 }
 
@@ -117,7 +124,9 @@ private struct TermsView : View {
                 tabRectangle()
                     .padding(.top)
                 Spacer()
-                smileRectangle()
+                Image.TermsOfService
+                    .resizable()
+                    .frame(width: 248, height: 74)
                 
                 Text(TextHelper.TermsService.TermsOfUser.rawValue.locale())
                     .padding()
@@ -143,7 +152,10 @@ private struct PrivacyView : View {
                     .padding(.top)
                     .padding()
                 Spacer()
-                smileRectangle()
+                Image.PrivacyPolicy
+                    .resizable()
+                    .frame(width: 248, height: 74)
+                
                 Text(TextHelper.TermsService.PrivacyPolicy.rawValue.locale())
                     .padding()
                     .font(.SpaceBold20)
@@ -164,14 +176,3 @@ private struct tabRectangle: View {
     }
 }
 
-private struct smileRectangle: View {
-    var body: some View {
-        Text("😀")
-            .font(.system(size: 32))
-            .background(
-                RoundedRectangle(cornerRadius: 11)
-                    .foregroundColor(Color.CrewlWhitePink)
-                    .frame(width: 80, height: 80)
-            )
-    }
-}

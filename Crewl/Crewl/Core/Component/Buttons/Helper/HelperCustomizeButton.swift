@@ -11,11 +11,12 @@ import SwiftUI
 
 // Set CustomBlackBackground Size
 struct CustomBlackBackground: View {
+    var buttonColor : Color
     var frameWidth : CGFloat
     var frameHeight : CGFloat
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .foregroundColor(Color(ColorHelper.black.rawValue))
+            .foregroundColor(buttonColor)
             .zIndex(0)
             .frame(width: frameWidth, height: frameHeight)
             .offset(x: 6, y: 5)

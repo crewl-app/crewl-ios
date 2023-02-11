@@ -44,7 +44,9 @@ struct LoginSuccessView: View {
                     Text(TextHelper.ButtonText.Continue.rawValue.locale())
                         .font(.SpaceBold13)
                 }
-                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 321))
+                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
+                                                backButtonColor: Color.CrewlBlack,
+                                                setWidthAgain: 321))
                 // MARK: - \\
                 Spacer()
             }

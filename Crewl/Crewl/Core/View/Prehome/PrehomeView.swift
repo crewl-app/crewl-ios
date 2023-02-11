@@ -16,18 +16,27 @@ struct Prehome: View {
             ZStack {
                 Color.BackgroundColor
                     .ignoresSafeArea()
+                
+                Image("prehome")
+                    .resizable()
+                    .ignoresSafeArea()
+                    .aspectRatio(contentMode: .fill)
+                    .padding(.top)
+                    
                 VStack {
                     Spacer()
                     
                     // MARK: - Logo
-                    Image.CrewlLogo
-                        .resizable()
-                        .frame(width: UIScreen.main.bounds.width * 0.4,
-                               height: UIScreen.main.bounds.height * 0.15)
+//                    Image.CrewlLogo
+//                        .resizable()
+//                        .frame(width: UIScreen.main.bounds.width * 0.4,
+//                               height: UIScreen.main.bounds.height * 0.15)
+                    Spacer()
                     Spacer()
                     
+                    
                     // MARK: - Buttons
-                    VStack {
+                    VStack(spacing: 0) {
                         // Login Button
                         NavigationLink {
                             viewModel.router.goToLogin()
@@ -36,7 +45,9 @@ struct Prehome: View {
                             Text(TextHelper.ButtonText.SignIn.rawValue.locale())
                                 .font(.SpaceBold13)
                         }
-                        .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlWhite, setWidthAgain: 272))
+                        .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlWhite,
+                                                        backButtonColor: Color.CrewlBlack,
+                                                        setWidthAgain: 220))
                         .padding(.vertical)
                         
                         // Back & Register Buttons
@@ -50,9 +61,13 @@ struct Prehome: View {
                                 Text(TextHelper.ButtonText.SignUp.rawValue.locale())
                                     .font(.SpaceBold13)
                             }
-                            .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 215))
+                            .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
+                                                            backButtonColor: Color.CrewlBlack,
+                                                            setWidthAgain: 170))
                         }
                     }
+                    .padding(.bottom,5)
+                    .padding(.bottom)
                     .padding(.horizontal)
                     Spacer()
                 }

@@ -11,6 +11,7 @@ enum ColorHelper : String {
     case backgroundColor = "BackgroundColor"
     case yellow = "Yellow"
     case softYellow = "SoftYellow"
+    case sofBlack = "SoftBlack"
     case white = "White"
     case black = "Black"
     case green = "Green"

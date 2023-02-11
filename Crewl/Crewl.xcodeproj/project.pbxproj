@@ -14,7 +14,7 @@
 		341712E629956D5700463D46 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712E529956D5700463D46 /* HomeView.swift */; };
 		341712E82995746100463D46 /* LoginOTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712E72995746100463D46 /* LoginOTPRouter.swift */; };
 		341712EB2995747700463D46 /* LoginOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EA2995747600463D46 /* LoginOTPViewModel.swift */; };
-		341712ED299575D100463D46 /* CustomOTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EC299575D100463D46 /* CustomOTPTextField.swift */; };
+		341712ED299575D100463D46 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EC299575D100463D46 /* OTPTextField.swift */; };
 		341712EF2995786600463D46 /* ReSendCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EE2995786600463D46 /* ReSendCode.swift */; };
 		341712F329958F4300463D46 /* PhoneAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712F229958F4300463D46 /* PhoneAuthManager.swift */; };
 		341712F6299590C300463D46 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 341712F5299590C300463D46 /* FirebaseAnalytics */; };
@@ -48,9 +48,10 @@
 		3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B3298FD25F00577FFB /* FontHandler.swift */; };
 		3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B4298FD25F00577FFB /* FontHelper.swift */; };
 		3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8C3298FD2BF00577FFB /* OnboardingView.swift */; };
+		349CF63B2996A43C005B9150 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CF63A2996A43C005B9150 /* CountryCode.swift */; };
 		34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E229932FB7007E9740 /* LoginPropertys.swift */; };
-		34D145E52993368B007E9740 /* CustomPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E42993368B007E9740 /* CustomPhoneTextField.swift */; };
-		34D145E729933D26007E9740 /* CustomCountryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E629933D26007E9740 /* CustomCountryTextField.swift */; };
+		34D145E52993368B007E9740 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E42993368B007E9740 /* PhoneTextField.swift */; };
+		34D145E729933D26007E9740 /* CountryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E629933D26007E9740 /* CountryTextField.swift */; };
 		34D264DA29929721003A2BDF /* LoginNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D264D929929721003A2BDF /* LoginNumberViewModel.swift */; };
 		34D264DC29929729003A2BDF /* LoginNumberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D264DB29929729003A2BDF /* LoginNumberRouter.swift */; };
 		34D264DF2992979A003A2BDF /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D264DE2992979A003A2BDF /* PrivacyPolicy.swift */; };
@@ -76,7 +77,7 @@
 		341712E529956D5700463D46 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		341712E72995746100463D46 /* LoginOTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOTPRouter.swift; sourceTree = "<group>"; };
 		341712EA2995747600463D46 /* LoginOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOTPViewModel.swift; sourceTree = "<group>"; };
-		341712EC299575D100463D46 /* CustomOTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOTPTextField.swift; sourceTree = "<group>"; };
+		341712EC299575D100463D46 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		341712EE2995786600463D46 /* ReSendCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSendCode.swift; sourceTree = "<group>"; };
 		341712F229958F4300463D46 /* PhoneAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthManager.swift; sourceTree = "<group>"; };
 		3417130429959C2300463D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,9 +108,10 @@
 		3461F8B3298FD25F00577FFB /* FontHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
 		3461F8B4298FD25F00577FFB /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		3461F8C3298FD2BF00577FFB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		349CF63A2996A43C005B9150 /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		34D145E229932FB7007E9740 /* LoginPropertys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPropertys.swift; sourceTree = "<group>"; };
-		34D145E42993368B007E9740 /* CustomPhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhoneTextField.swift; sourceTree = "<group>"; };
-		34D145E629933D26007E9740 /* CustomCountryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCountryTextField.swift; sourceTree = "<group>"; };
+		34D145E42993368B007E9740 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		34D145E629933D26007E9740 /* CountryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTextField.swift; sourceTree = "<group>"; };
 		34D264D929929721003A2BDF /* LoginNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberViewModel.swift; sourceTree = "<group>"; };
 		34D264DB29929729003A2BDF /* LoginNumberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberRouter.swift; sourceTree = "<group>"; };
 		34D264DE2992979A003A2BDF /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
@@ -172,23 +174,23 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		341712F029958D3E00463D46 /* LoginUIs */ = {
+		341712F029958D3E00463D46 /* LoginUI */ = {
 			isa = PBXGroup;
 			children = (
 				34D264DE2992979A003A2BDF /* PrivacyPolicy.swift */,
 				341712EE2995786600463D46 /* ReSendCode.swift */,
 			);
-			path = LoginUIs;
+			path = LoginUI;
 			sourceTree = "<group>";
 		};
-		341712F129958D5700463D46 /* LoginFields */ = {
+		341712F129958D5700463D46 /* LoginField */ = {
 			isa = PBXGroup;
 			children = (
-				34D145E42993368B007E9740 /* CustomPhoneTextField.swift */,
-				34D145E629933D26007E9740 /* CustomCountryTextField.swift */,
-				341712EC299575D100463D46 /* CustomOTPTextField.swift */,
+				34D145E42993368B007E9740 /* PhoneTextField.swift */,
+				34D145E629933D26007E9740 /* CountryTextField.swift */,
+				341712EC299575D100463D46 /* OTPTextField.swift */,
 			);
-			path = LoginFields;
+			path = LoginField;
 			sourceTree = "<group>";
 		};
 		341713012995912C00463D46 /* Firebase */ = {
@@ -238,7 +240,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		343CD7B02991231C0036A559 /* Instruments */ = {
+		343CD7B02991231C0036A559 /* Instrument */ = {
 			isa = PBXGroup;
 			children = (
 				3461F8A8298FD25F00577FFB /* Color */,
@@ -246,7 +248,7 @@
 				3461F8AF298FD25F00577FFB /* Text */,
 				3461F8B2298FD25F00577FFB /* Font */,
 			);
-			path = Instruments;
+			path = Instrument;
 			sourceTree = "<group>";
 		};
 		3461F884298FCEDA00577FFB /* Core */ = {
@@ -307,6 +309,7 @@
 				3417130629959F0700463D46 /* GoogleService-Info.plist */,
 				34173367298FBB5F00EEC9B4 /* Assets.xcassets */,
 				3461F894298FCF2900577FFB /* Localizable.strings */,
+				349CF63A2996A43C005B9150 /* CountryCode.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,7 +317,7 @@
 		3461F89E298FD25F00577FFB /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				34D264DD2992976D003A2BDF /* UISubViews */,
+				34D264DD2992976D003A2BDF /* UISubView */,
 				34D264D8299296F5003A2BDF /* TextField */,
 				34DA93242991842900A65E0E /* Buttons */,
 			);
@@ -354,7 +357,7 @@
 		3461F8A7298FD25F00577FFB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				343CD7B02991231C0036A559 /* Instruments */,
+				343CD7B02991231C0036A559 /* Instrument */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -408,17 +411,17 @@
 		34D264D8299296F5003A2BDF /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				341712F129958D5700463D46 /* LoginFields */,
+				341712F129958D5700463D46 /* LoginField */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		34D264DD2992976D003A2BDF /* UISubViews */ = {
+		34D264DD2992976D003A2BDF /* UISubView */ = {
 			isa = PBXGroup;
 			children = (
-				341712F029958D3E00463D46 /* LoginUIs */,
+				341712F029958D3E00463D46 /* LoginUI */,
 			);
-			path = UISubViews;
+			path = UISubView;
 			sourceTree = "<group>";
 		};
 		34DA931F29917C0200A65E0E /* Prehome */ = {
@@ -605,9 +608,9 @@
 				3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */,
 				341712DE29954F2700463D46 /* LoginSuccessRouter.swift in Sources */,
 				3461F8BB298FD25F00577FFB /* ImageHelper.swift in Sources */,
-				34D145E729933D26007E9740 /* CustomCountryTextField.swift in Sources */,
+				34D145E729933D26007E9740 /* CountryTextField.swift in Sources */,
 				34DA93262991845C00A65E0E /* HelperCustomizeButton.swift in Sources */,
-				34D145E52993368B007E9740 /* CustomPhoneTextField.swift in Sources */,
+				34D145E52993368B007E9740 /* PhoneTextField.swift in Sources */,
 				3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */,
 				3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */,
 				34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */,
@@ -628,9 +631,10 @@
 				34DA9323299183DB00A65E0E /* PrimaryButtonStyle.swift in Sources */,
 				3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */,
 				3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */,
+				349CF63B2996A43C005B9150 /* CountryCode.swift in Sources */,
 				340BC6122994013200FE6945 /* LoginOTPView.swift in Sources */,
 				3461F8BF298FD25F00577FFB /* TextHandler.swift in Sources */,
-				341712ED299575D100463D46 /* CustomOTPTextField.swift in Sources */,
+				341712ED299575D100463D46 /* OTPTextField.swift in Sources */,
 				34DC9A8029927B14002A8EC0 /* PrehomeRouter.swift in Sources */,
 				34DC9A7B29927995002A8EC0 /* BackButtonStyle.swift in Sources */,
 				3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */,
@@ -774,6 +778,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -809,6 +814,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

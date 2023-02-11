@@ -15,17 +15,17 @@ class LoginOTPViewModel: ObservableObject {
     var router = LoginOTPRouterPromoter()
     
     @Published var number : String
+    @Published var countryCode : String
     @Published var OTPString : String
     @Published var isOTPWrong : Bool
-    @Published var isReSended : Bool
     @Published var isVerifectionCorrect : Bool
  
 
-    init(number: String, OTPString: String = "", isOTPWrong: Bool = false, isReSended : Bool = false, isVerifectionCorrect : Bool = false) {
+    init(number: String, countryCode : String, OTPString: String = "", isOTPWrong: Bool = false, isVerifectionCorrect : Bool = false) {
         self.number = number
+        self.countryCode = countryCode
         self.OTPString = OTPString
         self.isOTPWrong = isOTPWrong
-        self.isReSended = isReSended
         self.isVerifectionCorrect = isVerifectionCorrect
     }
     

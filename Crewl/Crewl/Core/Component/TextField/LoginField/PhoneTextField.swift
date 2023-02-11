@@ -1,5 +1,5 @@
 //
-//  CustomPhoneTextField.swift
+//  PhoneTextField.swift
 //  Crewl
 //
 //  Created by NomoteteS on 8.02.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomPhoneTextField: View {
+struct PhoneTextField: View {
     
     @Binding var number : String
     @State var tab = false
@@ -34,7 +34,7 @@ struct CustomPhoneTextField_Previews: PreviewProvider {
         ZStack {
             Color.BackgroundColor
                 .ignoresSafeArea()
-            CustomPhoneTextField(number: .constant(""))
+            PhoneTextField(number: .constant(""))
         }
     }
 }

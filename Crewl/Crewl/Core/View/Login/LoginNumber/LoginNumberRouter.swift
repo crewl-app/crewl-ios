@@ -10,11 +10,11 @@ import Foundation
 class LoginNumberRouter {}
 
 protocol LoginNumberRouterCharter {
-    func goToLoginOTPView(number: String) -> LoginOTPView
+    func goToLoginOTPView(number: String, countryCode: String) -> LoginOTPView
 }
 
 extension LoginNumberRouter : LoginNumberRouterCharter {
-    func goToLoginOTPView(number: String) -> LoginOTPView {
-        LoginOTPView(viewModel: LoginOTPViewModel(number: number))
+    func goToLoginOTPView(number: String, countryCode: String) -> LoginOTPView {
+        LoginOTPView(viewModel: LoginOTPViewModel(number: number, countryCode: countryCode))
     }
 }

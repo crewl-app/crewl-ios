@@ -11,10 +11,12 @@ import Foundation
 class LoginPropertys: ObservableObject {
     @Published var userPhone : String
     @Published var userCountry : String
+    @Published var userFlag : String
     
-    init(userPhone : String = "", userCountry : String = "+90") {
+    init(userPhone : String = "", userFlag : String = "🇹🇷",userCountry : String = "90") {
         self.userPhone = userPhone
         self.userCountry = userCountry
+        self.userFlag = userFlag
     }
     
     func compeleteLogin() -> String {

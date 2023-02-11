@@ -17,4 +17,5 @@ extension Color {
     public static let CrewlYellow = Color(ColorHelper.yellow.rawValue)
     public static let CrewlSoftYellow = Color(ColorHelper.softYellow.rawValue)
     public static let CrewlBlack = Color(ColorHelper.black.rawValue)
+    public static let CrewlSoftBlack = Color(ColorHelper.sofBlack.rawValue)
 }

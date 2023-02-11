@@ -25,13 +25,13 @@ struct BackButtonStyle: ButtonStyle {
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomButton(buttonColor: Color.CrewlWhite, frameWidth: 38, frameHeight: 38)
+            CustomButton(buttonColor: Color.CrewlWhite, frameWidth: 34, frameHeight: 34)
                 .offset(
                     x: configuration.isPressed ? 6 : 0,
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomBlackBackground(frameWidth: 38, frameHeight: 38)
+            CustomBlackBackground(buttonColor: Color.CrewlBlack, frameWidth: 34, frameHeight: 34)
         }
     }
 }

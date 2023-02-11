@@ -1,5 +1,5 @@
 //
-//  CustomOTPTextField.swift
+//  OTPTextField.swift
 //  Crewl
 //
 //  Created by NomoteteS on 9.02.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomOTPTextField: View {
+struct OTPTextField: View {
     
     @Binding var otpText : String
     @Binding var wrongCode : Bool
@@ -58,7 +58,7 @@ struct CustomOTPTextField: View {
                         y: 5)
             
             // Set Box
-            let status = (isKeyboardShowing && otpText.count > index)
+            let status = ((isKeyboardShowing && otpText.count > index) || otpText.count > index )
             RoundedRectangle(cornerRadius: 5, style: .continuous)
                 .stroke( wrongCode ? Color(.red) : Color(ColorHelper.black.rawValue), lineWidth: 2 )
                 .background {
@@ -79,7 +79,7 @@ struct CustomOTPTextField_Previews: PreviewProvider {
             Color.BackgroundColor
                 .ignoresSafeArea()
             VStack {
-                CustomOTPTextField(otpText: .constant(""), wrongCode: .constant(false))
+                OTPTextField(otpText: .constant(""), wrongCode: .constant(false))
             }
         }
     }

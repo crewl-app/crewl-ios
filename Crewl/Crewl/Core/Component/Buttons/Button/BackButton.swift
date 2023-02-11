@@ -10,7 +10,6 @@ import SwiftUI
 struct BackButton: View {
     @Environment(\.dismiss) var dismiss
 
-//    var toBack : () -> Void
     var body: some View {
         ZStack {
             Button {
