@@ -67,6 +67,12 @@
 		34DC9A8029927B14002A8EC0 /* PrehomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A7F29927B14002A8EC0 /* PrehomeRouter.swift */; };
 		34DC9A8D29927C6E002A8EC0 /* RegisterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8C29927C6E002A8EC0 /* RegisterName.swift */; };
 		34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */; };
+		A2A2056229984B1700E34F76 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2056129984B1700E34F76 /* Country.swift */; };
+		A2A205652998867D00E34F76 /* CountryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A205642998867D00E34F76 /* CountryItem.swift */; };
+		A2A2056829988C6D00E34F76 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A2A2056729988C6D00E34F76 /* Countries.json */; };
+		A2A2056A2998FF0500E34F76 /* CountryCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A205692998FF0500E34F76 /* CountryCodeScreen.swift */; };
+		A2A2056D2998FF8900E34F76 /* CountryCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2056C2998FF8900E34F76 /* CountryCodeHelper.swift */; };
+		A2A2056F29990C9200E34F76 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2056E29990C9200E34F76 /* PhoneNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +133,12 @@
 		34DC9A7F29927B14002A8EC0 /* PrehomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrehomeRouter.swift; sourceTree = "<group>"; };
 		34DC9A8C29927C6E002A8EC0 /* RegisterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterName.swift; sourceTree = "<group>"; };
 		34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberView.swift; sourceTree = "<group>"; };
+		A2A2056129984B1700E34F76 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		A2A205642998867D00E34F76 /* CountryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItem.swift; sourceTree = "<group>"; };
+		A2A2056729988C6D00E34F76 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		A2A205692998FF0500E34F76 /* CountryCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeScreen.swift; sourceTree = "<group>"; };
+		A2A2056C2998FF8900E34F76 /* CountryCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeHelper.swift; sourceTree = "<group>"; };
+		A2A2056E29990C9200E34F76 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +189,10 @@
 		341712F029958D3E00463D46 /* LoginUI */ = {
 			isa = PBXGroup;
 			children = (
+				A2A205632998866D00E34F76 /* Row */,
 				34D264DE2992979A003A2BDF /* PrivacyPolicy.swift */,
 				341712EE2995786600463D46 /* ReSendCode.swift */,
+				A2A205692998FF0500E34F76 /* CountryCodeScreen.swift */,
 			);
 			path = LoginUI;
 			sourceTree = "<group>";
@@ -220,6 +234,7 @@
 		34173362298FBB5C00EEC9B4 /* Crewl */ = {
 			isa = PBXGroup;
 			children = (
+				A2A2056629988C3A00E34F76 /* MockData */,
 				341713082995ADB200463D46 /* Crewl.entitlements */,
 				34173363298FBB5C00EEC9B4 /* CrewlApp.swift */,
 				3461F884298FCEDA00577FFB /* Core */,
@@ -285,6 +300,8 @@
 			children = (
 				34DC9A732991ACD4002A8EC0 /* OnboardingItem.swift */,
 				34D145E229932FB7007E9740 /* LoginPropertys.swift */,
+				A2A2056129984B1700E34F76 /* Country.swift */,
+				A2A2056E29990C9200E34F76 /* PhoneNumber.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -472,6 +489,7 @@
 		34DC9A8129927B48002A8EC0 /* LoginNumber */ = {
 			isa = PBXGroup;
 			children = (
+				A2A2056B2998FF7400E34F76 /* Helper */,
 				34D264DB29929729003A2BDF /* LoginNumberRouter.swift */,
 				34D264D929929721003A2BDF /* LoginNumberViewModel.swift */,
 				34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */,
@@ -503,6 +521,30 @@
 				34DC9A8229927B88002A8EC0 /* RegisterName */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		A2A205632998866D00E34F76 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				A2A205642998867D00E34F76 /* CountryItem.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		A2A2056629988C3A00E34F76 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				A2A2056729988C6D00E34F76 /* Countries.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		A2A2056B2998FF7400E34F76 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A2A2056C2998FF8900E34F76 /* CountryCodeHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,6 +624,7 @@
 				3461F89C298FCF2900577FFB /* Localizable.strings in Resources */,
 				3461F897298FCF2900577FFB /* SpaceGrotesk-Regular.ttf in Resources */,
 				34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */,
+				A2A2056829988C6D00E34F76 /* Countries.json in Resources */,
 				3461F89A298FCF2900577FFB /* SpaceGrotesk-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +639,8 @@
 				3417130529959C2300463D46 /* AppDelegate.swift in Sources */,
 				341712E329954F3800463D46 /* LoginSuccessView.swift in Sources */,
 				34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */,
+				A2A205652998867D00E34F76 /* CountryItem.swift in Sources */,
+				A2A2056A2998FF0500E34F76 /* CountryCodeScreen.swift in Sources */,
 				34DC9A742991ACD4002A8EC0 /* OnboardingItem.swift in Sources */,
 				3461F8BE298FD25F00577FFB /* TextHelper.swift in Sources */,
 				34DC9A7629927374002A8EC0 /* BackButton.swift in Sources */,
@@ -610,6 +655,7 @@
 				3461F8BB298FD25F00577FFB /* ImageHelper.swift in Sources */,
 				34D145E729933D26007E9740 /* CountryTextField.swift in Sources */,
 				34DA93262991845C00A65E0E /* HelperCustomizeButton.swift in Sources */,
+				A2A2056D2998FF8900E34F76 /* CountryCodeHelper.swift in Sources */,
 				34D145E52993368B007E9740 /* PhoneTextField.swift in Sources */,
 				3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */,
 				3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */,
@@ -625,6 +671,7 @@
 				3461F8B6298FD25F00577FFB /* SplashView.swift in Sources */,
 				34D264DA29929721003A2BDF /* LoginNumberViewModel.swift in Sources */,
 				341712EF2995786600463D46 /* ReSendCode.swift in Sources */,
+				A2A2056229984B1700E34F76 /* Country.swift in Sources */,
 				34D264DC29929729003A2BDF /* LoginNumberRouter.swift in Sources */,
 				341712E629956D5700463D46 /* HomeView.swift in Sources */,
 				34DA932129917C1100A65E0E /* PrehomeView.swift in Sources */,
@@ -632,6 +679,7 @@
 				3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */,
 				3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */,
 				349CF63B2996A43C005B9150 /* CountryCode.swift in Sources */,
+				A2A2056F29990C9200E34F76 /* PhoneNumber.swift in Sources */,
 				340BC6122994013200FE6945 /* LoginOTPView.swift in Sources */,
 				3461F8BF298FD25F00577FFB /* TextHandler.swift in Sources */,
 				341712ED299575D100463D46 /* OTPTextField.swift in Sources */,
@@ -769,7 +817,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crewl/Preview Content\"";
-				DEVELOPMENT_TEAM = MW2482B7WH;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crewl/Utils/Info.plist;
@@ -785,7 +833,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NomoSiOS.Crewl;
+				PRODUCT_BUNDLE_IDENTIFIER = NomoteteS.Crewl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -805,7 +853,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crewl/Preview Content\"";
-				DEVELOPMENT_TEAM = MW2482B7WH;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crewl/Utils/Info.plist;
@@ -821,7 +869,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NomoSiOS.Crewl;
+				PRODUCT_BUNDLE_IDENTIFIER = NomoteteS.Crewl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

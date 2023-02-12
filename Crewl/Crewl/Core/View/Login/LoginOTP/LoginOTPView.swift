@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginOTPView: View {
     
     @ObservedObject var viewModel : LoginOTPViewModel
-    @FocusState var toFocused : fields?
+    @FocusState var toFocused : FieldType?
     
     var body: some View {
         ZStack {
@@ -30,7 +30,7 @@ struct LoginOTPView: View {
                             .minimumScaleFactor(0.5)
                         
                         Group {
-                            Text("+\(viewModel.countryCode)\(viewModel.number)").font(.system(size: 14, weight: .bold)) +
+                            Text(viewModel.phoneNumber.getTotalNumber()).font(.system(size: 14, weight: .bold)) +
                             Text(TextHelper.LoginText.SendedCodeNumber.rawValue.locale())
                             
                         }
@@ -50,7 +50,7 @@ struct LoginOTPView: View {
                     
                     // MARK: - ReSendCode
                     ReSendCode() {
-                        PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.number) { success in
+                        PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.phoneNumber.number) { success in
                         }
                     }
                     .padding(.vertical)
@@ -103,12 +103,12 @@ struct LoginOTPView: View {
 
 struct LoginOTPView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginOTPView(viewModel: .init(number: "", countryCode: ""))
+        LoginOTPView(viewModel: .init(phoneNumber: PhoneNumber(code:"",number:"")))
     }
 }
 
 extension LoginOTPView {
-    enum fields : Hashable {
+    enum FieldType : Hashable {
         case OTP
     }
 }

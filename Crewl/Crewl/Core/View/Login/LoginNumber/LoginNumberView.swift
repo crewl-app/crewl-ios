@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct LoginNumberView: View {
-    
     @ObservedObject var viewModel : LoginNumberViewModel
-    @FocusState var toFocused : fields?
+    @FocusState var toFocused : FieldType?
+    
+    @State private var isCountryBottomSheetShown = false
     
     var body: some View {
         ZStack {
-
+            
             Color.BackgroundColor
                 .ignoresSafeArea()
             VStack {
@@ -34,14 +35,14 @@ struct LoginNumberView: View {
                 //MARK: - TextFields
                 VStack {
                     HStack {
-                        CountryTextField(countryCode: $viewModel.loginPropertys.userCountry,
-                                         countryFlag: $viewModel.loginPropertys.userFlag)
+                        CountryTextField(country: .constant(viewModel.selectedCountryByUser))
                             .onTapGesture {
-                                viewModel.isClickedCountry = true
+                                viewModel.isClickedCountryBottomSheet = true
+                                isCountryBottomSheetShown = true
                             }
                         
                         PhoneTextField(number: $viewModel.loginPropertys.userPhone)
-                            .focused($toFocused, equals: .phoneNUmber)
+                            .focused($toFocused, equals: .phoneNumber)
                     }
                     //MARK: - Attentions
                     HStack {
@@ -73,7 +74,7 @@ struct LoginNumberView: View {
                         
                         // Button
                         Button {
-                            PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.loginPropertys.userPhone) { success in
+                        PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.loginPropertys.userPhone) { success in
                                     viewModel.isPhoneCorrect.toggle()
                             }
                         } label: {
@@ -87,7 +88,10 @@ struct LoginNumberView: View {
                         
                         // Destination
                         NavigationLink(isActive: $viewModel.isPhoneCorrect) {
-                            viewModel.router.goToLoginOTPView(number: viewModel.loginPropertys.userPhone, countryCode: viewModel.loginPropertys.userCountry)
+                            let userPhoneNumber = PhoneNumber(code:viewModel.selectedCountryByUser.countryCode,
+                                                              number:viewModel.loginPropertys.userPhone)
+                            
+                            viewModel.router.goToLoginOTPView(phoneNumber: userPhoneNumber)
                                 .navigationBarBackButtonHidden(true)
                         } label: { }
                     }
@@ -96,14 +100,17 @@ struct LoginNumberView: View {
                 }
               
             }
-            .sheet(isPresented: $viewModel.isClickedCountry) {
-                CountryCodes(countryCode: $viewModel.loginPropertys.userCountry,
-                             countryFlag: $viewModel.loginPropertys.userFlag,
-                             isClickedCountry: $viewModel.isClickedCountry)
+            .sheet(isPresented: $isCountryBottomSheetShown) {
+                CountryCodeScreen(countries: $viewModel.countryList,
+                                  isClickedCountry: $viewModel.isClickedCountryBottomSheet
+                ) { selectedCountry in
+                    viewModel.selectedCountryByUser = selectedCountry
+                    isCountryBottomSheetShown = false
+                }
             }
         }
         .onAppear{
-            toFocused = .phoneNUmber
+            toFocused = .phoneNumber
         }
     }
 }
@@ -115,7 +122,7 @@ struct LoginNumber_Previews: PreviewProvider {
 }
 
 extension LoginNumberView {
-    enum fields : Hashable {
-        case phoneNUmber
+    enum FieldType : Hashable {
+        case phoneNumber
     }
 }

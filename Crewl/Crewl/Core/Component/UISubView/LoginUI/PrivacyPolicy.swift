@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PrivacyPolicy: View {
-    
     @Binding var isCheckMarked : Bool
     @Binding var isActivatePolicy : Bool
     @Binding var isActivateTerms : Bool

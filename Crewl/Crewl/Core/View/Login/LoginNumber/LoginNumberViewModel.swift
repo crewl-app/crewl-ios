@@ -12,17 +12,20 @@ import FirebaseAuth
 typealias LoginNumberRouterPromoter = LoginNumberRouter
 
 class LoginNumberViewModel : ObservableObject {
+    lazy var countryList: [Country] = getCountries()
     
     var router = LoginNumberRouterPromoter()
     
+    @Published var selectedCountryByUser : Country
     @Published var loginPropertys = LoginPropertys()
     @Published var isCheckMarked : Bool
     @Published var isActivatePolicy : Bool
     @Published var isActivateTerms : Bool
     @Published var isPhoneCorrect : Bool
-    @Published var isClickedCountry : Bool
+    @Published var isClickedCountryBottomSheet : Bool
     
-    init(loginPropertys: LoginPropertys = LoginPropertys(),
+    init(selectedCountryByUser: Country = MockData.defaultCountry,
+         loginPropertys: LoginPropertys = LoginPropertys(),
          router: LoginNumberRouterPromoter = LoginNumberRouterPromoter(),
          isCheckMarked: Bool = false,
          isActivatePolicy: Bool = false,
@@ -32,12 +35,21 @@ class LoginNumberViewModel : ObservableObject {
          isClickedCountry : Bool = false
     )
     {
+        self.selectedCountryByUser = selectedCountryByUser
         self.loginPropertys = loginPropertys
         self.router = router
         self.isCheckMarked = isCheckMarked
         self.isActivatePolicy = isActivatePolicy
         self.isActivateTerms = isActivateTerms
         self.isPhoneCorrect = isPhoneCorrect
-        self.isClickedCountry = isClickedCountry
+        self.isClickedCountryBottomSheet = isClickedCountry
     }
 }
+
+// TODO: Change default country depends by local country of phone.
+extension LoginNumberViewModel {
+    struct MockData {
+        static var defaultCountry = Country(name: "Turkey", dialogCode: "TR", countryCode: "+90", flag: "🇹🇷")
+    }
+}
+
