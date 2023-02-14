@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import NotificationCenter
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     let gcmMessageIDKey = "gcm.message_id"

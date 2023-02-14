@@ -28,12 +28,12 @@ struct PrivacyPolicy: View {
                 .padding(.all,2)
             }
             .offset(x: isCheckMarked ? 4 : 0,
-                y: isCheckMarked ? 4 : 0)
+                    y: isCheckMarked ? 4 : 0)
         }
         .frame(width: 302,
-               height: 51)
+               height: 51)  
         .sheet(isPresented: $isActivateTerms, content: {
-            TermsView()
+                TermsView()
         })
         .sheet(isPresented: $isActivatePolicy, content: {
             PrivacyView()

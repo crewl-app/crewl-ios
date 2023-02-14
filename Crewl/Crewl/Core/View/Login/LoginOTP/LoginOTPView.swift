@@ -49,7 +49,6 @@ struct LoginOTPView: View {
                             }
                         })
                         .focused($toFocused, equals: .OTP)
-                        .padding(.vertical)
                     
                     Spacer() // Spacer
                     

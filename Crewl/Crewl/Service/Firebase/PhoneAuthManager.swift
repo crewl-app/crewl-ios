@@ -17,7 +17,7 @@ class PhoneAuthManager {
     
     public func startAuth(phoneNumber: String, completion: @escaping (Bool) -> Void) {
         
-        auth.settings?.isAppVerificationDisabledForTesting = true
+        auth.settings?.isAppVerificationDisabledForTesting = false
         
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [weak self] verificationId, error in
             guard let verificationId = verificationId, error == nil else {

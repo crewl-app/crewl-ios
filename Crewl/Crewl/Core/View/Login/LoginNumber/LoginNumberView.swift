@@ -56,46 +56,46 @@ struct LoginNumberView: View {
                     .frame(width: 240)
                 }
                 
+                Spacer() // SPACER
+
+                //MARK: - Pricvacy Policy
                 PrivacyPolicy(isCheckMarked: $viewModel.isCheckMarked,
                               isActivatePolicy: $viewModel.isActivatePolicy,
                               isActivateTerms: $viewModel.isActivateTerms)
                     .padding()
-                
-                Spacer() // SPACER
-                
-                // MARK: - Buttons
-                HStack(spacing: 20) {
-                    
-                    BackButton()
-                    
-                    // Button & Destination
-                    Group {
-                        /// Checking positive
-                        let status = (viewModel.isCheckMarked && viewModel.loginPropertys.userPhone.count > 9)
+                                
+                //MARK: - Buttons
+                ZStack {
+                    HStack(spacing: 20) {
                         
-                        //  Button to OTP screen
-                        PrimaryButton(action: {
-                            PhoneAuthManager.shared.startAuth(phoneNumber: "\(viewModel.selectedCountryByUser.countryCode)\(viewModel.loginPropertys.userPhone)") { success in
-                                viewModel.isPhoneCorrect.toggle()
-                            }
-                        }, text: TextHelper.ButtonText.SendVerification.rawValue)
-                        .compositingGroup()
-                        .opacity(status ? 1 : 0.5)
-                        .disabled(status != true)
+                        BackButton()
                         
-                        // Destination
-                        NavigationLink(isActive: $viewModel.isPhoneCorrect) {
-                            let userPhoneNumber = PhoneNumber(code:viewModel.selectedCountryByUser.countryCode,
-                                                              number:viewModel.loginPropertys.userPhone)
-                            viewModel.router.goToLoginOTPView(phoneNumber: userPhoneNumber,verifectionID: viewModel.verifectionID)
-                                .navigationBarBackButtonHidden(true)
-                        } label: { }
+                        // Button & Destination
+                        Group {
+                            /// Checking positive
+                            let status = (viewModel.isCheckMarked && viewModel.loginPropertys.userPhone.count > 9)
+                            
+                            //  Button to OTP screen
+                            PrimaryButton(action: {
+                                PhoneAuthManager.shared.startAuth(phoneNumber: "\(viewModel.selectedCountryByUser.countryCode)\(viewModel.loginPropertys.userPhone)") { success in
+                                    viewModel.isPhoneCorrect.toggle()
+                                }
+                            }, text: TextHelper.ButtonText.SendVerification.rawValue)
+                            .compositingGroup()
+                            .opacity(status ? 1 : 0.5)
+                            .disabled(status != true)
+                        }
+                        .frame(alignment: .bottom)
                     }
-                    .frame(alignment: .bottom)
-                    .padding(.vertical)
-                    // MARK: - \\
+                    // Destination
+                    NavigationLink(isActive: $viewModel.isPhoneCorrect) {
+                        let userPhoneNumber = PhoneNumber(code:viewModel.selectedCountryByUser.countryCode,
+                                                          number:viewModel.loginPropertys.userPhone)
+                        viewModel.router.goToLoginOTPView(phoneNumber: userPhoneNumber,verifectionID: viewModel.verifectionID)
+                            .navigationBarBackButtonHidden(true)
+                    } label: { }
                 }
-              
+                // MARK: - \\
             }
             .sheet(isPresented: $viewModel.isClickedCountryBottomSheet ) {
                 CountryCodeScreen(countries: $viewModel.countryList,

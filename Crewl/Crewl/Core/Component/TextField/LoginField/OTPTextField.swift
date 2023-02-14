@@ -51,7 +51,7 @@ struct OTPTextField: View {
                 Text("")
             }
         }
-        .frame(width: 45, height: 45)
+        .frame(width: 38, height: 38)
         .background {
             RoundedRectangle(cornerRadius: 5)
                 .offset(x: 5,
