@@ -45,8 +45,8 @@ extension Font {
     static let RoundedRegular10 : Font = .system(size: getSize.Little10, weight: .regular, design: .rounded)
     
     // MARK: SemiBold
-    static let RoundedSemiBold10 : Font = .system(size: getSize.Little10, weight: .semibold, design: .rounded)
     static let RoundedSemiBold14 : Font = .system(size: getSize.Medium14, weight: .semibold, design: .rounded)
+    static let RoundedSemiBold10 : Font = .system(size: getSize.Little10, weight: .semibold, design: .rounded)
     
     // MARK: Bold
     static let RoundedBold18 : Font = .system(size: getSize.Large18, weight: .bold, design: .rounded)

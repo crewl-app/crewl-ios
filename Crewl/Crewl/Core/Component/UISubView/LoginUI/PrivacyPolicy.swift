@@ -18,7 +18,7 @@ struct PrivacyPolicy: View {
             PPBlackBackground()
             ZStack {
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.CrewlBlack,lineWidth: 3)
+                    .stroke(Color.CrewlBlack,lineWidth: 2)
                     .background {   Color.CrewlWhite.cornerRadius(5)    }
                 HStack(spacing: 0) {
                     
@@ -68,7 +68,7 @@ private struct PPText: View {
         VStack(alignment: .leading) {
             HStack(spacing: 3) {
                 Text("Kullanım Koşulları")
-                    .font(.RoundedBold11)
+                    .font(.RoundedSemiBold10)
                     .onTapGesture {
                         activateTerms.toggle()
                     }
@@ -83,8 +83,9 @@ private struct PPText: View {
             Text("okudum ve kabul ediyorum.")
         }
         .font(.RoundedRegular12)
-        .frame(width: 265,
-               height: 50)
+        .lineLimit(2)
+        .frame(width: 240)
+        .padding(.trailing)
     }
 }
 
@@ -94,6 +95,9 @@ private struct PPCheck: View {
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .frame(width: 40, height: 40)
+                .foregroundColor(Color.CrewlWhite)
             ZStack {
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(lineWidth: 2)
@@ -103,10 +107,8 @@ private struct PPCheck: View {
                     .font(.system(size: 13, weight: .semibold))
                     .opacity(checkMarked ? 1 : 0)
             }
-            .padding()
-            .frame(width: 40, height: 40)
+            .padding(.all,10)
         }
-        .padding(.leading)
         .onTapGesture {
             checkMarked.toggle()
         }
@@ -117,7 +119,7 @@ private struct PPCheck: View {
 private struct TermsView : View {
     var body: some View {
         ZStack {
-            Color(ColorHelper.white.rawValue)
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
                 tabRectangle()
@@ -125,7 +127,7 @@ private struct TermsView : View {
                 Spacer()
                 Image.TermsOfService
                     .resizable()
-                    .frame(width: 248, height: 74)
+                    .frame(width: 248, height: 178)
                 
                 Text(TextHelper.TermsService.TermsOfUser.rawValue.locale())
                     .padding()
@@ -144,7 +146,7 @@ private struct TermsView : View {
 private struct PrivacyView : View {
     var body: some View {
         ZStack {
-            Color.CrewlWhite
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
                 tabRectangle()
@@ -153,7 +155,7 @@ private struct PrivacyView : View {
                 Spacer()
                 Image.PrivacyPolicy
                     .resizable()
-                    .frame(width: 248, height: 74)
+                    .frame(width: 248, height: 174)
                 
                 Text(TextHelper.TermsService.PrivacyPolicy.rawValue.locale())
                     .padding()

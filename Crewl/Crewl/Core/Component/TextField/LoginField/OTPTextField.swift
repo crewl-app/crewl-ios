@@ -76,7 +76,7 @@ struct OTPTextField: View {
 struct CustomOTPTextField_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.BackgroundColor
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
                 OTPTextField(otpText: .constant(""), wrongCode: .constant(false))

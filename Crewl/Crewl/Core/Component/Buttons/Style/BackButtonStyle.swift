@@ -39,7 +39,7 @@ struct BackButtonStyle: ButtonStyle {
 struct BackButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.BackgroundColor
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
                 Button {

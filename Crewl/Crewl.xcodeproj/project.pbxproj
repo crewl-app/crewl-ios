@@ -16,7 +16,6 @@
 		341712EB2995747700463D46 /* LoginOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EA2995747600463D46 /* LoginOTPViewModel.swift */; };
 		341712ED299575D100463D46 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EC299575D100463D46 /* OTPTextField.swift */; };
 		341712EF2995786600463D46 /* ReSendCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712EE2995786600463D46 /* ReSendCode.swift */; };
-		341712F329958F4300463D46 /* PhoneAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341712F229958F4300463D46 /* PhoneAuthManager.swift */; };
 		341712F6299590C300463D46 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 341712F5299590C300463D46 /* FirebaseAnalytics */; };
 		341712F8299590C300463D46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 341712F7299590C300463D46 /* FirebaseAuth */; };
 		341712FA299590C300463D46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 341712F9299590C300463D46 /* FirebaseFirestore */; };
@@ -28,6 +27,7 @@
 		34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173363298FBB5C00EEC9B4 /* CrewlApp.swift */; };
 		34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34173367298FBB5F00EEC9B4 /* Assets.xcassets */; };
 		3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */; };
+		3440FD67299B09B900A58F0A /* PhoneAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440FD66299B09B900A58F0A /* PhoneAuthManager.swift */; };
 		3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F887298FCF0B00577FFB /* State+Extension.swift */; };
 		3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F888298FCF0B00577FFB /* View+Extension.swift */; };
 		3461F896298FCF2900577FFB /* SpaceGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */; };
@@ -48,7 +48,9 @@
 		3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B3298FD25F00577FFB /* FontHandler.swift */; };
 		3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B4298FD25F00577FFB /* FontHelper.swift */; };
 		3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8C3298FD2BF00577FFB /* OnboardingView.swift */; };
+		346E35DC299AD11A00DBC3CD /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E35DB299AD11A00DBC3CD /* CGFloat+Extension.swift */; };
 		349CF63B2996A43C005B9150 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CF63A2996A43C005B9150 /* CountryCode.swift */; };
+		34CD4D732999904900D20538 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CD4D722999904900D20538 /* PrimaryButton.swift */; };
 		34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E229932FB7007E9740 /* LoginPropertys.swift */; };
 		34D145E52993368B007E9740 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E42993368B007E9740 /* PhoneTextField.swift */; };
 		34D145E729933D26007E9740 /* CountryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E629933D26007E9740 /* CountryTextField.swift */; };
@@ -69,7 +71,6 @@
 		34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */; };
 		A2A2056229984B1700E34F76 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2056129984B1700E34F76 /* Country.swift */; };
 		A2A205652998867D00E34F76 /* CountryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A205642998867D00E34F76 /* CountryItem.swift */; };
-		A2A2056829988C6D00E34F76 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A2A2056729988C6D00E34F76 /* Countries.json */; };
 		A2A2056A2998FF0500E34F76 /* CountryCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A205692998FF0500E34F76 /* CountryCodeScreen.swift */; };
 		A2A2056D2998FF8900E34F76 /* CountryCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2056C2998FF8900E34F76 /* CountryCodeHelper.swift */; };
 		A2A2056F29990C9200E34F76 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2056E29990C9200E34F76 /* PhoneNumber.swift */; };
@@ -85,7 +86,6 @@
 		341712EA2995747600463D46 /* LoginOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOTPViewModel.swift; sourceTree = "<group>"; };
 		341712EC299575D100463D46 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		341712EE2995786600463D46 /* ReSendCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSendCode.swift; sourceTree = "<group>"; };
-		341712F229958F4300463D46 /* PhoneAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthManager.swift; sourceTree = "<group>"; };
 		3417130429959C2300463D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3417130629959F0700463D46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		341713082995ADB200463D46 /* Crewl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crewl.entitlements; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 		34173363298FBB5C00EEC9B4 /* CrewlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewlApp.swift; sourceTree = "<group>"; };
 		34173367298FBB5F00EEC9B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3440FD66299B09B900A58F0A /* PhoneAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneAuthManager.swift; sourceTree = "<group>"; };
 		3461F887298FCF0B00577FFB /* State+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+Extension.swift"; sourceTree = "<group>"; };
 		3461F888298FCF0B00577FFB /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		3461F88E298FCF2900577FFB /* SpaceGrotesk-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Light.ttf"; sourceTree = "<group>"; };
@@ -114,7 +115,9 @@
 		3461F8B3298FD25F00577FFB /* FontHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
 		3461F8B4298FD25F00577FFB /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		3461F8C3298FD2BF00577FFB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		346E35DB299AD11A00DBC3CD /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		349CF63A2996A43C005B9150 /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
+		34CD4D722999904900D20538 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		34D145E229932FB7007E9740 /* LoginPropertys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPropertys.swift; sourceTree = "<group>"; };
 		34D145E42993368B007E9740 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		34D145E629933D26007E9740 /* CountryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTextField.swift; sourceTree = "<group>"; };
@@ -135,7 +138,6 @@
 		34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberView.swift; sourceTree = "<group>"; };
 		A2A2056129984B1700E34F76 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A2A205642998867D00E34F76 /* CountryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItem.swift; sourceTree = "<group>"; };
-		A2A2056729988C6D00E34F76 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A2A205692998FF0500E34F76 /* CountryCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeScreen.swift; sourceTree = "<group>"; };
 		A2A2056C2998FF8900E34F76 /* CountryCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeHelper.swift; sourceTree = "<group>"; };
 		A2A2056E29990C9200E34F76 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
@@ -210,7 +212,7 @@
 		341713012995912C00463D46 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				341712F229958F4300463D46 /* PhoneAuthManager.swift */,
+				3440FD66299B09B900A58F0A /* PhoneAuthManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -234,7 +236,6 @@
 		34173362298FBB5C00EEC9B4 /* Crewl */ = {
 			isa = PBXGroup;
 			children = (
-				A2A2056629988C3A00E34F76 /* MockData */,
 				341713082995ADB200463D46 /* Crewl.entitlements */,
 				34173363298FBB5C00EEC9B4 /* CrewlApp.swift */,
 				3461F884298FCEDA00577FFB /* Core */,
@@ -291,6 +292,7 @@
 			children = (
 				3461F887298FCF0B00577FFB /* State+Extension.swift */,
 				3461F888298FCF0B00577FFB /* View+Extension.swift */,
+				346E35DB299AD11A00DBC3CD /* CGFloat+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -465,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				34DC9A7529927374002A8EC0 /* BackButton.swift */,
+				34CD4D722999904900D20538 /* PrimaryButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -529,14 +532,6 @@
 				A2A205642998867D00E34F76 /* CountryItem.swift */,
 			);
 			path = Row;
-			sourceTree = "<group>";
-		};
-		A2A2056629988C3A00E34F76 /* MockData */ = {
-			isa = PBXGroup;
-			children = (
-				A2A2056729988C6D00E34F76 /* Countries.json */,
-			);
-			path = MockData;
 			sourceTree = "<group>";
 		};
 		A2A2056B2998FF7400E34F76 /* Helper */ = {
@@ -624,7 +619,6 @@
 				3461F89C298FCF2900577FFB /* Localizable.strings in Resources */,
 				3461F897298FCF2900577FFB /* SpaceGrotesk-Regular.ttf in Resources */,
 				34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */,
-				A2A2056829988C6D00E34F76 /* Countries.json in Resources */,
 				3461F89A298FCF2900577FFB /* SpaceGrotesk-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,6 +632,7 @@
 			files = (
 				3417130529959C2300463D46 /* AppDelegate.swift in Sources */,
 				341712E329954F3800463D46 /* LoginSuccessView.swift in Sources */,
+				346E35DC299AD11A00DBC3CD /* CGFloat+Extension.swift in Sources */,
 				34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */,
 				A2A205652998867D00E34F76 /* CountryItem.swift in Sources */,
 				A2A2056A2998FF0500E34F76 /* CountryCodeScreen.swift in Sources */,
@@ -660,9 +655,9 @@
 				3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */,
 				3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */,
 				34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */,
+				34CD4D732999904900D20538 /* PrimaryButton.swift in Sources */,
 				34D264DF2992979A003A2BDF /* PrivacyPolicy.swift in Sources */,
 				34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */,
-				341712F329958F4300463D46 /* PhoneAuthManager.swift in Sources */,
 				3461F8B7298FD25F00577FFB /* SplashRouter.swift in Sources */,
 				34DA931C29917B3000A65E0E /* OnboardingViewModel.swift in Sources */,
 				3461F8B9298FD25F00577FFB /* ColorHelper.swift in Sources */,
@@ -671,6 +666,7 @@
 				3461F8B6298FD25F00577FFB /* SplashView.swift in Sources */,
 				34D264DA29929721003A2BDF /* LoginNumberViewModel.swift in Sources */,
 				341712EF2995786600463D46 /* ReSendCode.swift in Sources */,
+				3440FD67299B09B900A58F0A /* PhoneAuthManager.swift in Sources */,
 				A2A2056229984B1700E34F76 /* Country.swift in Sources */,
 				34D264DC29929729003A2BDF /* LoginNumberRouter.swift in Sources */,
 				341712E629956D5700463D46 /* HomeView.swift in Sources */,
@@ -817,7 +813,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crewl/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crewl/Utils/Info.plist;
@@ -833,7 +829,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NomoteteS.Crewl;
+				PRODUCT_BUNDLE_IDENTIFIER = NomoSiOS.Crewl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -853,7 +849,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crewl/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Crewl/Utils/Info.plist;
@@ -869,7 +865,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NomoteteS.Crewl;
+				PRODUCT_BUNDLE_IDENTIFIER = NomoSiOS.Crewl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

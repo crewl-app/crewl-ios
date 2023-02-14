@@ -13,7 +13,7 @@ struct LoginSuccessView: View {
     
     var body: some View {
         ZStack {
-            Color.BackgroundColor
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
                 VStack(spacing: 36) {
@@ -45,7 +45,6 @@ struct LoginSuccessView: View {
                         .font(.SpaceBold13)
                 }
                 .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
-                                                backButtonColor: Color.CrewlBlack,
                                                 setWidthAgain: 321))
                 // MARK: - \\
                 Spacer()

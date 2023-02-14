@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
+
 
 struct LoginNumberView: View {
     @ObservedObject var viewModel : LoginNumberViewModel
-    @FocusState var toFocused : FieldType?
-    
-    @State private var isCountryBottomSheetShown = false
-    
+    @FocusState var keyboardFocused : Bool
+        
     var body: some View {
         ZStack {
             
-            Color.BackgroundColor
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
                 //MARK: - Text
@@ -29,21 +30,21 @@ struct LoginNumberView: View {
                         .foregroundColor(Color.CrewlGray)
                 }
                 .frame(height: 90)
-                .padding(.vertical)
-                .padding(.top)
+                .padding()
                 
                 //MARK: - TextFields
                 VStack {
                     HStack {
-                        CountryTextField(country: .constant(viewModel.selectedCountryByUser))
+                        CountryTextField(country: $viewModel.selectedCountryByUser)
                             .onTapGesture {
                                 viewModel.isClickedCountryBottomSheet = true
-                                isCountryBottomSheetShown = true
                             }
                         
+                        
                         PhoneTextField(number: $viewModel.loginPropertys.userPhone)
-                            .focused($toFocused, equals: .phoneNumber)
+                            .focused($keyboardFocused)
                     }
+
                     //MARK: - Attentions
                     HStack {
                         Text("* ").foregroundColor(Color.red).font(.system(size: 15)) +
@@ -72,57 +73,50 @@ struct LoginNumberView: View {
                         /// Checking positive
                         let status = (viewModel.isCheckMarked && viewModel.loginPropertys.userPhone.count > 9)
                         
-                        // Button
-                        Button {
-                        PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.loginPropertys.userPhone) { success in
-                                    viewModel.isPhoneCorrect.toggle()
+                        //  Button to OTP screen
+                        PrimaryButton(action: {
+                            PhoneAuthManager.shared.startAuth(phoneNumber: "\(viewModel.selectedCountryByUser.countryCode)\(viewModel.loginPropertys.userPhone)") { success in
+                                viewModel.isPhoneCorrect.toggle()
                             }
-                        } label: {
-                            Text(TextHelper.ButtonText.SendVerification.rawValue.locale())
-                                .font(.SpaceBold13)
-                        }
+                        }, text: TextHelper.ButtonText.SendVerification.rawValue)
+                        .compositingGroup()
+                        .opacity(status ? 1 : 0.5)
                         .disabled(status != true)
-                        .buttonStyle(PrimaryButtonStyle(buttonColor: status ? Color.CrewlYellow : Color.CrewlSoftYellow,
-                                                        backButtonColor: status ? Color.CrewlBlack : Color.CrewlSoftBlack,
-                                                        setWidthAgain: 271))
                         
                         // Destination
                         NavigationLink(isActive: $viewModel.isPhoneCorrect) {
                             let userPhoneNumber = PhoneNumber(code:viewModel.selectedCountryByUser.countryCode,
                                                               number:viewModel.loginPropertys.userPhone)
-                            
-                            viewModel.router.goToLoginOTPView(phoneNumber: userPhoneNumber)
+                            viewModel.router.goToLoginOTPView(phoneNumber: userPhoneNumber,verifectionID: viewModel.verifectionID)
                                 .navigationBarBackButtonHidden(true)
                         } label: { }
                     }
+                    .frame(alignment: .bottom)
                     .padding(.vertical)
                     // MARK: - \\
                 }
               
             }
-            .sheet(isPresented: $isCountryBottomSheetShown) {
+            .sheet(isPresented: $viewModel.isClickedCountryBottomSheet ) {
                 CountryCodeScreen(countries: $viewModel.countryList,
                                   isClickedCountry: $viewModel.isClickedCountryBottomSheet
                 ) { selectedCountry in
                     viewModel.selectedCountryByUser = selectedCountry
-                    isCountryBottomSheetShown = false
+                    viewModel.isClickedCountryBottomSheet = false
                 }
             }
         }
-        .onAppear{
-            toFocused = .phoneNumber
-        }
+        .onAppear {
+            keyboardFocused = viewModel.isFocusState
+               
+           }
     }
 }
 
 struct LoginNumber_Previews: PreviewProvider {
     static var previews: some View {
-        LoginNumberView(viewModel: LoginNumberViewModel())
+        LoginNumberView(viewModel: LoginNumberViewModel( isFocusState: true))
     }
 }
 
-extension LoginNumberView {
-    enum FieldType : Hashable {
-        case phoneNumber
-    }
-}
+

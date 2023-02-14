@@ -13,7 +13,7 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            Color.BackgroundColor
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             
             // MARK: - Into
@@ -31,7 +31,7 @@ struct OnboardingView: View {
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
                 
                 // MARK: - Button
-                Button {
+                PrimaryButton(action: {
                     withAnimation(.easeIn) {
                         if viewModel.pageIndex >= 3 {
                             viewModel.routerActive = true
@@ -39,13 +39,9 @@ struct OnboardingView: View {
                             viewModel.pageIndex += 1
                         }
                     }
-                } label: {
-                    Text(TextHelper.ButtonText.Continue.rawValue.locale())
-                        .font(.SpaceBold13)
-                }
-                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
-                                                backButtonColor: Color.CrewlBlack,
-                                                setWidthAgain: 266))
+                }, text: TextHelper.ButtonText.Continue.rawValue
+                    )
+                
                 
                 Spacer()
                 Spacer()
@@ -71,6 +67,7 @@ private struct TemplateOnboarding: View {
         VStack {
             Text(items.title.locale())
                 .font(.SpaceBold22)
+                .lineLimit(2)
                 .frame(width: UIScreen.main.bounds.width * 0.79)
             
             items.image

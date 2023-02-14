@@ -32,7 +32,7 @@ struct PhoneTextField: View {
 struct CustomPhoneTextField_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.BackgroundColor
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             PhoneTextField(number: .constant(""))
         }

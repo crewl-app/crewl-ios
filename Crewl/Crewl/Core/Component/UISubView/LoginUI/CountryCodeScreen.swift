@@ -16,37 +16,40 @@ struct CountryCodeScreen : View{
     @State var searchQuery = ""
     
     var body: some View {
-        ScrollView {
+        VStack {
+            // MARK: - Top Little Rectengle
+            RoundedRectangle(cornerRadius: 5)
+                .frame(width: 44,height: 4)
+                .foregroundColor(Color.gray)
+                .padding()
+            
+            // MARK: - Searchbar
             ZStack {
-                VStack {
-                    RoundedRectangle(cornerRadius: 5)
-                        .frame(width: 44,height: 4)
-                        .foregroundColor(Color.gray)
-                        .padding()
-                    
-                    // MARK: - Searchbar
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.CrewlGray)
-                            .frame(height: 40)
-                        
-                        HStack {
-                            Image(systemName: "magnifyingglass")
-                            TextField("Searching", text: $searchQuery)
-                        }
-                        .padding(.leading)
-                    }.padding()
-                    
-                    ForEach(searchQuery == "" ? countries : countries.filter{
-                        $0.name.lowercased().contains(searchQuery.lowercased())
-                    }) { country in
-                        CountryItem(country: country) { selectedCountry in
-                            onCountryItemClicked(selectedCountry)
-                        }.padding(5)
-                    }
-                }.padding(.horizontal)
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.CrewlGray)
+                    .frame(height: 40)
+                
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    TextField("Searching", text: $searchQuery)
+                }
+                .padding(.leading)
             }
-        }.background(Color.BackgroundColor)
+            .padding()
+            // MARK: - Country List
+            ScrollView {
+                ForEach(searchQuery == "" ? countries : countries.filter{
+                    $0.name.lowercased().contains(searchQuery.lowercased())
+                }) { country in
+                    CountryItem(country: country) { selectedCountry in
+                        onCountryItemClicked(selectedCountry)
+                    }.padding(5)
+                }
+            }
+            .padding(.top)
+            .padding(.horizontal)
+            // MARK: - //
+        }
+        .background(Color.CrewlBackgroundColor)
     }
 }
-

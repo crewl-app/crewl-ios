@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
 
 struct LoginOTPView: View {
     
@@ -14,7 +16,7 @@ struct LoginOTPView: View {
     
     var body: some View {
         ZStack {
-            Color.BackgroundColor
+            Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
                 
@@ -27,22 +29,25 @@ struct LoginOTPView: View {
                         Text(TextHelper.LoginText.VerificationText.rawValue.locale())
                             .font(.SpaceBold23)
                             .lineLimit(2)
-                            .minimumScaleFactor(0.5)
                         
                         Group {
                             Text(viewModel.phoneNumber.getTotalNumber()).font(.system(size: 14, weight: .bold)) +
                             Text(TextHelper.LoginText.SendedCodeNumber.rawValue.locale())
-                            
                         }
+                        .padding(.vertical,5)
                         .font(.RoundedRegular14)
-                        .padding(.trailing)
                     }
-                    .padding(.horizontal)
-                    .padding(.top)
+                    .frame(height: 100)
+                    .padding(.all)
                     
                     
                     // MARK: - OTPTextField
                     OTPTextField(otpText: $viewModel.OTPString, wrongCode: $viewModel.isOTPWrong)
+                        .onChange(of: viewModel.OTPString, perform: { OTP in
+                            if OTP.count == 5 {
+                                viewModel.isOTPWrong = false
+                            }
+                        })
                         .focused($toFocused, equals: .OTP)
                         .padding(.vertical)
                     
@@ -50,36 +55,39 @@ struct LoginOTPView: View {
                     
                     // MARK: - ReSendCode
                     ReSendCode() {
-                        PhoneAuthManager.shared.startAuth(phoneNumber: viewModel.phoneNumber.number) { success in
+                        PhoneAuthManager.shared.startAuth(phoneNumber:viewModel.phoneNumber.getTotalNumber()) { success in
+                           
                         }
+                        
                     }
                     .padding(.vertical)
                     
                     // MARK: - Button
                     HStack(spacing: 20) {
                         
+                        // Back Button
                         BackButton()
                         
+                        /// Checking positive
                         let status = (viewModel.OTPString.count > 5)
                         
+                        // Verifection Button
                         Group{
-                            Button {
+                            PrimaryButton(action: {
                                 PhoneAuthManager.shared.verifyCode(smsCode: viewModel.OTPString) { success in
                                     if success {
                                         viewModel.isVerifectionCorrect.toggle()
                                     } else {
-                                        viewModel.isOTPWrong.toggle()
+                                        viewModel.isOTPWrong = true
                                     }
                                 }
-                            } label: {
-                                Text(TextHelper.ButtonText.Confirm.rawValue.locale())
-                                    .font(.SpaceBold13)
-                            }
+                                
+                            }, text: TextHelper.ButtonText.Confirm.rawValue)
                             .disabled(status != true)
-                            .buttonStyle(PrimaryButtonStyle(buttonColor: status ? Color.CrewlYellow : Color.CrewlSoftYellow,
-                                                            backButtonColor: status ? Color.CrewlBlack : Color.CrewlSoftBlack,
-                                                            setWidthAgain: 265))
+                            .compositingGroup()
+                            .opacity(status ? 1 : 0.5)
                             
+                            // Destination
                             NavigationLink(isActive: $viewModel.isVerifectionCorrect) {
                                 viewModel.router.goToLoginSuccessView()
                                     .navigationBarBackButtonHidden(true)
@@ -103,7 +111,7 @@ struct LoginOTPView: View {
 
 struct LoginOTPView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginOTPView(viewModel: .init(phoneNumber: PhoneNumber(code:"",number:"")))
+        LoginOTPView(viewModel: .init(phoneNumber: PhoneNumber(code:"+90",number:"5392469551"), verifectionID: ""))
     }
 }
 

@@ -16,7 +16,10 @@ struct CrewlApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Prehome()
+            NavigationView {
+                Prehome()
+                    .preferredColorScheme(.light)
+            }
         }
     }
 }

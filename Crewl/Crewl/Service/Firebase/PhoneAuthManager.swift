@@ -13,7 +13,7 @@ class PhoneAuthManager {
     
     private let auth = Auth.auth()
     
-    private var verificationId: String?
+    var verificationId: String? 
     
     public func startAuth(phoneNumber: String, completion: @escaping (Bool) -> Void) {
         
@@ -22,10 +22,10 @@ class PhoneAuthManager {
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [weak self] verificationId, error in
             guard let verificationId = verificationId, error == nil else {
                 completion(false)
-                print("\(error?.localizedDescription ?? "")")
+                print("Verify Phone :\(error?.localizedDescription ?? "Verify Phone : Error")")
                 return
             }
-            self?.verificationId = verificationId
+            self!.verificationId = verificationId
             completion(true)
         }
     }

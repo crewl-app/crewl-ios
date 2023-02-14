@@ -12,25 +12,31 @@ struct Prehome: View {
     @ObservedObject var viewModel : PrehomeViewModel = .init()
     
     var body: some View {
-        NavigationView {
             ZStack {
-                Color.BackgroundColor
+                Color.CrewlBackgroundColor
                     .ignoresSafeArea()
                 
-                Image("prehome")
-                    .resizable()
-                    .ignoresSafeArea()
-                    .aspectRatio(contentMode: .fill)
-                    .padding(.top)
+                VStack {
+                    
+                    
+                        Image("preHomeTop")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width * 1,height: UIScreen.main.bounds.height * 0.27)
+                            .padding(.top,UIScreen.main.bounds.width * 0.1)
+            
+                        Image("preHomeCorners")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: UIScreen.main.bounds.width * 1.5,height: UIScreen.main.bounds.height * 0.63)
+                }
+                .frame(width:  UIScreen.main.bounds.width * 1,height: UIScreen.main.bounds.height * 1)
+                
                     
                 VStack {
                     Spacer()
                     
                     // MARK: - Logo
-//                    Image.CrewlLogo
-//                        .resizable()
-//                        .frame(width: UIScreen.main.bounds.width * 0.4,
-//                               height: UIScreen.main.bounds.height * 0.15)
+
                     Spacer()
                     Spacer()
                     
@@ -39,14 +45,13 @@ struct Prehome: View {
                     VStack(spacing: 0) {
                         // Login Button
                         NavigationLink {
-                            viewModel.router.goToLogin()
+                            viewModel.router.goToLogin(isKeyboardFocus: true)
                                 .navigationBarBackButtonHidden(true)
                         } label: {
                             Text(TextHelper.ButtonText.SignIn.rawValue.locale())
                                 .font(.SpaceBold13)
                         }
                         .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlWhite,
-                                                        backButtonColor: Color.CrewlBlack,
                                                         setWidthAgain: 220))
                         .padding(.vertical)
                         
@@ -62,7 +67,6 @@ struct Prehome: View {
                                     .font(.SpaceBold13)
                             }
                             .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
-                                                            backButtonColor: Color.CrewlBlack,
                                                             setWidthAgain: 170))
                         }
                     }
@@ -73,7 +77,7 @@ struct Prehome: View {
                 }
             }
         }
-    }
+    
 }
 
 struct Prehome_Previews: PreviewProvider {
