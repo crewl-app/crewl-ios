@@ -12,9 +12,9 @@ typealias PrehomeRouterPromoter = PrehomeRouter
 class PrehomeViewModel : ObservableObject {
     
     var router = PrehomeRouterPromoter()
-
-    init(router: PrehomeRouterPromoter = PrehomeRouterPromoter()) {
+    
+    init(router: PrehomeRouterPromoter = PrehomeRouterPromoter())
+    {
         self.router = router
-
     }
 }

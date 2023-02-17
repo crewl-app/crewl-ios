@@ -12,66 +12,55 @@ import Firebase
 struct LoginOTPView: View {
     
     @ObservedObject var viewModel : LoginOTPViewModel
-    @FocusState var toFocused : FieldType?
+    @FocusState var toFocused : Bool
     
     var body: some View {
-        ZStack {
+        GeometryReader { Geo in
             Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack {
-                
-                Spacer() // SPACER
-                
+                // MARK: - Text
                 VStack(alignment: .leading,spacing: 10) {
-                    
-                    // MARK: - Text
-                    VStack(spacing: 10) {
-                        Text(TextHelper.LoginText.VerificationText.rawValue.locale())
-                            .font(.SpaceBold23)
-                            .lineLimit(2)
-                        
-                        Group {
-                            Text(viewModel.phoneNumber.getTotalNumber()).font(.system(size: 14, weight: .bold)) +
-                            Text(TextHelper.LoginText.SendedCodeNumber.rawValue.locale())
-                        }
-                        .padding(.vertical,5)
-                        .font(.RoundedRegular14)
+                    Text(TextHelper.LoginText.VerificationText.rawValue.locale())
+                        .font(.SpaceBold23)
+                        .lineLimit(2)
+                    Group {
+                        Text(viewModel.phoneNumber.getTotalNumber()).font(.system(size: 14, weight: .bold)) +
+                        Text(TextHelper.LoginText.SendedCodeNumber.rawValue.locale())
                     }
-                    .frame(height: 100)
+                    .font(.RoundedRegular14)
+                }
+                .frame(height: 90)
+                .padding()
+                // MARK: - OTPTextField
+                OTPTextField(otpText: $viewModel.OTPString, wrongCode: $viewModel.isOTPWrong)
+                    .onChange(of: viewModel.OTPString, perform: { OTP in
+                        if OTP.count == 5 {
+                            viewModel.isOTPWrong = false
+                        }
+                    })
                     .padding(.all)
-                    
-                    
-                    // MARK: - OTPTextField
-                    OTPTextField(otpText: $viewModel.OTPString, wrongCode: $viewModel.isOTPWrong)
-                        .onChange(of: viewModel.OTPString, perform: { OTP in
-                            if OTP.count == 5 {
-                                viewModel.isOTPWrong = false
-                            }
-                        })
-                        .focused($toFocused, equals: .OTP)
-                    
-                    Spacer() // Spacer
-                    
+                    .focused($toFocused)
+                
+                Spacer()
+                
+                Group {
                     // MARK: - ReSendCode
                     ReSendCode() {
-                        PhoneAuthManager.shared.startAuth(phoneNumber:viewModel.phoneNumber.getTotalNumber()) { success in
-                           
-                        }
-                        
+                        PhoneAuthManager.shared.startAuth(phoneNumber:viewModel.phoneNumber.getTotalNumber()) { _ in }
                     }
-                    .padding(.vertical)
-                    
-                    // MARK: - Button
-                    HStack(spacing: 20) {
+                    .padding(.horizontal)
+                    .frame(height: 27)
+                    .padding(.bottom,Geo.dh(0.01))
+                    // MARK: - Buttons
+                    HStack(spacing: 18) {
                         
-                        // Back Button
                         BackButton()
-                        
+                            .buttonStyle(BackButtonStyle())
                         /// Checking positive
                         let status = (viewModel.OTPString.count > 5)
-                        
                         // Verifection Button
-                        Group{
+                        ZStack {
                             PrimaryButton(action: {
                                 PhoneAuthManager.shared.verifyCode(smsCode: viewModel.OTPString) { success in
                                     if success {
@@ -80,42 +69,32 @@ struct LoginOTPView: View {
                                         viewModel.isOTPWrong = true
                                     }
                                 }
-                                
-                            }, text: TextHelper.ButtonText.Confirm.rawValue)
+                            }, text: TextHelper.ButtonText.Confirm.rawValue,
+                                          buttonWidth: Geo.dw(0.686),
+                                          buttonHeight: 50)
                             .disabled(status != true)
                             .compositingGroup()
                             .opacity(status ? 1 : 0.5)
-                            
                             // Destination
                             NavigationLink(isActive: $viewModel.isVerifectionCorrect) {
                                 viewModel.router.goToLoginSuccessView()
-                                    .navigationBarBackButtonHidden(true)
+                                    .navigationBarHidden(true)
                             } label: {  }
                         }
-                        // MARK: - \\
                     }
-                    .padding(.bottom)
-                    .padding(.leading)
-                    
-                    
                 }
-                .padding(.horizontal)
-            }
-            .onAppear{
-                toFocused = .OTP
+                .padding(.bottom,Geo.dh(0.05))
+                // MARK: - \\
             }
         }
+        .onAppear{ toFocused.toggle() }
     }
 }
+
 
 struct LoginOTPView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginOTPView(viewModel: .init(phoneNumber: PhoneNumber(code:"+90",number:"5392469551"), verifectionID: ""))
+        LoginOTPView(viewModel: .init(phoneNumber: PhoneNumber(code:"+90",number:"5392469551")))
     }
 }
 
-extension LoginOTPView {
-    enum FieldType : Hashable {
-        case OTP
-    }
-}

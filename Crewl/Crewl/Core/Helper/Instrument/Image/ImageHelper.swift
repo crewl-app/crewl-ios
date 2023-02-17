@@ -9,29 +9,36 @@ import Foundation
 
 struct ImageHelper {
     
-    enum App : String {
-        case AppLogo = "AppLogo"
-        case CrewlLogo = "CrewlLogo"
+    // MARK: - app
+    
+    enum app : String {
+        case appLogo = "appLogo"
     }
     
-    // MARK: - Onboarding Views
-    enum Onboarding: String {
+    // MARK: - onboarding Images
+    enum onboarding: String {
         case OnboardingOne = "firstOnboarding"
         case OnboardingTwo = "secondOnboarding"
         case OnboardingThree = "thirdOnboarding"
         case OnboardinFour = "fourthOnboarding"
     }
     
-    // MARK: - Login Views
+    // MARK: - Prehome Images
+    enum prehome: String {
+        case preHomeImage = "preHomeImage"
+    }
+    
+    // MARK: - Login Images
     enum Login: String {
         case LoginSuccess = "loginSuccess"
         case PrivacyPolicy = "privacyPolicy"
         case TermsOfService = "termsOfService"
     }
     
-    // MARK: - Notifications Views
+    // MARK: - Notifications Images
     enum Notifications: String {
         case notification = "notificationImage"
         case location = "locationImage"
     }
 }
+    // MARK: - /

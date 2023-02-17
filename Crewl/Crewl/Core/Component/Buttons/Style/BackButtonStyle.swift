@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct BackButtonStyle: ButtonStyle {
+    
+    var buttonWidth : CGFloat?
+    var buttonHeight : CGFloat?
+    
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
             configuration.label
@@ -25,13 +29,17 @@ struct BackButtonStyle: ButtonStyle {
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomButton(buttonColor: Color.CrewlWhite, frameWidth: 34, frameHeight: 34)
+            CustomButton(buttonColor: Color.CrewlWhite,
+                         frameWidth: buttonWidth ?? 34,
+                         frameHeight: buttonHeight ?? 34)
                 .offset(
                     x: configuration.isPressed ? 6 : 0,
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomBlackBackground(buttonColor: Color.CrewlBlack, frameWidth: 34, frameHeight: 34)
+            CustomBlackBackground(buttonColor: Color.CrewlBlack,
+                                  frameWidth: buttonWidth ?? 34,
+                                  frameHeight: buttonHeight ?? 34)
         }
     }
 }

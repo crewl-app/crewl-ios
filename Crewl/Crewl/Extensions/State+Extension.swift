@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 
 extension Binding where Value == String {
+    
+    /// set limit string values
+    /// - Parameter lenght: Int
+    /// - Returns: self
     func limit(_ lenght: Int) -> Self {
         if self.wrappedValue.count > lenght {
             DispatchQueue.main.async {
@@ -17,12 +21,5 @@ extension Binding where Value == String {
         }
         return self
     }
-    
-    func cWitdh(_ cWidth: Double) -> Double {
-        let main = UIScreen.main
-        let bounds = main.bounds
-        let width = bounds.width
-        
-        return width * cWidth
-    }
+
 }

@@ -11,16 +11,19 @@ import SwiftUI
 typealias OnboardingRouterPromoter = OnboardingRouter
 
 class OnboardingViewModel : ObservableObject {
+    
     var router = OnboardingRouterPromoter()
     @Published var pageIndex = 0
     @Published var routerActive : Bool
     
-    init(router: OnboardingRouterPromoter = OnboardingRouterPromoter(), pageIndex: Int = 0, routerActive: Bool) {
+    init(router: OnboardingRouterPromoter = OnboardingRouterPromoter(),
+         pageIndex: Int = 0,
+         routerActive: Bool = false)
+    {
         self.router = router
         self.pageIndex = pageIndex
         self.routerActive = routerActive
     }
-    
     
     var onboardingItems : [OnboardingItem] = [
         OnboardingItem(title: TextHelper.Onboarding.FirstOnboardingTitle.rawValue,

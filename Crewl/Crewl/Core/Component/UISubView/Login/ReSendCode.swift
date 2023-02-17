@@ -40,10 +40,9 @@ struct ReSendCode: View {
                     .font(.RoundedBold11)
                     .foregroundColor(Color(count == 0 ? ColorHelper.white.rawValue : ColorHelper.yellow.rawValue))
             }
-        }.padding(.horizontal)
-            .onAppear{
-                startTimer()
-            }
+        }
+        .padding(.horizontal)
+        .onAppear{ startTimer() }
     }
     
     
@@ -62,7 +61,6 @@ struct ReSendCode: View {
 struct ReSendCode_Previews: PreviewProvider {
     static var previews: some View {
         ReSendCode() {
-            
         }
     }
 }

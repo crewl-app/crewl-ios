@@ -11,6 +11,9 @@ struct PrimaryButton: View {
     
     var action : () -> Void
     var text : String
+    var buttonWidth : CGFloat
+    var buttonHeight : CGFloat?
+    var buttonColor : Color?
     
     var body: some View {
         Button {
@@ -18,15 +21,17 @@ struct PrimaryButton: View {
         } label: {
             Text(text.locale())
                 .font(.SpaceBold13)
-        }.buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 271))
+        }.buttonStyle(PrimaryButtonStyle(buttonColor: buttonColor ?? Color.CrewlYellow,
+                                         buttonWidth: buttonWidth,
+                                         buttonHeight: buttonHeight ?? 50 ))
     }
 }
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
         PrimaryButton(action: {
-            
-        }, text: "Mert Türedü")
+
+        }, text: "Mert Türedü", buttonWidth: 0, buttonHeight: 0)
 
     }
 }

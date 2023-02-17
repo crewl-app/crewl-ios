@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
+    
     var buttonColor : Color
-    var setWidthAgain : CGFloat
-    var opacity : Double?
+    var buttonWidth : CGFloat
+    var buttonHeight : CGFloat
+    
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
+            // MARK: - Primary Button
             configuration.label
                 .zIndex(2)
                 .offset(
@@ -20,14 +23,13 @@ struct PrimaryButtonStyle: ButtonStyle {
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomButton(buttonColor: buttonColor, frameWidth: setWidthAgain, frameHeight: 50)
+            CustomButton(buttonColor: buttonColor, frameWidth: buttonWidth, frameHeight: buttonHeight)
                 .offset(
                     x: configuration.isPressed ? 6 : 0,
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomBlackBackground(buttonColor: Color.CrewlBlack, frameWidth: setWidthAgain, frameHeight: 50)
-                .opacity(opacity ?? 1)
+            CustomBlackBackground(buttonColor: Color.CrewlBlack, frameWidth: buttonWidth, frameHeight: buttonHeight)
         }
     }
 }
@@ -40,8 +42,8 @@ struct Button_Previews: PreviewProvider {
                 
             } label: {
                 Text("I am Test Wohooo")
-            }.buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 300))
-
+            }.buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, buttonWidth: 300, buttonHeight: 50))
         }
     }
 }
+// MARK: - /

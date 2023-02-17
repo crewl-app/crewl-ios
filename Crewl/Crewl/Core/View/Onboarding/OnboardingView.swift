@@ -9,27 +9,28 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @ObservedObject var viewModel : OnboardingViewModel
+    @ObservedObject var viewModel : OnboardingViewModel = .init()
     
     var body: some View {
-        ZStack {
+        GeometryReader { Geo in
             Color.CrewlBackgroundColor
                 .ignoresSafeArea()
-            
-            // MARK: - Into
-            VStack {
+            VStack(spacing: 0) {
+                // MARK: - Items
                 TabView(selection: $viewModel.pageIndex) {
                     ForEach(viewModel.onboardingItems) { item in
                         VStack {
-                            TemplateOnboarding(items: item)
+                            TemplateOnboarding(items: item,
+                                               titleWitdh: Geo.dw(0.67),
+                                               desriptionWidth: Geo.dw(0.82),
+                                               imageHeight: Geo.dh(0.58),
+                                               imageWidth: Geo.dw(0.9))
                         }
                         .tag(item.tag)
                     }
-                    .multilineTextAlignment(.center)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
-                
                 // MARK: - Button
                 PrimaryButton(action: {
                     withAnimation(.easeIn) {
@@ -39,12 +40,12 @@ struct OnboardingView: View {
                             viewModel.pageIndex += 1
                         }
                     }
-                }, text: TextHelper.ButtonText.Continue.rawValue
-                    )
-                
-                
-                Spacer()
-                Spacer()
+                },
+                              text: TextHelper.ButtonText.Continue.rawValue,
+                              buttonWidth: Geo.dw(0.76)
+                )
+                .padding(.vertical)
+                // MARK: - /
             }
         }
         .fullScreenCover(isPresented: $viewModel.routerActive) {
@@ -55,31 +56,7 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(viewModel: .init(routerActive: false))
+        OnboardingView()
     }
 }
 
-private struct TemplateOnboarding: View {
-    
-    var items : OnboardingItem
-    
-    var body: some View {
-        VStack {
-            Text(items.title.locale())
-                .font(.SpaceBold22)
-                .lineLimit(2)
-                .frame(width: UIScreen.main.bounds.width * 0.79)
-            
-            items.image
-                .resizable()
-                .frame(width: UIScreen.main.bounds.width * 0.9,
-                       height: UIScreen.main.bounds.height * 0.56,
-                       alignment: .center)
-                .padding()
-            
-            Text(items.description.locale())
-                .font(.SpaceMedium14)
-                .frame(width: UIScreen.main.bounds.width * 0.79)
-        }
-    }
-}

@@ -37,15 +37,15 @@ struct LoginSuccessView: View {
                 Spacer()
                 
                 // MARK: - Button
-                NavigationLink {
-                    viewModel.router.goToHomeView()
-                        .navigationBarBackButtonHidden(true)
-                } label: {
-                    Text(TextHelper.ButtonText.Continue.rawValue.locale())
-                        .font(.SpaceBold13)
-                }
-                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
-                                                setWidthAgain: 321))
+//                NavigationLink {
+//                    viewModel.router.goToHomeView()
+//                        .navigationBarBackButtonHidden(true)
+//                } label: {
+//                    Text(TextHelper.ButtonText.Continue.rawValue.locale())
+//                        .font(.SpaceBold13)
+//                }
+//                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
+//                                                buttonWidth: 321))
                 // MARK: - \\
                 Spacer()
             }

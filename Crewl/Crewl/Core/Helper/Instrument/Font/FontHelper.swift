@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Fonts {
+struct SGFonts {
     var SpaceRegular = ("SpaceGrotesk-Regular")
     var SpaceLight = ("SpaceGrotesk-Light")
     var SpaceMedium = ("SpaceGrotesk-Medium")
@@ -16,7 +16,7 @@ struct Fonts {
     var SpaceBold = ("SpaceGrotesk-Bold")
 }
 
-struct FontSize {
+struct FontSize {    
     var Little10: CGFloat = 10
     var AltRegular11: CGFloat = 11
     var Regular12: CGFloat = 12

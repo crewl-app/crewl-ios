@@ -9,18 +9,18 @@ import Foundation
 import SwiftUI
 
 // Calling font and settings
-private let getFont = Fonts()
+private let getFont = SGFonts()
 private let getSize = FontSize()
 
 extension Font {
-    
+        
     //MARK: - Space Grotest Fonts
-    
+        
     // MARK: SpaceMedium
     static let SpaceMedium14 : Font = .custom(getFont.SpaceMedium, size: getSize.Medium14)
     
     // MARK: SpaceBold
-    static let SpaceBold23 : Font = .custom(getFont.SpaceBold, size: getSize.Title22)
+    static let SpaceBold23 : Font = .custom(getFont.SpaceBold, fixedSize: getSize.Title24 )
     static let SpaceBold22 : Font = .custom(getFont.SpaceBold, size: getSize.Title24)
     static let SpaceBold21 : Font = .custom(getFont.SpaceBold, size: getSize.Title22)
     static let SpaceBold20 : Font = .custom(getFont.SpaceBold, size: getSize.BigLarge20)

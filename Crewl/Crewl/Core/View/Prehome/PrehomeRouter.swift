@@ -11,7 +11,7 @@ final class PrehomeRouter {}
 
 protocol PrehomeRouterCharter {
     func goToRegister() -> RegisterName
-    func goToLogin(isKeyboardFocus: Bool) -> LoginNumberView
+    func goToLogin() -> LoginNumberView
     
 }
 
@@ -20,7 +20,7 @@ extension PrehomeRouter : PrehomeRouterCharter {
         RegisterName()
     }
     
-    func goToLogin(isKeyboardFocus: Bool) -> LoginNumberView {
-        LoginNumberView(viewModel: .init(isFocusState: isKeyboardFocus))
+    func goToLogin() -> LoginNumberView {
+        LoginNumberView()
     }
 }

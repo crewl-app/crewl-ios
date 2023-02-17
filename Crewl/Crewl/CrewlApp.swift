@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-import FirebaseCore
+import Firebase
+
 
 @main
 
@@ -17,9 +18,10 @@ struct CrewlApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                Prehome()
-                    .preferredColorScheme(.light)
+                SplashView()
+                    .navigationBarHidden(true)
             }
         }
     }
 }
+

@@ -9,21 +9,25 @@ import SwiftUI
 
 extension Image {
     
-    public static let AppLogo = Image(ImageHelper.App.AppLogo.rawValue)
-    public static let CrewlLogo = Image(ImageHelper.App.CrewlLogo.rawValue)
+    // MARK: - App Iamges
+    public static let appLogo = Image(ImageHelper.app.appLogo.rawValue)
     
-    // MARK: - Onboarding Views
-    public static let OnboardingOne = Image(ImageHelper.Onboarding.OnboardingOne.rawValue)
-    public static let OnboardingTwo = Image(ImageHelper.Onboarding.OnboardingTwo.rawValue)
-    public static let OnboardingThree = Image(ImageHelper.Onboarding.OnboardingThree.rawValue)
-    public static let OnboardingFour = Image(ImageHelper.Onboarding.OnboardinFour.rawValue)
+    // MARK: - Onboarding Iamges
+    public static let OnboardingOne = Image(ImageHelper.onboarding.OnboardingOne.rawValue)
+    public static let OnboardingTwo = Image(ImageHelper.onboarding.OnboardingTwo.rawValue)
+    public static let OnboardingThree = Image(ImageHelper.onboarding.OnboardingThree.rawValue)
+    public static let OnboardingFour = Image(ImageHelper.onboarding.OnboardinFour.rawValue)
+    
+    // MARK: - Prehome Image
+    public static let preHomeImage = Image(ImageHelper.prehome.preHomeImage.rawValue)
 
-    // MARK: - Login Views
+    // MARK: - Login Iamges
     public static let LoginSuccess = Image(ImageHelper.Login.LoginSuccess.rawValue)
     public static let PrivacyPolicy = Image(ImageHelper.Login.PrivacyPolicy.rawValue)
     public static let TermsOfService = Image(ImageHelper.Login.TermsOfService.rawValue)
     
-    // MARK: - Notifications Views
+    // MARK: - Notifications Iamges
     public static let Notification = Image(ImageHelper.Notifications.notification.rawValue)
     public static let Location = Image(ImageHelper.Notifications.location.rawValue)
 }
+    // MARK: - /

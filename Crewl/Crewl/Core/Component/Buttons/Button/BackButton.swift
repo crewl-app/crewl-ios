@@ -14,7 +14,7 @@ struct BackButton: View {
         ZStack {
             Button {
                 dismiss()
-            } label: {  }.buttonStyle(BackButtonStyle())
+            } label: {  }
         }
     }
 }

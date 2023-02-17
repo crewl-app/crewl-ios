@@ -31,7 +31,7 @@ struct PrivacyPolicy: View {
                     y: isCheckMarked ? 4 : 0)
         }
         .frame(width: 302,
-               height: 51)  
+               height: 51)
         .sheet(isPresented: $isActivateTerms, content: {
                 TermsView()
         })
