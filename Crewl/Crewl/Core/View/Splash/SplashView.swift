@@ -23,23 +23,15 @@ struct SplashView: View {
                     
                     Image.appLogo
                         .resizable()
-                        .frame(width: Geo.dw(0.5 / 2),
-                               height: Geo.dh(0.5 / 2.5))
+                        .frame(width: Geo.size.width * 0.18 ,
+                               height: Geo.size.height * 0.16)
                 }
                 .onChange(of: Geo.size) { newSize in
-                    
-                    self.setDim(width: Geo.size.width, height: Geo.size.height)
+                    viewModel.setPhoneDimensions(size: newSize)
                 }
             }
             // MARK: - /
         }
-    }
-    
-    private func setDim(width: Double, height: Double) {
-        WindowUtils.screenHeight = height
-        WindowUtils.screenWidth = width
-        
-        print(WindowUtils.screenHeight , WindowUtils.screenWidth)
     }
 }
 

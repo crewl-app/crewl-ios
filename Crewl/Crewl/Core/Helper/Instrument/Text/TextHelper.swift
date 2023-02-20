@@ -10,16 +10,16 @@ import SwiftUI
 
 struct TextHelper {
     
+    //MARK: - Button Text String
     enum ButtonText : String {
         case Continue = "continue"
         case Confirm = "confirm"
-        case SignIn = "signIn"
-        case SignUp = "signUp"
         case SendVerification = "sendVerification"
         case Later = "later"
         case Allow = "allow"
     }
     
+    //MARK: - Onboarding Text String
     enum Onboarding : String {
         case FirstOnboardingTitle = "firstOnboardingTitle"
         case FirstOnboardingDescription = "firstOnboardingDescription"
@@ -29,10 +29,12 @@ struct TextHelper {
         
         case ThirdOnboardingTitle = "thirdOnboardingTitle"
         case ThirdOnboardingDescription = "thirdOnboardingDescription"
+        
         case FourthOnboardingTitle = "fourthOnboardingTitle"
         case FourthOnboardingDescription = "fourthOnboardingDescription"
     }
     
+    //MARK: - Login Text String
     enum LoginText : String {
         case LoginTitle = "loginTitle"
         case LoginDescription = "loginDescription"
@@ -43,6 +45,7 @@ struct TextHelper {
         case NextToPageInLastLogin = "nextToPageInLastLogin"
     }
     
+    //MARK: - Notifications Text String
     enum Notifications : String {
         case NotifacionServiceTitle = "notifacionServiceTitle"
         case NotifacionServiceDescription = "notifacionServiceDescription"
@@ -50,16 +53,15 @@ struct TextHelper {
         case LocationServiceDescription = "locationServiceDescription"
     }
     
+    //MARK: - TermService Text String
     enum TermsService : String {
         case PrivacyPolicy = "privacyPolicy"
         case PrivacyPolicyDescription = "privacyPolicyDescription"
         case TermsOfUser = "termsOfUse"
         case TermsOfUseDescription = "termsOfUseDescription"
     }
+    //MARK: - /
 }
-
-
-// Text(LocaleKeys.Auth.apple.rawValue.locale())
 
 
 extension String {

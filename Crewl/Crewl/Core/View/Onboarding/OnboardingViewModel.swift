@@ -21,6 +21,8 @@ class OnboardingViewModel : ObservableObject {
          routerActive: Bool = false)
     {
         self.router = router
+        
+        print(type(of: TextHelper.Onboarding.FirstOnboardingTitle))
         self.pageIndex = pageIndex
         self.routerActive = routerActive
     }

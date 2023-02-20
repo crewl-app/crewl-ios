@@ -12,26 +12,26 @@ struct OnboardingView: View {
     @ObservedObject var viewModel : OnboardingViewModel = .init()
     
     var body: some View {
-        GeometryReader { Geo in
+        ZStack {
             Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack(spacing: 0) {
-                // MARK: - Items
+                // MARK: - Onboarding ForEach Item
                 TabView(selection: $viewModel.pageIndex) {
                     ForEach(viewModel.onboardingItems) { item in
                         VStack {
-                            TemplateOnboarding(items: item,
-                                               titleWitdh: Geo.dw(0.67),
-                                               desriptionWidth: Geo.dw(0.82),
-                                               imageHeight: Geo.dh(0.58),
-                                               imageWidth: Geo.dw(0.9))
+                            OnboardingItems(items: item,
+                                            widthT: 0.61.dW(),
+                                            widthD: 0.82.dW(),
+                                            imageSize: CGSize(width: 0.87.dW(),
+                                                              height: 0.543.dH()))
                         }
                         .tag(item.tag)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
-                // MARK: - Button
+                // MARK: - Onboarding Button
                 PrimaryButton(action: {
                     withAnimation(.easeIn) {
                         if viewModel.pageIndex >= 3 {
@@ -42,14 +42,16 @@ struct OnboardingView: View {
                     }
                 },
                               text: TextHelper.ButtonText.Continue.rawValue,
-                              buttonWidth: Geo.dw(0.76)
+                              buttonWidth: 0.76.dW()
                 )
                 .padding(.vertical)
                 // MARK: - /
             }
         }
         .fullScreenCover(isPresented: $viewModel.routerActive) {
-            viewModel.router.goToPrehome()
+            NavigationView {
+                viewModel.router.goToPrehome()
+            }
         }
     }
 }

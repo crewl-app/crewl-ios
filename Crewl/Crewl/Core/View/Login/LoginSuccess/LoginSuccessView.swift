@@ -28,7 +28,7 @@ struct LoginSuccessView: View {
                             .font(.SpaceBold23)
                         
                         Text(TextHelper.LoginText.NextToPageInLastLogin.rawValue.locale())
-                            .font(.RoundedBold18)
+                            .font(.Rounded18)
                             .offset(x: UIScreen.main.bounds.width * -0.1)
                     }
                 }

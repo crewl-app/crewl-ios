@@ -8,9 +8,7 @@
 import Foundation
 
 struct ImageHelper {
-    
     // MARK: - app
-    
     enum app : String {
         case appLogo = "appLogo"
     }

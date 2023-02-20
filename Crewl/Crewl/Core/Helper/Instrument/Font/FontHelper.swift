@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// MARK: - SpacerGrotesk Fonts Setted
 struct SGFonts {
     var SpaceRegular = ("SpaceGrotesk-Regular")
     var SpaceLight = ("SpaceGrotesk-Light")
@@ -16,19 +17,19 @@ struct SGFonts {
     var SpaceBold = ("SpaceGrotesk-Bold")
 }
 
-struct FontSize {    
-    var Little10: CGFloat = 10
-    var AltRegular11: CGFloat = 11
-    var Regular12: CGFloat = 12
-    var AltMedium13: CGFloat = 13
-    var Medium14: CGFloat = 14
-    var Middle16: CGFloat = 16
-    var AltLarge17: CGFloat = 17
-    var Large18: CGFloat = 18
-    var BigLarge20: CGFloat = 20
-    var Title22: CGFloat = 22
-    var Title24: CGFloat = 24
-    var LargeTitle40: CGFloat = 40
+// MARK: - Font Sizes
+struct FontSize {
+    var size10: CGFloat = 10
+    var size11: CGFloat = 11
+    var size12: CGFloat = 12
+    var size13: CGFloat = 13
+    var size14: CGFloat = 14
+    var size16: CGFloat = 16
+    var size17: CGFloat = 17
+    var size18: CGFloat = 18
+    var size20: CGFloat = 20
+    var size21: CGFloat = 21
+    var size22: CGFloat = 22
+    var size23: CGFloat = 23
+    var size24: CGFloat = 24
 }
-
-

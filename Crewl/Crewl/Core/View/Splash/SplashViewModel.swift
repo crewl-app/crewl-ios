@@ -28,4 +28,8 @@ final class SplashViewModel: ObservableObject {
             self.isActive = true
         }
     }
+    
+    func setPhoneDimensions(size: CGSize) {
+        WindowUtils.screenSize = size
+    }
 }

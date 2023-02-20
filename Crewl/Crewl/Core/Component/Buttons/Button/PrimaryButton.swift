@@ -30,8 +30,8 @@ struct PrimaryButton: View {
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
         PrimaryButton(action: {
-
+            
         }, text: "Mert Türedü", buttonWidth: 0, buttonHeight: 0)
-
+        
     }
 }

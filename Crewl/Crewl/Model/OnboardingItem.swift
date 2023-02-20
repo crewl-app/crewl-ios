@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// MARK: Onboarding Items Setter
+// MARK: - Onboarding Items Setter
 struct OnboardingItem : Identifiable, Equatable {
     var id: UUID = UUID()
     var title : String

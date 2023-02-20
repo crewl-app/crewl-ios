@@ -18,7 +18,7 @@ class LoginNumberViewModel : ObservableObject {
     
     @Published var selectedCountryByUser : Country
     @Published var loginPropertys = LoginPropertys()
-
+    
     // Booleans
     @Published var isCheckMarked : Bool
     @Published var isActivatePolicy : Bool
@@ -28,13 +28,12 @@ class LoginNumberViewModel : ObservableObject {
     
     init(selectedCountryByUser: Country = MockData.defaultCountry,
          loginPropertys: LoginPropertys = LoginPropertys(),
-         router: LoginNumberRouterPromoter = LoginNumberRouterPromoter(),
+         router: LoginNumberRouterPromoter = LoginNumberRouterPromoter(),         
          isCheckMarked: Bool = false,
          isActivatePolicy: Bool = false,
          isActivateTerms: Bool = false,
          isPhoneCorrect : Bool = false,
-         isClickedCountryBottomSheet : Bool = false
-    )
+         isClickedCountryBottomSheet : Bool = false)
     {
         self.selectedCountryByUser = selectedCountryByUser
         self.loginPropertys = loginPropertys
@@ -45,8 +44,6 @@ class LoginNumberViewModel : ObservableObject {
         self.isPhoneCorrect = isPhoneCorrect
         self.isClickedCountryBottomSheet = isClickedCountryBottomSheet
     }
-    
-    
 }
 
 // TODO: Change default country depends by local country of phone.

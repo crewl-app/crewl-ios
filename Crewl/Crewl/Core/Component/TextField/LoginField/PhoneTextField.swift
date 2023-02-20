@@ -12,13 +12,17 @@ struct PhoneTextField: View {
     @Binding var number : String
     @State var tab = false
     
+    
     var body: some View {
         ZStack {
             
             let status = (tab || number.count > 0)
             phoneBackground(status: .constant(status))
                 
-            TextField("", text: $number.limit(10) )
+            TextField("", text: $number.limit(15) )
+                .onChange(of: number, perform: { oldValue in
+                               number = format(with: "(XXX) XXX-XXXX", phone: oldValue)
+                           })
                 .keyboardType(.numberPad)
                 .frame(width: 210,
                        height: 40)
@@ -52,15 +56,15 @@ private struct phoneBackground: View {
                     .foregroundColor(status ? Color.CrewlYellow : Color.CrewlWhiteGray)
                     .frame(height: 1)
                     .offset(y:25.5)
-                
                 VStack(alignment: .leading) {
                     Text("Telefon Numarası")
-                    
-                    Text("(5xx) xxx-xx-xx")
+                        .padding(.top,3)
+                        .padding(.trailing,10)
+                    Spacer()
                 }
                 .opacity(status ? 0 : 1)
                 .padding(.trailing,100)
-                .font(.RoundedRegular14)
+                .font(.Rounded12)
                 .foregroundColor(Color.CrewlGray)
                 
             }.frame(width: 250,

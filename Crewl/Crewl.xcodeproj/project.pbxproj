@@ -27,6 +27,8 @@
 		34173364298FBB5C00EEC9B4 /* CrewlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34173363298FBB5C00EEC9B4 /* CrewlApp.swift */; };
 		34173368298FBB5F00EEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34173367298FBB5F00EEC9B4 /* Assets.xcassets */; };
 		3417336B298FBB5F00EEC9B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */; };
+		3426EF9629A2687F00CA1F0F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426EF9529A2687F00CA1F0F /* UserData.swift */; };
+		3426EF9829A2AAF400CA1F0F /* TextFieldFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426EF9729A2AAF400CA1F0F /* TextFieldFormatter.swift */; };
 		3440FD67299B09B900A58F0A /* PhoneAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3440FD66299B09B900A58F0A /* PhoneAuthManager.swift */; };
 		3461F88A298FCF0B00577FFB /* State+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F887298FCF0B00577FFB /* State+Extension.swift */; };
 		3461F88B298FCF0B00577FFB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F888298FCF0B00577FFB /* View+Extension.swift */; };
@@ -48,9 +50,9 @@
 		3461F8C0298FD25F00577FFB /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B3298FD25F00577FFB /* FontHandler.swift */; };
 		3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8B4298FD25F00577FFB /* FontHelper.swift */; };
 		3461F8C4298FD2BF00577FFB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461F8C3298FD2BF00577FFB /* OnboardingView.swift */; };
-		3477CEC9299D90F900C47BFD /* GeomertyReader+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477CEC8299D90F900C47BFD /* GeomertyReader+Extension.swift */; };
-		3477CECE299DDDF400C47BFD /* TemplateOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477CECD299DDDF300C47BFD /* TemplateOnboarding.swift */; };
+		3477CECE299DDDF400C47BFD /* OnboardingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477CECD299DDDF300C47BFD /* OnboardingItems.swift */; };
 		349CF63B2996A43C005B9150 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CF63A2996A43C005B9150 /* CountryCode.swift */; };
+		34A81C9429A179E1000A5D6B /* PrehomeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A81C9329A179E1000A5D6B /* PrehomeBackground.swift */; };
 		34CD4D732999904900D20538 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CD4D722999904900D20538 /* PrimaryButton.swift */; };
 		34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E229932FB7007E9740 /* LoginPropertys.swift */; };
 		34D145E52993368B007E9740 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D145E42993368B007E9740 /* PhoneTextField.swift */; };
@@ -70,7 +72,9 @@
 		34DC9A8029927B14002A8EC0 /* PrehomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A7F29927B14002A8EC0 /* PrehomeRouter.swift */; };
 		34DC9A8D29927C6E002A8EC0 /* RegisterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8C29927C6E002A8EC0 /* RegisterName.swift */; };
 		34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */; };
-		34F75A7529A0386D008A0483 /* WindowUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F75A7429A0386D008A0483 /* WindowUtils.swift */; };
+		34F3415129A10F3700A8111A /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3415029A10F3700A8111A /* Double+Extension.swift */; };
+		34F3415429A10F7600A8111A /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3415329A10F7600A8111A /* Int+Extension.swift */; };
+		34F3415629A111A700A8111A /* WindowUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3415529A111A700A8111A /* WindowUtils.swift */; };
 		A2A2056229984B1700E34F76 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A2056129984B1700E34F76 /* Country.swift */; };
 		A2A205652998867D00E34F76 /* CountryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A205642998867D00E34F76 /* CountryItem.swift */; };
 		A2A2056A2998FF0500E34F76 /* CountryCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A205692998FF0500E34F76 /* CountryCodeScreen.swift */; };
@@ -95,6 +99,8 @@
 		34173363298FBB5C00EEC9B4 /* CrewlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewlApp.swift; sourceTree = "<group>"; };
 		34173367298FBB5F00EEC9B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3417336A298FBB5F00EEC9B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3426EF9529A2687F00CA1F0F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		3426EF9729A2AAF400CA1F0F /* TextFieldFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormatter.swift; sourceTree = "<group>"; };
 		3440FD66299B09B900A58F0A /* PhoneAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneAuthManager.swift; sourceTree = "<group>"; };
 		3461F887298FCF0B00577FFB /* State+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+Extension.swift"; sourceTree = "<group>"; };
 		3461F888298FCF0B00577FFB /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
@@ -117,9 +123,9 @@
 		3461F8B3298FD25F00577FFB /* FontHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
 		3461F8B4298FD25F00577FFB /* FontHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		3461F8C3298FD2BF00577FFB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		3477CEC8299D90F900C47BFD /* GeomertyReader+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GeomertyReader+Extension.swift"; path = "../../../../../../../Desktop/GeomertyReader+Extension.swift"; sourceTree = "<group>"; };
-		3477CECD299DDDF300C47BFD /* TemplateOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateOnboarding.swift; sourceTree = "<group>"; };
+		3477CECD299DDDF300C47BFD /* OnboardingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItems.swift; sourceTree = "<group>"; };
 		349CF63A2996A43C005B9150 /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
+		34A81C9329A179E1000A5D6B /* PrehomeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrehomeBackground.swift; sourceTree = "<group>"; };
 		34CD4D722999904900D20538 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		34D145E229932FB7007E9740 /* LoginPropertys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPropertys.swift; sourceTree = "<group>"; };
 		34D145E42993368B007E9740 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
@@ -139,7 +145,9 @@
 		34DC9A7F29927B14002A8EC0 /* PrehomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrehomeRouter.swift; sourceTree = "<group>"; };
 		34DC9A8C29927C6E002A8EC0 /* RegisterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterName.swift; sourceTree = "<group>"; };
 		34DC9A8E29927C7F002A8EC0 /* LoginNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNumberView.swift; sourceTree = "<group>"; };
-		34F75A7429A0386D008A0483 /* WindowUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowUtils.swift; sourceTree = "<group>"; };
+		34F3415029A10F3700A8111A /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		34F3415329A10F7600A8111A /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		34F3415529A111A700A8111A /* WindowUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowUtils.swift; sourceTree = "<group>"; };
 		A2A2056129984B1700E34F76 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A2A205642998867D00E34F76 /* CountryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItem.swift; sourceTree = "<group>"; };
 		A2A205692998FF0500E34F76 /* CountryCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeScreen.swift; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 		340CC91F299E46CA00F45FB4 /* Prehome */ = {
 			isa = PBXGroup;
 			children = (
+				34A81C9329A179E1000A5D6B /* PrehomeBackground.swift */,
 			);
 			path = Prehome;
 			sourceTree = "<group>";
@@ -303,7 +312,8 @@
 			children = (
 				3461F887298FCF0B00577FFB /* State+Extension.swift */,
 				3461F888298FCF0B00577FFB /* View+Extension.swift */,
-				3477CEC8299D90F900C47BFD /* GeomertyReader+Extension.swift */,
+				34F3415029A10F3700A8111A /* Double+Extension.swift */,
+				34F3415329A10F7600A8111A /* Int+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,6 +325,7 @@
 				34D145E229932FB7007E9740 /* LoginPropertys.swift */,
 				A2A2056129984B1700E34F76 /* Country.swift */,
 				A2A2056E29990C9200E34F76 /* PhoneNumber.swift */,
+				3426EF9529A2687F00CA1F0F /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,7 +351,6 @@
 				34173367298FBB5F00EEC9B4 /* Assets.xcassets */,
 				3461F894298FCF2900577FFB /* Localizable.strings */,
 				349CF63A2996A43C005B9150 /* CountryCode.swift */,
-				34F75A7429A0386D008A0483 /* WindowUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -368,8 +378,8 @@
 				3461F8A1298FD25F00577FFB /* Splash */,
 				3461F8C2298FD29A00577FFB /* Onboarding */,
 				34DA931F29917C0200A65E0E /* Prehome */,
-				34DC9A8429927BCE002A8EC0 /* Register */,
 				34DC9A8329927BC6002A8EC0 /* Login */,
+				34DC9A8429927BCE002A8EC0 /* Register */,
 				341712E429956D4300463D46 /* Home */,
 			);
 			path = View;
@@ -389,6 +399,8 @@
 			isa = PBXGroup;
 			children = (
 				343CD7B02991231C0036A559 /* Instrument */,
+				34F3415529A111A700A8111A /* WindowUtils.swift */,
+				3426EF9729A2AAF400CA1F0F /* TextFieldFormatter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -449,7 +461,7 @@
 		3477CECB299DDDC400C47BFD /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3477CECD299DDDF300C47BFD /* TemplateOnboarding.swift */,
+				3477CECD299DDDF300C47BFD /* OnboardingItems.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -663,17 +675,18 @@
 				3417130529959C2300463D46 /* AppDelegate.swift in Sources */,
 				341712E329954F3800463D46 /* LoginSuccessView.swift in Sources */,
 				34D145E329932FB7007E9740 /* LoginPropertys.swift in Sources */,
+				3426EF9629A2687F00CA1F0F /* UserData.swift in Sources */,
 				A2A205652998867D00E34F76 /* CountryItem.swift in Sources */,
-				3477CECE299DDDF400C47BFD /* TemplateOnboarding.swift in Sources */,
+				3477CECE299DDDF400C47BFD /* OnboardingItems.swift in Sources */,
+				34F3415429A10F7600A8111A /* Int+Extension.swift in Sources */,
 				A2A2056A2998FF0500E34F76 /* CountryCodeScreen.swift in Sources */,
 				34DC9A742991ACD4002A8EC0 /* OnboardingItem.swift in Sources */,
-				3477CEC9299D90F900C47BFD /* GeomertyReader+Extension.swift in Sources */,
 				3461F8BE298FD25F00577FFB /* TextHelper.swift in Sources */,
 				34DC9A7629927374002A8EC0 /* BackButton.swift in Sources */,
 				341712E129954F3300463D46 /* LoginSuccessViewModel.swift in Sources */,
 				34DC9A8D29927C6E002A8EC0 /* RegisterName.swift in Sources */,
 				34DA931E29917B3700A65E0E /* OnboardingRouter.swift in Sources */,
-				34F75A7529A0386D008A0483 /* WindowUtils.swift in Sources */,
+				34F3415629A111A700A8111A /* WindowUtils.swift in Sources */,
 				3461F8B5298FD25F00577FFB /* SplashViewModel.swift in Sources */,
 				34DC9A7D29927B05002A8EC0 /* PrehomeViewModel.swift in Sources */,
 				3461F8C1298FD25F00577FFB /* FontHelper.swift in Sources */,
@@ -681,9 +694,11 @@
 				341712DE29954F2700463D46 /* LoginSuccessRouter.swift in Sources */,
 				3461F8BB298FD25F00577FFB /* ImageHelper.swift in Sources */,
 				34D145E729933D26007E9740 /* CountryTextField.swift in Sources */,
+				34F3415129A10F3700A8111A /* Double+Extension.swift in Sources */,
 				34DA93262991845C00A65E0E /* HelperCustomizeButton.swift in Sources */,
 				A2A2056D2998FF8900E34F76 /* CountryCodeHelper.swift in Sources */,
 				34D145E52993368B007E9740 /* PhoneTextField.swift in Sources */,
+				3426EF9829A2AAF400CA1F0F /* TextFieldFormatter.swift in Sources */,
 				3461F8BA298FD25F00577FFB /* ColorHandler.swift in Sources */,
 				3461F8BC298FD25F00577FFB /* ImageHandler.swift in Sources */,
 				34DC9A8F29927C7F002A8EC0 /* LoginNumberView.swift in Sources */,
@@ -709,6 +724,7 @@
 				349CF63B2996A43C005B9150 /* CountryCode.swift in Sources */,
 				A2A2056F29990C9200E34F76 /* PhoneNumber.swift in Sources */,
 				340BC6122994013200FE6945 /* LoginOTPView.swift in Sources */,
+				34A81C9429A179E1000A5D6B /* PrehomeBackground.swift in Sources */,
 				3461F8BF298FD25F00577FFB /* TextHandler.swift in Sources */,
 				341712ED299575D100463D46 /* OTPTextField.swift in Sources */,
 				34DC9A8029927B14002A8EC0 /* PrehomeRouter.swift in Sources */,

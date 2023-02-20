@@ -9,8 +9,6 @@
 // MARK: - Button Texts
 "sendVerification" = "Onay Kodu Gönder";
 "continue" = "Devam Et";
-"signIn" = "Giriş Yap";
-"signUp" = "Kayıt Ol";
 "later" = "Daha sonra";
 "allow" = "İzin ver";
 

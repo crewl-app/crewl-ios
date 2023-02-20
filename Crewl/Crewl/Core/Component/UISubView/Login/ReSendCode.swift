@@ -23,7 +23,7 @@ struct ReSendCode: View {
                 }
             } label: {
                 Text("Kodu Yeniden gönder")
-                    .font(.RoundedBold12)
+                    .font(.Rounded10.bold())
                     .foregroundColor(Color(count == 0 ? ColorHelper.black.rawValue : ColorHelper.gray.rawValue))
             }
             .disabled(launchTimer)
@@ -37,7 +37,7 @@ struct ReSendCode: View {
                     .foregroundColor(Color(count == 0 ? ColorHelper.green.rawValue : ColorHelper.black.rawValue))
                 
                 Text("\(count)")
-                    .font(.RoundedBold11)
+                    .font(.Rounded10.bold())
                     .foregroundColor(Color(count == 0 ? ColorHelper.white.rawValue : ColorHelper.yellow.rawValue))
             }
         }

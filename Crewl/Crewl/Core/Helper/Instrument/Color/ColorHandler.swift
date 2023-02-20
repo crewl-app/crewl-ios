@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension Color {
+    //MARK: - Crewl Colors
     public static let CrewlBackgroundColor = Color(ColorHelper.backgroundColor.rawValue)
     public static let CrewlWhite = Color(ColorHelper.white.rawValue)
     public static let CrewlGreen = Color(ColorHelper.green.rawValue)
@@ -16,4 +17,5 @@ extension Color {
     public static let CrewlGray = Color(ColorHelper.gray.rawValue)
     public static let CrewlYellow = Color(ColorHelper.yellow.rawValue)
     public static let CrewlBlack = Color(ColorHelper.black.rawValue)
+    //MARK: - /
 }

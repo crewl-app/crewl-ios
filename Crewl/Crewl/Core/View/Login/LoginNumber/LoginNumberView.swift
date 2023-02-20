@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import Firebase
 
 struct LoginNumberView: View {
     
@@ -15,21 +13,23 @@ struct LoginNumberView: View {
     @FocusState var toFocused : Bool
     
     var body: some View {
-        GeometryReader { Geo in
+        ZStack {
             Color.CrewlBackgroundColor
                 .ignoresSafeArea()
-            VStack {
+            VStack{
                 //MARK: - Text
                 VStack(alignment: .leading, spacing: 10) {
                     Text(TextHelper.LoginText.LoginTitle.rawValue.locale())
                         .font(.SpaceBold23)
                     Text(TextHelper.LoginText.LoginDescription.rawValue.locale())
-                        .font(.RoundedRegular14)
+                        .font(.Rounded13)
                         .foregroundColor(Color.CrewlGray)
                 }
-                .frame(width: Geo.dw(0.91),
-                       height: 85)
-                //MARK: - TextFields
+                .padding(.top,36)
+                .padding(.trailing)
+                .frame(width: 0.97.dW(),
+                       height: 150)
+                //MARK: - Login TextFields
                 VStack {
                     HStack {
                         CountryTextField(country: $viewModel.selectedCountryByUser)
@@ -39,21 +39,22 @@ struct LoginNumberView: View {
                         PhoneTextField(number: $viewModel.loginPropertys.userPhone)
                             .focused($toFocused)
                     }
-                    //MARK: - Attentions
+                    //MARK: - Login Attentions
                     HStack {
                         Text("* ").foregroundColor(Color.red).font(.system(size: 15)) +
                         Text(TextHelper.LoginText.AttentionMassage.rawValue.locale())
-                            .font(.RoundedRegular14)
+                            .font(.Rounded13)
                             .foregroundColor(Color.CrewlGray)
                     }
                     .offset(x: 40)
-                    .frame(width: 240)
+                    .frame(width: 0.6.dW(),
+                           height: 40)
                 }
-                .padding()
+                .padding(.top)
                 
                 Spacer()
                 
-                // MARK: Buttons & PP
+                // MARK: Login Buttons & PP
                 Group {
                     //Privacy Policy
                     PrivacyPolicy(isCheckMarked: $viewModel.isCheckMarked,
@@ -73,8 +74,7 @@ struct LoginNumberView: View {
                                     viewModel.isPhoneCorrect.toggle()
                                 }
                             }, text: TextHelper.ButtonText.SendVerification.rawValue,
-                                          buttonWidth: Geo.dw(0.76),
-                                          buttonHeight: 50)
+                                          buttonWidth: 0.76.dW())
                             .compositingGroup()
                             .opacity(status ? 1 : 0.5)
                             .disabled(status != true)
@@ -88,11 +88,9 @@ struct LoginNumberView: View {
                         }
                     }
                 }
-                .padding(.bottom,Geo.dh(0.05))
+                .padding(.bottom,20)
                 // MARK: - \\
             }
-            .position(x: Geo.dpx(0.5),
-                      y: Geo.dpy(0.5))
             .sheet(isPresented: $viewModel.isClickedCountryBottomSheet ) {
                 CountryCodeScreen(countries: $viewModel.countryList,
                                   isClickedCountry: $viewModel.isClickedCountryBottomSheet)

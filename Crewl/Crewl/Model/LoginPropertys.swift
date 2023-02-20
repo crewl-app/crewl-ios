@@ -8,9 +8,9 @@
 import Foundation
 
 class LoginPropertys: ObservableObject {
-    @Published var userPhone : String
-    @Published var userCountry : String
-    @Published var userFlag : String
+    var userPhone : String
+    var userCountry : String
+    var userFlag : String
     
     init(userPhone : String = "", userFlag : String = "🇹🇷", userCountry : String = "90") {
         self.userPhone = userPhone

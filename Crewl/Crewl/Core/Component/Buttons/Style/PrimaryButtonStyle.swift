@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
     
-    var buttonColor : Color
+    var buttonColor : Color?
     var buttonWidth : CGFloat
     var buttonHeight : CGFloat
     
@@ -23,18 +23,22 @@ struct PrimaryButtonStyle: ButtonStyle {
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomButton(buttonColor: buttonColor, frameWidth: buttonWidth, frameHeight: buttonHeight)
+            CustomButton(buttonColor: buttonColor ?? Color.CrewlYellow,
+                         frameWidth: buttonWidth,
+                         frameHeight: buttonHeight)
                 .offset(
                     x: configuration.isPressed ? 6 : 0,
                     y: configuration.isPressed ? 5 : 0
                 )
             
-            CustomBlackBackground(buttonColor: Color.CrewlBlack, frameWidth: buttonWidth, frameHeight: buttonHeight)
+            CustomBlackBackground(buttonColor: Color.CrewlBlack,
+                                  frameWidth: buttonWidth,
+                                  frameHeight: buttonHeight)
         }
     }
 }
 
-// MARK: - Button Test
+// MARK: - Primary Button Test
 struct Button_Previews: PreviewProvider {
     static var previews: some View {
         VStack {

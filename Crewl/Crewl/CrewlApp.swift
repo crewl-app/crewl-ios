@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 import Firebase
 
 
@@ -20,6 +21,7 @@ struct CrewlApp: App {
             NavigationView {
                 SplashView()
                     .navigationBarHidden(true)
+                    .preferredColorScheme(.light)
             }
         }
     }
