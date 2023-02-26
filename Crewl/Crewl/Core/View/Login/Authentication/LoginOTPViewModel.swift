@@ -32,8 +32,11 @@ class LoginOTPViewModel: ObservableObject {
 
 		DispatchQueue.main.asyncAfter(deadline: .now() + ASYNC_DELAY_MEDIUM) {
 			PhoneAuthManager.shared.verifyCode(code: self.code) { success in
-				self.isVerificationCorrect = true
-
+                if success {
+                    self.isVerificationCorrect = true
+                } else {
+                    self.isCodeWrong = true
+                }
 				self.isLoading = false
 			}
 		}

@@ -43,6 +43,7 @@ struct OnboardingView: View {
 		.fullScreenCover(isPresented: $viewModel.routerActive) {
 			NavigationView {
 				viewModel.router.goToPrehome()
+                    .navigationBarHidden(true)
 			}
 		}
 	}
