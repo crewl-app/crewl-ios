@@ -11,11 +11,11 @@ import SwiftUI
 final class SplashRouter {}
 
 protocol SplashRouterCharter {
-    func goToOnboarding() -> OnboardingView
+    func navigate() -> OnboardingView
 }
 
 extension SplashRouter : SplashRouterCharter {
-    func goToOnboarding() -> OnboardingView {
+    func navigate() -> OnboardingView {
         OnboardingView()
     }
 }

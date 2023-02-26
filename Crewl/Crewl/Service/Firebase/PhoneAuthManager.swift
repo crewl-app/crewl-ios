@@ -15,11 +15,11 @@ class PhoneAuthManager {
     
     var verificationId: String?
     
-    public func startAuth(phoneNumber: String, completion: @escaping (Bool) -> Void) {
+    public func startAuth(number: String, completion: @escaping (Bool) -> Void) {
         
 //        auth.settings?.isAppVerificationDisabledForTesting = 
         
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [weak self] verificationId, error in
+        PhoneAuthProvider.provider().verifyPhoneNumber(number, uiDelegate: nil) { [weak self] verificationId, error in
             guard let verificationId = verificationId, error == nil else {
                 completion(false)
                 print("Verify Phone :\(error?.localizedDescription ?? "Verify Phone : Error")")
@@ -30,13 +30,13 @@ class PhoneAuthManager {
         }
     }
     
-    public func verifyCode(smsCode: String, completion: @escaping (Bool) -> Void) {
+    public func verifyCode(code: String, completion: @escaping (Bool) -> Void) {
         guard let verificationId = verificationId else {
             completion(false)
             return
         }
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationId,
-                                                                 verificationCode: smsCode)
+                                                                 verificationCode: code)
         auth.signIn(with: credential) { result, error in
             guard result != nil, error == nil else {
                 completion(false)

@@ -8,33 +8,34 @@
 import SwiftUI
 
 struct PrehomeView: View {
-    
     @ObservedObject var viewModel : PrehomeViewModel = .init()
     @State var isClickedForRegister = false
     
     var body: some View {
         ZStack {
-            Color.CrewlBackgroundColor
-                .ignoresSafeArea()
             //MARK: - Prehome Background Image
             PrehomeBackground()
             //MARK: - Prehome Continue Button
             ZStack {
-                NavigationLink(destination: {
-                    viewModel.router.goToLogin()
-                        .navigationBarHidden(true)
-                }, label: {
-                    Text(TextHelper.ButtonText.Continue.rawValue.locale())
-                        .font(.SpaceBold13)
-                })
-                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlWhite,
-                                                buttonWidth: 0.56.dW(),
-                                                buttonHeight: 0.07.dH()))
+				PrimaryButton(
+					text: "Devam Et",
+					color: .white,
+					size: CGSize(width: UIScreen.main.bounds.width * 0.45, height: 55)
+				) {
+					isClickedForRegister = true
+				}
+				
+				.frame(maxHeight: UIScreen.main.bounds.height * 0.56, alignment: .bottom)
+
+				NavigationLink(isActive: $isClickedForRegister) {
+						viewModel.router.navigateLogin()
+							.navigationBarHidden(true)
+				} label: {}
                 //MARK: - /
             }
-            .position(x: 0.5.dW(),
-                      y: WindowUtils.windowType == WindowType.Small ? 0.65.dH() : 0.75.dH())
-        }
+		}.background(
+			Color.CrewlBackgroundColor.ignoresSafeArea()
+		)
     }
 }
 
