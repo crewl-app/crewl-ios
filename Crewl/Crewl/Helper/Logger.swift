@@ -30,7 +30,8 @@ enum Logger {
             return "\((file as NSString).lastPathComponent): at \(line), on \(function)"
         }
     }
-    
+
+	/* TODO: Add other log methods of various states. */
     static func i(_ string: StaticString, isContextShown: Bool = true, file: String = #file, function: String = #function, line: Int = #line) {
         let context = Context(file: file, function: function, line: line)
         Logger.handle(level: .info, str: string.description, isContextShown: isContextShown, context: context)
