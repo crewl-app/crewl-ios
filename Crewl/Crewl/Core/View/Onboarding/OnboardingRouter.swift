@@ -11,12 +11,12 @@ import SwiftUI
 final class OnboardingRouter {}
 
 protocol OnboardingRouterCharter {
-    func goToPrehome() -> Prehome
+    func goToPrehome() -> PrehomeView
 }
 
 extension OnboardingRouter : OnboardingRouterCharter {
-    func goToPrehome() -> Prehome {
-        Prehome()
+    func goToPrehome() -> PrehomeView {
+        PrehomeView()
     }
 }
 

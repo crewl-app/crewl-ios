@@ -11,16 +11,26 @@ import SwiftUI
 typealias OnboardingRouterPromoter = OnboardingRouter
 
 class OnboardingViewModel : ObservableObject {
+  
+    var scaleSize: Double = 1.0
+    /* */
     var router = OnboardingRouterPromoter()
     @Published var pageIndex = 0
     @Published var routerActive : Bool
     
-    init(router: OnboardingRouterPromoter = OnboardingRouterPromoter(), pageIndex: Int = 0, routerActive: Bool) {
+    init(router: OnboardingRouterPromoter = OnboardingRouterPromoter(),
+         pageIndex: Int = 0,
+         routerActive: Bool = false)
+    {
         self.router = router
+        
+        /* */
+		if (UIScreen.main.bounds.height < 680) { scaleSize = 0.9 }
+        /* */
+        
         self.pageIndex = pageIndex
         self.routerActive = routerActive
     }
-    
     
     var onboardingItems : [OnboardingItem] = [
         OnboardingItem(title: TextHelper.Onboarding.FirstOnboardingTitle.rawValue,
@@ -41,6 +51,5 @@ class OnboardingViewModel : ObservableObject {
                        tag: 3)
     ]
 }
-
 
 

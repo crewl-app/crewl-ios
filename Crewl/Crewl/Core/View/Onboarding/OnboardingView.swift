@@ -8,79 +8,50 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    
-    @ObservedObject var viewModel : OnboardingViewModel
-    
-    var body: some View {
-        ZStack {
-            Color.BackgroundColor
-                .ignoresSafeArea()
-            
-            // MARK: - Into
-            VStack {
-                TabView(selection: $viewModel.pageIndex) {
-                    ForEach(viewModel.onboardingItems) { item in
-                        VStack {
-                            TemplateOnboarding(items: item)
-                        }
-                        .tag(item.tag)
-                    }
-                    .multilineTextAlignment(.center)
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .indexViewStyle(.page(backgroundDisplayMode: .always))
-                
-                // MARK: - Button
-                Button {
-                    withAnimation(.easeIn) {
-                        if viewModel.pageIndex >= 3 {
-                            viewModel.routerActive = true
-                        }else {
-                            viewModel.pageIndex += 1
-                        }
-                    }
-                } label: {
-                    Text(TextHelper.ButtonText.Continue.rawValue.locale())
-                        .font(.SpaceBold13)
-                }
-                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow, setWidthAgain: 266))
-                
-                Spacer()
-                Spacer()
-            }
-        }.fullScreenCover(isPresented: $viewModel.routerActive) {
-                viewModel.router.goToPrehome()
-            
-        }
-    }
+	@ObservedObject var viewModel : OnboardingViewModel = .init()
+
+	var body: some View {
+		ZStack {
+			Color.CrewlBackgroundColor
+				.ignoresSafeArea()
+			VStack {
+				// MARK: - Onboarding ForEach Item
+				TabView(selection: $viewModel.pageIndex) {
+					ForEach(viewModel.onboardingItems) { item in
+						VStack {
+							OnboardingItemContent(item: item)
+						}
+						.tag(item.tag)
+					}
+				}
+				.tabViewStyle(.page(indexDisplayMode: .never))
+				.indexViewStyle(.page(backgroundDisplayMode: .always))
+
+				// MARK: - Onboarding Button
+				PrimaryButton(text: "Devam Et") {
+					withAnimation(.easeIn) {
+						if viewModel.pageIndex >= 3 {
+							viewModel.routerActive = true
+						} else {
+							viewModel.pageIndex += 1
+						}
+					}
+				}
+				.padding(.bottom, 20)
+			}
+		}
+		.fullScreenCover(isPresented: $viewModel.routerActive) {
+			NavigationView {
+				viewModel.router.goToPrehome()
+                    .navigationBarHidden(true)
+			}
+		}
+	}
 }
 
 struct OnboardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView(viewModel: .init(routerActive: false))
-    }
-}
-
-private struct TemplateOnboarding: View {
-
-    var items : OnboardingItem
-
-    var body: some View {
-        VStack {
-                Text(items.title.locale())
-                    .font(.SpaceBold22)
-                    .frame(width: UIScreen.main.bounds.width * 0.79)
-
-                items.image
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width * 0.9,
-                           height: UIScreen.main.bounds.height * 0.56,
-                           alignment: .center)
-                    .padding()
-
-                Text(items.description.locale())
-                    .font(.SpaceMedium14)
-                    .frame(width: UIScreen.main.bounds.width * 0.79)
-        }
-    }
+	static var previews: some View {
+		OnboardingView().previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
+			.previewDisplayName("iPhone 14")
+	}
 }

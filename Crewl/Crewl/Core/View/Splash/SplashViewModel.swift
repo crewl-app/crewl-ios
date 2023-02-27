@@ -11,11 +11,13 @@ typealias SplashRoutePromoter = SplashRouter
 
 final class SplashViewModel: ObservableObject {
     
-    @Published var isActive = false
+    @Published var isActive : Bool
     
     var router = SplashRoutePromoter()
     
-    init(isActive : Bool, router: SplashRoutePromoter = SplashRoutePromoter()) {
+    init(isActive : Bool = false,
+         router: SplashRoutePromoter = SplashRoutePromoter())
+    {
         self.isActive = isActive
         self.router = router
         startCountdown()
@@ -26,5 +28,8 @@ final class SplashViewModel: ObservableObject {
             self.isActive = true
         }
     }
+    
+    func setPhoneDimensions(size: CGSize) {
+        WindowUtils.screenSize = size
+    }
 }
-
