@@ -10,13 +10,13 @@ import Foundation
 final class PrehomeRouter {}
 
 protocol PrehomeRouterCharter {
-    func navigateRegister() -> RegisterName
+    func navigateRegister() -> RegisterNameView
     func navigateLogin() -> LoginNumberView
 }
 
 extension PrehomeRouter : PrehomeRouterCharter {
-    func navigateRegister() -> RegisterName {
-        RegisterName()
+    func navigateRegister() -> RegisterNameView {
+        RegisterNameView()
     }
     
     func navigateLogin() -> LoginNumberView {

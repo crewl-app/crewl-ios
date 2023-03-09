@@ -21,5 +21,15 @@ extension Binding where Value == String {
         }
         return self
     }
+    
+  
+}
 
+extension Binding {
+    /// Set Empty Value for Bindings Values
+    /// - Parameter defaultValue: <#defaultValue description#>
+    /// - Returns: <#description#>
+    func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+        Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
+    }
 }
