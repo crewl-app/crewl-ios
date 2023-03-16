@@ -1,5 +1,5 @@
 //
-//  EntranceHeader.swift
+//  EntryHeader.swift
 //  Crewl
 //
 //  Created by NomoteteS on 6.03.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EntranceHeader: View {
+struct EntryHeader: View {
     
     var title: String
     var description: String
@@ -32,6 +32,6 @@ struct EntranceHeader: View {
 
 struct EntranceHeader_Previews: PreviewProvider {
     static var previews: some View {
-        EntranceHeader(title: "", description: "")
+        EntryHeader(title: "", description: "")
     }
 }
