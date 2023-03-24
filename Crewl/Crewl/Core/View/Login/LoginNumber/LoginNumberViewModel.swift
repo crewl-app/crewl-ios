@@ -10,21 +10,21 @@ import SwiftUI
 import FirebaseAuth
 
 typealias LoginNumberRouterPromoter = LoginNumberRouter
-
+//TODO: RegisterName ViewModel Benzet
 class LoginNumberViewModel : ObservableObject {
 	lazy var countries: [Country] = CountryListData.countries
 
 	var router = LoginNumberRouterPromoter()
 
 	@Published var country : Country
-	@Published var phone : UserPhoneNumber
+	@Published var phone : UserPhoneNumberModel
 
 	/* State flags. */
 	@Published var isPhoneCorrect : Bool = false
 	@Published var isLoading: Bool = false
 
 	init(country: Country = HolderData.defaultCountry,
-		 phone: UserPhoneNumber = UserPhoneNumber(code: "", number: ""),
+		 phone: UserPhoneNumberModel = UserPhoneNumberModel(code: "", number: ""),
 		 router: LoginNumberRouterPromoter = LoginNumberRouterPromoter()
 	) {
 		self.country = country
@@ -37,11 +37,9 @@ class LoginNumberViewModel : ObservableObject {
 
 		DispatchQueue.main.asyncAfter(deadline: .now() + ASYNC_DELAY_MEDIUM) {
 			self.phone.code = self.country.countryCode
-
 			PhoneAuthManager.shared.startAuth(number: self.phone.fullNumber) { success in
 				self.isPhoneCorrect = true
 			}
-
 			self.isLoading = false
 		}
 	}

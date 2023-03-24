@@ -10,14 +10,25 @@ import SwiftUI
 struct CustomTextField: View {
     
     var text: String
-    @Binding var isTrue : Bool
-    @Binding var isActive : Bool
+    @Binding var isTrue: Bool
+    @Binding var isActive: Bool
     @Binding var textField: String
-
+    @State var image: String?
+    
     var body: some View {
-        HStack {
-            TextField(text, text: $textField)
-                .padding(.horizontal)
+        HStack(spacing:0) {
+            
+            if image?.count ?? "".count > 0 {
+                Image(systemName: image ?? "")
+                    .padding(.leading)
+                
+                TextField(text, text: $textField)
+                    .padding(.horizontal)
+            } else {
+                TextField(text, text: $textField)
+                    .padding(.leading)
+            }
+            
             Spacer()
         }
         .background{
@@ -48,10 +59,11 @@ struct CustomTextField_Previews: PreviewProvider {
         ZStack {
             Color.CrewlBackgroundColor
                 .ignoresSafeArea()
-            CustomTextField(text: "",
+            CustomTextField(text: "asdasdas",
                             isTrue: .constant(false),
                             isActive: .constant(true),
-                            textField: .constant(""))
+                            textField: .constant(""),
+                            image: "")
         }
     }
 }

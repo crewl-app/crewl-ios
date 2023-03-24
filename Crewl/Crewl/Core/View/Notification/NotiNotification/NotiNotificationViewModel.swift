@@ -22,8 +22,6 @@ class NotiNotificationViewModel: ObservableObject {
     }
     
     func getNoti() {
-        UNUserNotificationCenter.current().requestAuthorization(
-          
-          completionHandler: {_, _ in })
+        UNUserNotificationCenter.current().requestAuthorization(completionHandler: {_, _ in })
     }
 }

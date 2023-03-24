@@ -10,11 +10,12 @@ import Foundation
 class LoginSuccessRouter {}
 
 protocol LoginSuccessRouterCharter {
-    func navigate() -> HomeView
+    func navigateHome() -> HomeView
+    
 }
 
 extension LoginSuccessRouter : LoginSuccessRouterCharter {
-    func navigate() -> HomeView {
+    func navigateHome() -> HomeView {
         HomeView()
     }
 }

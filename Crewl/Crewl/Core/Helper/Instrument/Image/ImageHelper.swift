@@ -40,7 +40,7 @@ struct ImageHelper {
         case RegisterSuccess = "registerSuccess"
     }
     
-    // MARK: - Notifications Images
+    // MARK: ImageHelper - Notifications Images
     enum Notifications: String {
         case NotiNotification = "notiNotification"
         case NotiLocation = "notiLocation"

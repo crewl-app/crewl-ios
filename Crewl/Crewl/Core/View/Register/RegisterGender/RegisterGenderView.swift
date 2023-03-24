@@ -12,40 +12,45 @@ struct RegisterGenderView: View {
     @StateObject var viewModel: RegisterGenderViewModel
     
     var body: some View {
-        VStack {
-                        
-            HStack{
-                Text("Cinsiyetin nedir?")
-                    .font(.SpaceBold23)
-                
+        ZStack {
+            Color.CrewlBackgroundColor
+                .ignoresSafeArea()
+            VStack {
+                //MARK: RegisterGenderView - Header
+                EntryHeader(title: "Cinsiyetin Nedir?")
+                //MARK: RegisterGenderView - Gender Section
+                //TODO: Tek cinsiyeti seçme ve genderların ortalama (Tasarıma uygun değil.)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(viewModel.registerGenderItems,id: \.genderName) { item in
+                            RegisterGenderPickerView(genderName: item.genderName,
+                                                     genderImage: item.genderImage,
+                                                     isClicked: (viewModel.gender == item.genderName))
+                            .padding(.horizontal)
+                            .onTapGesture {
+                                viewModel.gender = item.genderName
+                            }
+                            .foregroundColor(.black)
+                        }
+                    }
+                }
+                .scaledToFit()
                 Spacer()
-            }
-            .padding(EdgeInsets.init(top: 30,
-                                     leading: 20,
-                                     bottom: 0,
-                                     trailing: 0))
-            
-            ScrollView(.horizontal,showsIndicators: false) {
-                HStack {
-                    ForEach(viewModel.registerGenderItems) { item in
-                        RegisterGenderPickerView(gender: item.gender,
-                                                 genderImage: item.image,
-                                                 isClicked: .constant(true))
-                        .padding(.horizontal)
+                //MARK: RegisterGenderView - Button
+                let status = (viewModel.gender != "")
+                ZStack {
+                    NavigationLink(isActive: $viewModel.isReadyToNextView) {
+                        viewModel.router.navigate(nameData: viewModel.nameData,
+                                                  surnameData: viewModel.surnameData,
+                                                  genderData: viewModel.gender)
+                    } label: {  }
+                    EntryButtonsCollected(isLoading: .constant(false),
+                                          status: .constant(status)) {
+                    } buttonAction: {
+                        viewModel.isReadyToNextView.toggle()
                     }
                 }
             }
-            .padding(.top)
-            
-            Spacer()
-            
-            EntryButtonsCollected(isLoading: .constant(false),
-                                  status: .constant(false)) {
-                
-            } buttonAction: {
-                
-            }
-            
         }
     }
 }

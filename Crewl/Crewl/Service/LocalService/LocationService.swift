@@ -5,15 +5,25 @@
 //  Created by NomoteteS on 7.03.2023.
 //
 
-import Foundation
-
 import CoreLocation
+import Combine
 
 
 class LocationService: NSObject, ObservableObject {
     private let manager = CLLocationManager()
-    @Published var userLocation: CLLocation?
+    @Published var location: CLLocation? {
+        willSet { objectWillChange.send() }
+    }
+ 
     static let shared = LocationService()
+    
+    var latitude: CLLocationDegrees {
+        return location?.coordinate.latitude ?? 0
+    }
+    
+    var longitude: CLLocationDegrees {
+        return location?.coordinate.longitude ?? 0
+    }
     
     override init() {
         super.init()
@@ -44,10 +54,10 @@ extension LocationService: CLLocationManagerDelegate {
         @unknown default:
             fatalError()
         }
-        
-        func locationManager(_ manager: CLLocationManager, didUpdateLocation locations: [CLLocation]) {
-            guard let location = locations.last else {return}
-            self.userLocation = location
-        }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+           guard let location = locations.last else { return }
+           self.location = location
+       }
 }

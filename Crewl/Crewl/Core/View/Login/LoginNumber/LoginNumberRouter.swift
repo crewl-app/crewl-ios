@@ -10,11 +10,11 @@ import Foundation
 class LoginNumberRouter {}
 
 protocol LoginNumberRouterCharter {
-    func navigate(phone: UserPhoneNumber) -> LoginOTPView
+    func navigate(phone: UserPhoneNumberModel) -> LoginOTPView
 }
 
 extension LoginNumberRouter : LoginNumberRouterCharter {
-    func navigate(phone: UserPhoneNumber) -> LoginOTPView {
+    func navigate(phone: UserPhoneNumberModel) -> LoginOTPView {
         LoginOTPView(phone: phone)
     }
 }

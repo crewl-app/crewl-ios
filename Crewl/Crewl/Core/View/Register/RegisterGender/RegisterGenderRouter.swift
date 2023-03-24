@@ -10,11 +10,13 @@ import Foundation
 class RegisterGenderRouter {}
 
 private protocol RegisterGenderRouterCharter {
-    func navigate() -> RegisterBirthView
+    func navigate(nameData: String, surnameData: String, genderData: String) -> RegisterBirthView
 }
 
 extension RegisterGenderRouter : RegisterGenderRouterCharter {
-    func navigate() -> RegisterBirthView {
-        RegisterBirthView()
+    func navigate(nameData: String, surnameData: String, genderData: String) -> RegisterBirthView {
+        RegisterBirthView(viewModel: .init(nameData: nameData,
+                                           surnameData: surnameData,
+                                           genderData: genderData))
     }
 }

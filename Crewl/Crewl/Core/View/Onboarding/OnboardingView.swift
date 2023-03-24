@@ -26,7 +26,6 @@ struct OnboardingView: View {
 				}
 				.tabViewStyle(.page(indexDisplayMode: .never))
 				.indexViewStyle(.page(backgroundDisplayMode: .always))
-
 				// MARK: - Onboarding Button
 				PrimaryButton(text: "Devam Et") {
 					withAnimation(.easeIn) {

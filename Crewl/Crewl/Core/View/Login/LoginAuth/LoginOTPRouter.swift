@@ -10,11 +10,18 @@ import Foundation
 class LoginOTPRouter {}
 
 protocol LoginOTPRouterCharter {
-    func navigate() -> LoginSuccessView
+    func navigateSuccess() -> LoginSuccessView
+    func navigateRegister() -> RegisterNameView
 }
 
 extension LoginOTPRouter : LoginOTPRouterCharter {
-    func navigate() -> LoginSuccessView {
+    func navigateSuccess() -> LoginSuccessView {
         LoginSuccessView()
     }
+    func navigateRegister() -> RegisterNameView {
+        RegisterNameView()
+    }
 }
+
+
+

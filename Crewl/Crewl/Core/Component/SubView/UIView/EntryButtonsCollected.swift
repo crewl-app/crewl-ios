@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EntryButtonsCollected: View {
     
+    @Environment(\.dismiss) var Dismiss
     @Binding var isLoading : Bool
     @Binding var status : Bool
     var backAction: () -> ()
@@ -18,6 +19,7 @@ struct EntryButtonsCollected: View {
         HStack(spacing: 20) {
             BackButton {
                 backAction()
+                Dismiss()
             }
             let status = (status)
             ZStack {

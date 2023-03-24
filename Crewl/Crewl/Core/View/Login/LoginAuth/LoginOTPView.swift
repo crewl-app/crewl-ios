@@ -10,10 +10,11 @@ import FirebaseAuth
 import Firebase
 
 struct LoginOTPView: View {
+    
 	@ObservedObject var viewModel : LoginOTPViewModel = .init()
 	@FocusState var isFocused : Bool
 
-	var phone : UserPhoneNumber
+	var phone : UserPhoneNumberModel
 	
 	var body: some View {
 		ZStack {
@@ -63,17 +64,21 @@ struct LoginOTPView: View {
 						ZStack {
 							// Redirect button to authentication code screen.
 							PrimaryButton(text: "Onayla", isLoading: $viewModel.isLoading) {
-								viewModel.verifyCode()
+                                viewModel.verifyCode(phoneNumber: self.phone.fullNumber)
 							}
 							.disabled(status != true)
 							.compositingGroup()
 							.opacity(status ? 1 : 0.5)
-
 							// Destination
 							NavigationLink(isActive: $viewModel.isVerificationCorrect) {
-								viewModel.router.navigate()
+								viewModel.router.navigateSuccess()
 									.navigationBarHidden(true)
 							} label: {}
+                            
+                            NavigationLink(isActive: $viewModel.isShouldUserRegister) {
+                                viewModel.router.navigateRegister()
+                                    .navigationBarHidden(true)
+                            } label: {}
 						}
 					}
 				}
@@ -90,8 +95,6 @@ struct LoginOTPView: View {
 		}
 	}
 }
-
-
 
 private struct MainContent: View {
 	@State var viewModel: LoginOTPViewModel
@@ -111,7 +114,7 @@ private struct MainContent: View {
 
 struct LoginOTPView_Previews: PreviewProvider {
 	static var previews: some View {
-		LoginOTPView(phone: UserPhoneNumber(code: "+90", number: "5324409818"))
+		LoginOTPView(phone: UserPhoneNumberModel(code: "+90", number: "5324409818"))
 	}
 }
 

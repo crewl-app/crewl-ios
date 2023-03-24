@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct RegisterItem: Identifiable, Equatable {
+struct RegisterGenderItem: Identifiable,Equatable {
     var id = UUID().uuidString
-    var image : Image
-    var gender : String
+    var genderImage : String
+    var genderName : String
 }

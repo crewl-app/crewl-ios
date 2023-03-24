@@ -1,5 +1,5 @@
 //
-//  ImagePicker.swift
+//  ImagePickerService.swift
 //  Crewl
 //
 //  Created by NomoteteS on 6.03.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable{
+struct ImagePickerService: UIViewControllerRepresentable{
     
     @Environment(\.dismiss) var dismiss
     
@@ -32,9 +32,9 @@ struct ImagePicker: UIViewControllerRepresentable{
     }
     
     final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        var parent: ImagePicker
+        var parent: ImagePickerService
         
-        init(_ parent: ImagePicker) {
+        init(_ parent: ImagePickerService) {
             self.parent = parent
         }
         

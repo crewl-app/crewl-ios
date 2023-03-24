@@ -8,9 +8,12 @@
 import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
+import Firebase
+import CoreLocation
 
 class UserDataManager: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
+    @Published var userModel: UserModel?
     
     static let shared = UserDataManager()
     
@@ -18,23 +21,27 @@ class UserDataManager: ObservableObject {
         userSession = Auth.auth().currentUser
     }
     
-    func regsiter(name: String,
-                  surname: String,
-                  phone: String,
-                  image: UIImage?,
-                  birthdate: String,
-                  gender: String) {
+    func regsiter(userName: String,
+                  userSurname: String,
+                  userPhone: String,
+                  latitude: Double,
+                  longitude: Double,
+                  userImage: UIImage?,
+                  userBirthdate: String,
+                  userGender: String) {
         
-        guard let image = image else { return }
+        guard let userImage = userImage else { return }
         
-        ImageUploaderManager.uploadImage(image: image) { imageUrl in
-            let data = ["name": name,
-                        "surname": surname,
-                        "phone": phone,
+        ImageUploaderManager.uploadImage(image: userImage) { imageUrl in
+            let data = ["uid": self.userSession?.uid,
+                        "name": userName,
+                        "surname": userSurname,
+                        "phoneNumber": userPhone,
+                        "location": ["latitude":latitude,
+                                     "longitude":longitude],
                         "imageUrl": imageUrl,
-                        "birthdate": birthdate,
-                        "gender": gender,
-                        "uid": self.userSession?.uid]
+                        "birthdate": userBirthdate,
+                        "gender": userGender]
             
             COLLECTION_USERS.document(self.userSession!.uid).setData(data as [String : Any]) { _ in
                 self.userSession = self.userSession

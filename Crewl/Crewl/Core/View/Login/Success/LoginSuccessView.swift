@@ -16,7 +16,7 @@ struct LoginSuccessView: View {
 				.ignoresSafeArea()
 			VStack(alignment: .leading, spacing: 20) {
 				Spacer(minLength: 50)
-				// MARK: - Image
+				// MARK: LoginSuccessView - Image
 				Image.LoginSuccess
 					.resizable()
 					.aspectRatio(contentMode: .fit)
@@ -34,22 +34,18 @@ struct LoginSuccessView: View {
 
 				Spacer()
 
-				PrimaryButton(text: "Devam Et",
-							  size: CGSize(width: UIScreen.main.bounds.width * 0.9, height: 55)
-				) {}
-					.frame(maxWidth: .infinity, alignment: .center)
-					.padding(.all, 20)
-				// MARK: - Button
-				//                NavigationLink {
-				//                    viewModel.router.goToHomeView()
-				//                        .navigationBarBackButtonHidden(true)
-				//                } label: {
-				//                    Text(TextHelper.ButtonText.Continue.rawValue.locale())
-				//                        .font(.SpaceBold13)
-				//                }
-				//                .buttonStyle(PrimaryButtonStyle(buttonColor: Color.CrewlYellow,
-				//                                                buttonWidth: 321))
-				// MARK: - \\
+                // MARK: LoginSuccessView - Button
+                ZStack {
+                    NavigationLink(isActive: .constant(false)) {
+                        viewModel.router.navigateHome()
+                    } label: {  }
+                    PrimaryButton(text: "Devam Et",
+                                  size: CGSize(width: UIScreen.main.bounds.width * 0.9, height: 55)
+                    ) {  }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.all, 20)
+                }
+
 			}.frame(maxWidth: .infinity, alignment: .leading)
 		}
 	}

@@ -14,23 +14,25 @@ struct RegisterNameView: View {
     var body: some View {
         ZStack {
             //MARK: RegisterNameView - Check Status
-            let falseStatus = (viewModel.name?.count == nil)
+            let falseStatus = (viewModel.name?.count ?? "".count > 2)
             Color.CrewlBackgroundColor
                 .ignoresSafeArea()
             VStack(spacing: 30) {
-                //MARK: RegisterNameView - Title & Description
-                RegisterNameViewHeader()
-                    .padding(.top)
+                //MARK: RegisterNameView - Header
+                EntryHeader(title: "İsmin nedir?",
+                            description: "Diğer Kullanıcılar sadece ismini görebilir.")
                 VStack(spacing: 15) {
                     //MARK: RegisterNameView - TextFields
                     CustomTextField(text: "İsim",
                                     isTrue: $viewModel.isStatus,
                                     isActive: $viewModel.isStatusShow,
                                     textField: $viewModel.name.toUnwrapped(defaultValue: ""))
+                    .keyboardType(.default)
                     CustomTextField(text: "Soyisim",
                                     isTrue: .constant(false),
                                     isActive: .constant(false),
                                     textField: $viewModel.surname.toUnwrapped(defaultValue: ""))
+                    .keyboardType(.default)
                     //MARK: RegisterNameView - Error Massage
                     HStack(spacing: 5) {
                         Text("*").foregroundColor(.red)
@@ -41,31 +43,29 @@ struct RegisterNameView: View {
                     .opacity(viewModel.isOpacityShown ? 1 : 0 )
                     .padding(.horizontal,40)
                 }
-                
                 Spacer()
-                
                 //MARK: RegisterNameView - Buttons
                 ZStack {
+                    NavigationLink(isActive: $viewModel.isReadyToNextView) {
+                        viewModel.router.navigate(name: viewModel.name ?? "", surname: viewModel.surname ?? "")
+                    } label: {  }
                     HStack(spacing: 25) {
                         BackButton()
                         PrimaryButton(text: "Devam Et") {
+                            viewModel.save()
                             if falseStatus {
                                 viewModel.isOpacityShown = true
                                 viewModel.isStatusShow = true
                             }
                         }
                     }
-                    NavigationLink(isActive: $viewModel.isReadyToNextView) {
-                        viewModel.router.navigate(name: viewModel.name!, surname: viewModel.surname ?? "")
-                    } label: {  }
                 }
             }
         }
     }
 }
 
-
-struct RegisterName_Previews: PreviewProvider {
+struct RegisterNameView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterNameView()
     }

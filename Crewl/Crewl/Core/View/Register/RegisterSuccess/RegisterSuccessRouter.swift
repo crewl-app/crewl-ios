@@ -7,3 +7,14 @@
 
 import Foundation
 
+class RegisterSuccessRouter {}
+
+private protocol RegisterSuccessRouterCharter {
+    func navigateHome() -> HomeView
+}
+
+extension RegisterSuccessRouter: RegisterSuccessRouterCharter {
+    func navigateHome() -> HomeView {
+        HomeView()
+    }
+}

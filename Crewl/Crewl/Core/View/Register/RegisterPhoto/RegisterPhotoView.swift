@@ -17,10 +17,8 @@ struct RegisterPhotoView: View {
                 .ignoresSafeArea()
             VStack {
                 //MARK: RegisterPhotoView - Header
-                RegisterPhotoHeader()
-                
-                Spacer()
-                
+                EntryHeader(title: "Fotoğrafını yükle.",
+                            description: "Lütfen yüzünün gözüktüğü bir fotoğrafını yükle.\n Fotoğrafını istediğin zaman değiştirebilirsin.")
                 //MARK: RegisterPhotoView - UserImage
                 ZStack{
                     Circle()
@@ -30,20 +28,19 @@ struct RegisterPhotoView: View {
                                 Image(uiImage: image)
                                     .resizable()
                                     .clipShape(Circle())
-                            }else{
-                                Image.RegisterPhoto
-                                    .resizable()
-                                    .clipShape(Circle())
                             }
+                        }
+                        .background{
+                            Image("registerPhoto")
+                                .resizable()
+                                .padding(.all,-20)
+                                .clipShape(Circle())
                         }
                 }
                 .padding(.all)
-                
-                //MARK: RegisterPhotoView - User ImagePicker Sections
+                //MARK: RegisterPhotoView - User ImagePickerService Sections
                 HStack {
-                    
                     Spacer()
-                    
                     SecondryButton(text: "Galeriden Seç") {
                         viewModel.source = .gallery
                         viewModel.isShowPicker.toggle()
@@ -53,26 +50,29 @@ struct RegisterPhotoView: View {
                         viewModel.source = .camera
                         viewModel.isShowPicker.toggle()
                     }
-                    
                     Spacer()
-                    
                 }
+                .padding(.bottom)
                 .padding()
-                
                 Spacer()
-                
                 //MARK: RegisterPhotoView - Buttons
-                EntryButtonsCollected(isLoading: .constant(false),
-                                      status: .constant(false)) {
-                    
-                } buttonAction: {
-                    
+                let status = (viewModel.userImage != nil)
+                ZStack {
+                    NavigationLink(isActive: $viewModel.isReadyToNextView) {
+                        //CRASH: RegisterPhotoView - Preview Sim Crash Blocker
+//                        viewModel.router.navigate()
+                    } label: {  }
+                    EntryButtonsCollected(isLoading: .constant(false),
+                                          status: .constant(status)) {
+                        
+                    } buttonAction: {
+                        viewModel.isReadyToNextView.toggle()
+                    }
                 }
             }
-            
         }
         .fullScreenCover(isPresented: $viewModel.isShowPicker) {
-            ImagePicker(sourceType: viewModel.source == .gallery ? .photoLibrary : .camera, selectedImage: $viewModel.userImage)
+            ImagePickerService(sourceType: viewModel.source == .gallery ? .photoLibrary : .camera, selectedImage: $viewModel.userImage)
                 .ignoresSafeArea()
         }
     }

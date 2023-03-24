@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 import NotificationCenter
+import GoogleMaps
+import GooglePlaces
 
 
 
@@ -15,6 +17,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
+    GMSServices.provideAPIKey("AIzaSyBBQ0dT2vVevclSTtkgZ99mPOG-IZcAcsQ")
+    GMSPlacesClient.provideAPIKey("AIzaSyBBQ0dT2vVevclSTtkgZ99mPOG-IZcAcsQ")
     print("SwiftUI_2_Lifecycle_PhoneNumber_AuthApp application is starting up. ApplicationDelegate didFinishLaunchingWithOptions.")
     return true
   }
